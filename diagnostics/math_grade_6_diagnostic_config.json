@@ -1,0 +1,727 @@
+{
+  "id": "math_grade_6_diagnostic",
+  "mode": "6 класс",
+  "title": "Диагностика знаний по математике за 6 класс",
+  "duration_minutes": "40–50",
+  "description": "Диагностика ключевых тем математики 6 класса: отрицательные числа, дроби, пропорции, проценты, уравнения, координатная прямая, текстовые задачи и геометрические величины.",
+  "levels": [
+    {
+      "min_percent": 0,
+      "max_percent": 39.9,
+      "name": "нужен разбор базы",
+      "summary": "Есть серьёзные пробелы в темах 6 класса. Перед переходом к более сложным задачам нужно восстановить действия с рациональными числами, дроби и проценты."
+    },
+    {
+      "min_percent": 40,
+      "max_percent": 59.9,
+      "name": "база нестабильна",
+      "summary": "Отдельные темы знакомы, но навыки пока неустойчивы. Основной фокус — дроби, отрицательные числа, пропорции и перевод условия задачи в действие."
+    },
+    {
+      "min_percent": 60,
+      "max_percent": 79.9,
+      "name": "рабочий уровень",
+      "summary": "База 6 класса в целом есть, но остаются зоны риска. Нужно закрепить смешанные вычисления, проценты, уравнения и задачи на пропорции."
+    },
+    {
+      "min_percent": 80,
+      "max_percent": 100,
+      "name": "уверенный уровень",
+      "summary": "Ученик уверенно справляется с основными темами 6 класса. Можно переходить к более сложным смешанным задачам и подготовке к алгебре 7 класса."
+    }
+  ],
+  "topics": [
+    {
+      "id": "rational_numbers",
+      "name": "Рациональные числа",
+      "order": 1,
+      "critical": true
+    },
+    {
+      "id": "fractions_decimals",
+      "name": "Дроби и десятичные дроби",
+      "order": 2,
+      "critical": true
+    },
+    {
+      "id": "ratios_proportions",
+      "name": "Отношения и пропорции",
+      "order": 3,
+      "critical": true
+    },
+    {
+      "id": "percent_tasks",
+      "name": "Проценты",
+      "order": 4,
+      "critical": true
+    },
+    {
+      "id": "equations_expressions",
+      "name": "Выражения и уравнения",
+      "order": 5,
+      "critical": true
+    },
+    {
+      "id": "coordinate_line",
+      "name": "Координатная прямая",
+      "order": 6,
+      "critical": false
+    },
+    {
+      "id": "word_problems",
+      "name": "Текстовые задачи",
+      "order": 7,
+      "critical": true
+    },
+    {
+      "id": "geometry_measurement",
+      "name": "Геометрия и измерения",
+      "order": 8,
+      "critical": false
+    }
+  ],
+  "skills": [
+    {
+      "id": "calculation_accuracy",
+      "name": "Вычислительная аккуратность",
+      "order": 1
+    },
+    {
+      "id": "sign_and_number_sense",
+      "name": "Знаки и числовой смысл",
+      "order": 2
+    },
+    {
+      "id": "fraction_percent_fluency",
+      "name": "Дроби и проценты",
+      "order": 3
+    },
+    {
+      "id": "proportional_reasoning",
+      "name": "Пропорциональное мышление",
+      "order": 4
+    },
+    {
+      "id": "equation_solving",
+      "name": "Решение уравнений",
+      "order": 5
+    },
+    {
+      "id": "problem_modeling",
+      "name": "Моделирование задачи",
+      "order": 6
+    },
+    {
+      "id": "attention_to_format",
+      "name": "Внимание к формату ответа",
+      "order": 7
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "title": "Действия с отрицательными числами",
+      "text": "Вычислите: $-18+7-(-13)$.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "2",
+      "accepted_answers": [
+        "2"
+      ],
+      "topic_weights": {
+        "rational_numbers": 1.0
+      },
+      "skill_weights": {
+        "sign_and_number_sense": 0.7,
+        "calculation_accuracy": 0.3
+      },
+      "solution": "$-18+7=-11$, $-11-(-13)=-11+13=2$.",
+      "typical_mistakes": [
+        "Не раскрывает минус перед отрицательным числом.",
+        "Ошибается при сложении чисел с разными знаками."
+      ],
+      "recommendation_if_low": "Повторить сложение и вычитание чисел с разными знаками."
+    },
+    {
+      "id": "q2",
+      "title": "Умножение рациональных чисел",
+      "text": "Вычислите: $(-4{,}5)\\cdot(-2) - 7$.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "2",
+      "accepted_answers": [
+        "2"
+      ],
+      "topic_weights": {
+        "rational_numbers": 0.8,
+        "fractions_decimals": 0.2
+      },
+      "skill_weights": {
+        "sign_and_number_sense": 0.5,
+        "calculation_accuracy": 0.5
+      },
+      "solution": "$(-4{,}5)\\cdot(-2)=9$, $9-7=2$.",
+      "typical_mistakes": [
+        "Ставит неверный знак произведения.",
+        "Ошибается при вычислении с десятичной дробью."
+      ],
+      "recommendation_if_low": "Отработать знаки при умножении и делении рациональных чисел."
+    },
+    {
+      "id": "q3",
+      "title": "Сравнение рациональных чисел",
+      "text": "Найдите расстояние между числами $-7$ и $5$ на координатной прямой.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "12",
+      "accepted_answers": [
+        "12"
+      ],
+      "topic_weights": {
+        "coordinate_line": 0.6,
+        "rational_numbers": 0.4
+      },
+      "skill_weights": {
+        "sign_and_number_sense": 0.6,
+        "calculation_accuracy": 0.4
+      },
+      "solution": "Расстояние равно $5-(-7)=12$.",
+      "typical_mistakes": [
+        "Считает расстояние как разность модулей.",
+        "Теряет знак минус."
+      ],
+      "recommendation_if_low": "Повторить координатную прямую и расстояние между точками."
+    },
+    {
+      "id": "q4",
+      "title": "Сложение дробей",
+      "text": "Вычислите: $\\frac{5}{8}+\\frac{7}{12}$. Ответ запишите обыкновенной дробью.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "ordinary_fraction",
+      "answer": "29/24",
+      "accepted_answers": [
+        "29/24"
+      ],
+      "topic_weights": {
+        "fractions_decimals": 1.0
+      },
+      "skill_weights": {
+        "fraction_percent_fluency": 0.8,
+        "attention_to_format": 0.2
+      },
+      "solution": "Общий знаменатель 24: $\\frac{15}{24}+\\frac{14}{24}=\\frac{29}{24}$.",
+      "typical_mistakes": [
+        "Складывает знаменатели.",
+        "Не приводит дроби к общему знаменателю."
+      ],
+      "recommendation_if_low": "Повторить сложение дробей с разными знаменателями."
+    },
+    {
+      "id": "q5",
+      "title": "Умножение дробей",
+      "text": "Вычислите: $\\frac{9}{14}\\cdot\\frac{7}{18}$. Ответ запишите обыкновенной дробью.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "ordinary_fraction",
+      "answer": "1/4",
+      "accepted_answers": [
+        "1/4"
+      ],
+      "topic_weights": {
+        "fractions_decimals": 1.0
+      },
+      "skill_weights": {
+        "fraction_percent_fluency": 0.7,
+        "calculation_accuracy": 0.2,
+        "attention_to_format": 0.1
+      },
+      "solution": "$\\frac{9}{14}\\cdot\\frac{7}{18}=\\frac{9\\cdot7}{14\\cdot18}=\\frac{1}{4}$ после сокращения.",
+      "typical_mistakes": [
+        "Не сокращает дроби до умножения.",
+        "Ошибается в сокращении."
+      ],
+      "recommendation_if_low": "Закрепить умножение дробей и сокращение."
+    },
+    {
+      "id": "q6",
+      "title": "Деление дробей",
+      "text": "Вычислите: $\\frac{5}{6}:\\frac{10}{9}$. Ответ запишите обыкновенной дробью.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "ordinary_fraction",
+      "answer": "3/4",
+      "accepted_answers": [
+        "3/4"
+      ],
+      "topic_weights": {
+        "fractions_decimals": 1.0
+      },
+      "skill_weights": {
+        "fraction_percent_fluency": 0.8,
+        "attention_to_format": 0.2
+      },
+      "solution": "$\\frac{5}{6}:\\frac{10}{9}=\\frac{5}{6}\\cdot\\frac{9}{10}=\\frac{3}{4}$.",
+      "typical_mistakes": [
+        "Не переворачивает вторую дробь.",
+        "Ошибается в сокращении."
+      ],
+      "recommendation_if_low": "Повторить деление дробей как умножение на обратную дробь."
+    },
+    {
+      "id": "q7",
+      "title": "Десятичные дроби",
+      "text": "Вычислите: $3{,}6\\cdot1{,}25-2{,}4$. Ответ запишите десятичной дробью.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "decimal",
+      "answer": "2.1",
+      "accepted_answers": [
+        "2.1",
+        "2,1"
+      ],
+      "topic_weights": {
+        "fractions_decimals": 1.0
+      },
+      "skill_weights": {
+        "fraction_percent_fluency": 0.5,
+        "calculation_accuracy": 0.4,
+        "attention_to_format": 0.1
+      },
+      "solution": "$3{,}6\\cdot1{,}25=4{,}5$, $4{,}5-2{,}4=2{,}1$.",
+      "typical_mistakes": [
+        "Неверно ставит запятую.",
+        "Сначала вычитает, а потом умножает."
+      ],
+      "recommendation_if_low": "Повторить действия с десятичными дробями и порядок действий."
+    },
+    {
+      "id": "q8",
+      "title": "Преобразование дроби",
+      "text": "Запишите $\\frac{7}{20}$ в виде десятичной дроби.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "decimal",
+      "answer": "0.35",
+      "accepted_answers": [
+        "0.35",
+        "0,35"
+      ],
+      "topic_weights": {
+        "fractions_decimals": 1.0
+      },
+      "skill_weights": {
+        "fraction_percent_fluency": 0.7,
+        "attention_to_format": 0.3
+      },
+      "solution": "$\\frac{7}{20}=\\frac{35}{100}=0{,}35$.",
+      "typical_mistakes": [
+        "Делит 20 на 7.",
+        "Ошибается при переводе в сотые."
+      ],
+      "recommendation_if_low": "Повторить перевод обыкновенных дробей в десятичные."
+    },
+    {
+      "id": "q9",
+      "title": "Отношение чисел",
+      "text": "Упростите отношение $42:56$. Ответ запишите обыкновенной дробью.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "ordinary_fraction",
+      "answer": "3/4",
+      "accepted_answers": [
+        "3/4"
+      ],
+      "topic_weights": {
+        "ratios_proportions": 1.0
+      },
+      "skill_weights": {
+        "proportional_reasoning": 0.7,
+        "calculation_accuracy": 0.2,
+        "attention_to_format": 0.1
+      },
+      "solution": "$42:56=\\frac{42}{56}=\\frac{3}{4}$.",
+      "typical_mistakes": [
+        "Не сокращает отношение.",
+        "Путает порядок чисел."
+      ],
+      "recommendation_if_low": "Повторить отношение чисел и сокращение дробей."
+    },
+    {
+      "id": "q10",
+      "title": "Пропорция",
+      "text": "Решите пропорцию: $\\frac{x}{15}=\\frac{8}{12}$.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "10",
+      "accepted_answers": [
+        "10"
+      ],
+      "topic_weights": {
+        "ratios_proportions": 0.8,
+        "equations_expressions": 0.2
+      },
+      "skill_weights": {
+        "proportional_reasoning": 0.7,
+        "equation_solving": 0.3
+      },
+      "solution": "$x=15\\cdot\\frac{8}{12}=10$.",
+      "typical_mistakes": [
+        "Неверно применяет основное свойство пропорции.",
+        "Ошибается при сокращении 8/12."
+      ],
+      "recommendation_if_low": "Повторить пропорции и нахождение неизвестного члена."
+    },
+    {
+      "id": "q11",
+      "title": "Масштаб",
+      "text": "На карте расстояние между городами равно 6 см. Масштаб карты $1:2500000$. Сколько километров между городами на местности?",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "150",
+      "accepted_answers": [
+        "150"
+      ],
+      "topic_weights": {
+        "ratios_proportions": 0.7,
+        "word_problems": 0.3
+      },
+      "skill_weights": {
+        "proportional_reasoning": 0.6,
+        "problem_modeling": 0.3,
+        "calculation_accuracy": 0.1
+      },
+      "solution": "$6\\cdot2500000=15000000$ см = 150 км.",
+      "typical_mistakes": [
+        "Не переводит сантиметры в километры.",
+        "Путает масштаб с делением."
+      ],
+      "recommendation_if_low": "Повторить масштаб и перевод единиц длины."
+    },
+    {
+      "id": "q12",
+      "title": "Проценты от числа",
+      "text": "Найдите $18\\%$ от числа 350.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "63",
+      "accepted_answers": [
+        "63"
+      ],
+      "topic_weights": {
+        "percent_tasks": 1.0
+      },
+      "skill_weights": {
+        "fraction_percent_fluency": 0.6,
+        "calculation_accuracy": 0.4
+      },
+      "solution": "$350\\cdot0{,}18=63$.",
+      "typical_mistakes": [
+        "Делит на 18 вместо умножения на 0,18.",
+        "Неверно переводит проценты в десятичную дробь."
+      ],
+      "recommendation_if_low": "Повторить нахождение процента от числа."
+    },
+    {
+      "id": "q13",
+      "title": "Число по проценту",
+      "text": "$24\\%$ числа равны 18. Найдите это число.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "75",
+      "accepted_answers": [
+        "75"
+      ],
+      "topic_weights": {
+        "percent_tasks": 0.8,
+        "ratios_proportions": 0.2
+      },
+      "skill_weights": {
+        "fraction_percent_fluency": 0.5,
+        "proportional_reasoning": 0.4,
+        "calculation_accuracy": 0.1
+      },
+      "solution": "$18:0{,}24=75$.",
+      "typical_mistakes": [
+        "Находит 24% от 18.",
+        "Неверно переводит 24% в десятичную дробь."
+      ],
+      "recommendation_if_low": "Повторить нахождение числа по его проценту."
+    },
+    {
+      "id": "q14",
+      "title": "Изменение на проценты",
+      "text": "Цена товара была 1200 рублей. Её снизили на $15\\%$. Сколько рублей стала стоить вещь?",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "1020",
+      "accepted_answers": [
+        "1020"
+      ],
+      "topic_weights": {
+        "percent_tasks": 0.8,
+        "word_problems": 0.2
+      },
+      "skill_weights": {
+        "fraction_percent_fluency": 0.5,
+        "problem_modeling": 0.3,
+        "calculation_accuracy": 0.2
+      },
+      "solution": "Скидка $1200\\cdot0{,}15=180$, новая цена $1200-180=1020$.",
+      "typical_mistakes": [
+        "Прибавляет процент вместо вычитания.",
+        "Ошибается при нахождении скидки."
+      ],
+      "recommendation_if_low": "Отработать задачи на увеличение и уменьшение на проценты."
+    },
+    {
+      "id": "q15",
+      "title": "Раскрытие скобок",
+      "text": "Найдите значение выражения $5(2x-3)-4(x+1)$ при $x=-2$.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "-31",
+      "accepted_answers": [
+        "-31"
+      ],
+      "topic_weights": {
+        "equations_expressions": 0.8,
+        "rational_numbers": 0.2
+      },
+      "skill_weights": {
+        "equation_solving": 0.4,
+        "sign_and_number_sense": 0.4,
+        "calculation_accuracy": 0.2
+      },
+      "solution": "$5(2x-3)-4(x+1)=10x-15-4x-4=6x-19$. При $x=-2$ получаем $-31$.",
+      "typical_mistakes": [
+        "Неверно раскрывает скобки перед минусом.",
+        "Ошибается при подстановке отрицательного значения."
+      ],
+      "recommendation_if_low": "Повторить раскрытие скобок и подстановку значений."
+    },
+    {
+      "id": "q16",
+      "title": "Линейное уравнение",
+      "text": "Решите уравнение: $4(2x-1)=3x+26$.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "6",
+      "accepted_answers": [
+        "6"
+      ],
+      "topic_weights": {
+        "equations_expressions": 1.0
+      },
+      "skill_weights": {
+        "equation_solving": 0.8,
+        "calculation_accuracy": 0.2
+      },
+      "solution": "$8x-4=3x+26$, $5x=30$, $x=6$.",
+      "typical_mistakes": [
+        "Ошибается при переносе слагаемых.",
+        "Неверно раскрывает скобки."
+      ],
+      "recommendation_if_low": "Отработать линейные уравнения со скобками."
+    },
+    {
+      "id": "q17",
+      "title": "Координатная прямая",
+      "text": "На координатной прямой точка $A$ имеет координату $-9$, а точка $B$ — координату $4$. Найдите координату середины отрезка $AB$. Ответ запишите десятичной дробью.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "decimal",
+      "answer": "-2.5",
+      "accepted_answers": [
+        "-2.5",
+        "-2,5"
+      ],
+      "topic_weights": {
+        "coordinate_line": 0.8,
+        "rational_numbers": 0.2
+      },
+      "skill_weights": {
+        "sign_and_number_sense": 0.5,
+        "calculation_accuracy": 0.3,
+        "attention_to_format": 0.2
+      },
+      "solution": "Координата середины равна $\\frac{-9+4}{2}=\\frac{-5}{2}=-2{,}5$.",
+      "typical_mistakes": [
+        "Находит длину отрезка вместо середины.",
+        "Ошибается со знаком."
+      ],
+      "recommendation_if_low": "Повторить координатную прямую и середину отрезка."
+    },
+    {
+      "id": "q18",
+      "title": "Текстовая задача на пропорции",
+      "text": "За 7 одинаковых тетрадей заплатили 196 рублей. Сколько стоят 12 таких тетрадей?",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "336",
+      "accepted_answers": [
+        "336"
+      ],
+      "topic_weights": {
+        "word_problems": 0.6,
+        "ratios_proportions": 0.4
+      },
+      "skill_weights": {
+        "problem_modeling": 0.5,
+        "proportional_reasoning": 0.4,
+        "calculation_accuracy": 0.1
+      },
+      "solution": "Одна тетрадь стоит $196:7=28$ рублей. $12\\cdot28=336$ рублей.",
+      "typical_mistakes": [
+        "Не находит цену одной тетради.",
+        "Путает количество и стоимость."
+      ],
+      "recommendation_if_low": "Тренировать задачи на прямую пропорциональность."
+    },
+    {
+      "id": "q19",
+      "title": "Геометрия: площадь",
+      "text": "Площадь прямоугольника равна 96 см², одна сторона равна 8 см. Найдите периметр прямоугольника.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "40",
+      "accepted_answers": [
+        "40"
+      ],
+      "topic_weights": {
+        "geometry_measurement": 0.8,
+        "word_problems": 0.2
+      },
+      "skill_weights": {
+        "problem_modeling": 0.4,
+        "calculation_accuracy": 0.3,
+        "attention_to_format": 0.3
+      },
+      "solution": "Вторая сторона $96:8=12$ см. Периметр $2(8+12)=40$ см.",
+      "typical_mistakes": [
+        "Путает площадь и периметр.",
+        "Останавливается после нахождения второй стороны."
+      ],
+      "recommendation_if_low": "Повторить связь площади и периметра прямоугольника."
+    },
+    {
+      "id": "q20",
+      "title": "Круговая диаграмма и проценты",
+      "text": "В классе 30 учеников. $40\\%$ учеников ходят в спортивную секцию. Сколько учеников ходят в спортивную секцию?",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "12",
+      "accepted_answers": [
+        "12"
+      ],
+      "topic_weights": {
+        "percent_tasks": 0.5,
+        "word_problems": 0.3,
+        "geometry_measurement": 0.2
+      },
+      "skill_weights": {
+        "fraction_percent_fluency": 0.5,
+        "problem_modeling": 0.3,
+        "calculation_accuracy": 0.2
+      },
+      "solution": "$30\\cdot0{,}4=12$.",
+      "typical_mistakes": [
+        "Неверно переводит 40% в десятичную дробь.",
+        "Находит 40 вместо 40% от числа."
+      ],
+      "recommendation_if_low": "Повторить проценты в задачах с данными."
+    }
+  ],
+  "topic_recommendations": {
+    "rational_numbers": {
+      "low": "Повторить положительные и отрицательные числа, модуль и действия с разными знаками.",
+      "medium": "Закрепить рациональные числа на коротких вычислительных примерах.",
+      "good": "Поддерживать навык через смешанные выражения с дробями и знаками."
+    },
+    "fractions_decimals": {
+      "low": "Повторить действия с обыкновенными и десятичными дробями.",
+      "medium": "Закрепить сложение, умножение, деление дробей и перевод между формами записи.",
+      "good": "Добавлять задачи, где дроби и десятичные числа встречаются вместе."
+    },
+    "ratios_proportions": {
+      "low": "Повторить отношения, пропорции и основное свойство пропорции.",
+      "medium": "Отработать пропорции и масштаб на простых задачах.",
+      "good": "Переходить к текстовым задачам на прямую и обратную пропорциональность."
+    },
+    "percent_tasks": {
+      "low": "Повторить перевод процентов в дробь и основные типы задач на проценты.",
+      "medium": "Закрепить нахождение процента от числа и числа по проценту.",
+      "good": "Добавлять задачи на изменение величины и проценты в тексте."
+    },
+    "equations_expressions": {
+      "low": "Повторить раскрытие скобок, приведение подобных и простые уравнения.",
+      "medium": "Закрепить уравнения со скобками и рациональными числами.",
+      "good": "Переходить к более длинным выражениям и задачам с уравнением."
+    },
+    "coordinate_line": {
+      "low": "Повторить координатную прямую, расстояние и середину отрезка.",
+      "medium": "Закрепить работу с отрицательными координатами.",
+      "good": "Добавлять задачи, где координаты связаны с модулем и расстоянием."
+    },
+    "word_problems": {
+      "low": "Учиться выделять величины, связь между ними и нужное действие.",
+      "medium": "Отрабатывать задачи на стоимость, проценты и пропорции.",
+      "good": "Решать смешанные задачи в два-три действия."
+    },
+    "geometry_measurement": {
+      "low": "Повторить периметр, площадь и единицы измерения.",
+      "medium": "Закрепить задачи, где сначала нужно найти недостающую сторону.",
+      "good": "Переходить к составным геометрическим задачам."
+    }
+  },
+  "skill_recommendations": {
+    "calculation_accuracy": {
+      "low": "Нужна регулярная тренировка вычислений и проверка промежуточных шагов.",
+      "medium": "Добавить короткие блоки на аккуратность с рациональными числами.",
+      "good": "Поддерживать точность на смешанных выражениях."
+    },
+    "sign_and_number_sense": {
+      "low": "Повторить смысл отрицательных чисел, модуль и действия с разными знаками.",
+      "medium": "Закрепить знаки на координатной прямой и в вычислениях.",
+      "good": "Добавлять задачи с несколькими отрицательными числами."
+    },
+    "fraction_percent_fluency": {
+      "low": "Повторить дроби, десятичные дроби и проценты как связанные формы записи.",
+      "medium": "Закрепить вычисления с дробями и процентами.",
+      "good": "Решать задачи, где нужно выбрать удобную форму записи."
+    },
+    "proportional_reasoning": {
+      "low": "Повторить отношения и пропорции с простых числовых примеров.",
+      "medium": "Отработать пропорции в текстовых задачах.",
+      "good": "Переходить к задачам на масштаб и изменение величин."
+    },
+    "equation_solving": {
+      "low": "Повторить раскрытие скобок и перенос слагаемых.",
+      "medium": "Закрепить линейные уравнения со скобками.",
+      "good": "Добавлять задачи, которые удобно решать уравнением."
+    },
+    "problem_modeling": {
+      "low": "Учиться переводить условие в выражение, пропорцию или уравнение.",
+      "medium": "Решать текстовые задачи с обязательным пояснением действия.",
+      "good": "Добавлять смешанные задачи на проценты, стоимость и геометрию."
+    },
+    "attention_to_format": {
+      "low": "Следить за тем, какую форму ответа требует условие: дробь, десятичная дробь или целое число.",
+      "medium": "Отрабатывать запись ответа без лишних единиц измерения и в нужном формате.",
+      "good": "Поддерживать аккуратность оформления в задачах разных типов."
+    }
+  }
+}

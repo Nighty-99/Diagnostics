@@ -1,0 +1,701 @@
+{
+  "id": "math_grade_5_diagnostic",
+  "mode": "5 класс",
+  "title": "Диагностика знаний по математике за 5 класс",
+  "duration_minutes": "35–45",
+  "description": "Короткая диагностика ключевых тем математики 5 класса: натуральные числа, порядок действий, дроби, десятичные дроби, текстовые задачи и геометрические величины.",
+  "levels": [
+    {
+      "min_percent": 0,
+      "max_percent": 39.9,
+      "name": "нужен разбор базы",
+      "summary": "Есть заметные пробелы в базовых вычислениях и понимании условий задач. Лучше начать с восстановления арифметики и аккуратности записи."
+    },
+    {
+      "min_percent": 40,
+      "max_percent": 59.9,
+      "name": "база нестабильна",
+      "summary": "Часть тем ученик узнаёт, но ошибки пока возникают в нескольких базовых блоках. Нужна последовательная отработка вычислений и задач по тексту."
+    },
+    {
+      "min_percent": 60,
+      "max_percent": 79.9,
+      "name": "рабочий уровень",
+      "summary": "Основные темы 5 класса в целом освоены, но есть отдельные зоны риска. Важно закрепить дроби, порядок действий и текстовые задачи."
+    },
+    {
+      "min_percent": 80,
+      "max_percent": 100,
+      "name": "уверенный уровень",
+      "summary": "Ученик уверенно справляется с большинством тем 5 класса. Дальше можно переходить к более сложным смешанным задачам и подготовке к темам 6 класса."
+    }
+  ],
+  "topics": [
+    {
+      "id": "natural_numbers",
+      "name": "Натуральные числа и вычисления",
+      "order": 1,
+      "critical": true
+    },
+    {
+      "id": "operation_order",
+      "name": "Порядок действий и выражения",
+      "order": 2,
+      "critical": true
+    },
+    {
+      "id": "ordinary_fractions",
+      "name": "Обыкновенные дроби",
+      "order": 3,
+      "critical": true
+    },
+    {
+      "id": "decimal_fractions",
+      "name": "Десятичные дроби",
+      "order": 4,
+      "critical": true
+    },
+    {
+      "id": "word_problems",
+      "name": "Текстовые задачи",
+      "order": 5,
+      "critical": true
+    },
+    {
+      "id": "geometry_measurement",
+      "name": "Геометрия и измерения",
+      "order": 6,
+      "critical": true
+    },
+    {
+      "id": "data_logic",
+      "name": "Работа с данными и логика",
+      "order": 7,
+      "critical": false
+    }
+  ],
+  "skills": [
+    {
+      "id": "calculation_accuracy",
+      "name": "Вычислительная аккуратность",
+      "order": 1
+    },
+    {
+      "id": "operation_reasoning",
+      "name": "Понимание порядка действий",
+      "order": 2
+    },
+    {
+      "id": "fraction_decimal_fluency",
+      "name": "Работа с дробями",
+      "order": 3
+    },
+    {
+      "id": "problem_modeling",
+      "name": "Перевод условия в действие",
+      "order": 4
+    },
+    {
+      "id": "geometric_reasoning",
+      "name": "Геометрическое мышление",
+      "order": 5
+    },
+    {
+      "id": "attention_to_format",
+      "name": "Внимание к формату ответа",
+      "order": 6
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "title": "Натуральные числа: сложение и вычитание",
+      "text": "Вычислите: $438+275-196$.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "517",
+      "accepted_answers": [
+        "517"
+      ],
+      "topic_weights": {
+        "natural_numbers": 1.0
+      },
+      "skill_weights": {
+        "calculation_accuracy": 1.0
+      },
+      "solution": "$438+275=713$, $713-196=517$.",
+      "typical_mistakes": [
+        "Ошибается при переходе через десяток или сотню.",
+        "Теряет знак действия."
+      ],
+      "recommendation_if_low": "Повторить письменное сложение и вычитание многозначных чисел."
+    },
+    {
+      "id": "q2",
+      "title": "Порядок действий",
+      "text": "Вычислите: $840:12+17\\cdot6$.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "172",
+      "accepted_answers": [
+        "172"
+      ],
+      "topic_weights": {
+        "operation_order": 0.7,
+        "natural_numbers": 0.3
+      },
+      "skill_weights": {
+        "operation_reasoning": 0.6,
+        "calculation_accuracy": 0.4
+      },
+      "solution": "$840:12=70$, $17\\cdot6=102$, $70+102=172$.",
+      "typical_mistakes": [
+        "Выполняет действия строго слева направо.",
+        "Ошибается в делении или умножении."
+      ],
+      "recommendation_if_low": "Закрепить порядок действий: сначала умножение и деление, затем сложение и вычитание."
+    },
+    {
+      "id": "q3",
+      "title": "Выражение со скобками",
+      "text": "Вычислите: $(1250-835):5+64$.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "147",
+      "accepted_answers": [
+        "147"
+      ],
+      "topic_weights": {
+        "operation_order": 0.7,
+        "natural_numbers": 0.3
+      },
+      "skill_weights": {
+        "operation_reasoning": 0.5,
+        "calculation_accuracy": 0.5
+      },
+      "solution": "$1250-835=415$, $415:5=83$, $83+64=147$.",
+      "typical_mistakes": [
+        "Не выполняет действие в скобках первым.",
+        "Ошибается при делении 415 на 5."
+      ],
+      "recommendation_if_low": "Потренировать выражения со скобками и делением многозначных чисел."
+    },
+    {
+      "id": "q4",
+      "title": "Нахождение неизвестного компонента",
+      "text": "Решите уравнение: $x+378=925$.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "547",
+      "accepted_answers": [
+        "547"
+      ],
+      "topic_weights": {
+        "natural_numbers": 0.5,
+        "operation_order": 0.5
+      },
+      "skill_weights": {
+        "operation_reasoning": 0.5,
+        "calculation_accuracy": 0.5
+      },
+      "solution": "$x=925-378=547$.",
+      "typical_mistakes": [
+        "Выбирает сложение вместо вычитания.",
+        "Ошибается в письменном вычитании."
+      ],
+      "recommendation_if_low": "Повторить связь сложения и вычитания при решении простых уравнений."
+    },
+    {
+      "id": "q5",
+      "title": "Умножение и деление",
+      "text": "Вычислите: $36\\cdot25-450:9$.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "850",
+      "accepted_answers": [
+        "850"
+      ],
+      "topic_weights": {
+        "natural_numbers": 0.6,
+        "operation_order": 0.4
+      },
+      "skill_weights": {
+        "calculation_accuracy": 0.6,
+        "operation_reasoning": 0.4
+      },
+      "solution": "$36\\cdot25=900$, $450:9=50$, $900-50=850$.",
+      "typical_mistakes": [
+        "Сначала выполняет вычитание.",
+        "Ошибается при умножении на 25."
+      ],
+      "recommendation_if_low": "Отработать устные приёмы умножения на 25 и порядок действий."
+    },
+    {
+      "id": "q6",
+      "title": "Сравнение величин",
+      "text": "Сколько сантиметров в $3$ м $48$ см?",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "348",
+      "accepted_answers": [
+        "348"
+      ],
+      "topic_weights": {
+        "geometry_measurement": 0.7,
+        "natural_numbers": 0.3
+      },
+      "skill_weights": {
+        "geometric_reasoning": 0.5,
+        "calculation_accuracy": 0.3,
+        "attention_to_format": 0.2
+      },
+      "solution": "$3$ м = $300$ см, $300+48=348$ см.",
+      "typical_mistakes": [
+        "Забывает, что 1 м = 100 см.",
+        "Пишет ответ с единицами измерения, если требуется число."
+      ],
+      "recommendation_if_low": "Повторить перевод единиц длины."
+    },
+    {
+      "id": "q7",
+      "title": "Обыкновенные дроби: сложение",
+      "text": "Вычислите: $\\frac{7}{12}+\\frac{5}{18}$. Ответ запишите обыкновенной дробью.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "ordinary_fraction",
+      "answer": "31/36",
+      "accepted_answers": [
+        "31/36"
+      ],
+      "topic_weights": {
+        "ordinary_fractions": 1.0
+      },
+      "skill_weights": {
+        "fraction_decimal_fluency": 0.8,
+        "attention_to_format": 0.2
+      },
+      "solution": "Общий знаменатель 36: $\\frac{21}{36}+\\frac{10}{36}=\\frac{31}{36}$.",
+      "typical_mistakes": [
+        "Складывает знаменатели.",
+        "Не приводит дроби к общему знаменателю."
+      ],
+      "recommendation_if_low": "Отработать общий знаменатель и сложение дробей."
+    },
+    {
+      "id": "q8",
+      "title": "Обыкновенные дроби: вычитание",
+      "text": "Вычислите: $\\frac{5}{6}-\\frac{7}{15}$. Ответ запишите обыкновенной дробью.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "ordinary_fraction",
+      "answer": "11/30",
+      "accepted_answers": [
+        "11/30"
+      ],
+      "topic_weights": {
+        "ordinary_fractions": 1.0
+      },
+      "skill_weights": {
+        "fraction_decimal_fluency": 0.8,
+        "attention_to_format": 0.2
+      },
+      "solution": "Общий знаменатель 30: $\\frac{25}{30}-\\frac{14}{30}=\\frac{11}{30}$.",
+      "typical_mistakes": [
+        "Неверно выбирает общий знаменатель.",
+        "Ошибается при вычитании числителей."
+      ],
+      "recommendation_if_low": "Повторить вычитание дробей с разными знаменателями."
+    },
+    {
+      "id": "q9",
+      "title": "Дробь от числа",
+      "text": "Найдите $\\frac{3}{8}$ от числа 216.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "81",
+      "accepted_answers": [
+        "81"
+      ],
+      "topic_weights": {
+        "ordinary_fractions": 0.7,
+        "word_problems": 0.3
+      },
+      "skill_weights": {
+        "fraction_decimal_fluency": 0.6,
+        "calculation_accuracy": 0.4
+      },
+      "solution": "$216:8=27$, $27\\cdot3=81$.",
+      "typical_mistakes": [
+        "Умножает на знаменатель вместо деления.",
+        "Находит одну восьмую, но забывает умножить на 3."
+      ],
+      "recommendation_if_low": "Повторить нахождение дроби от числа."
+    },
+    {
+      "id": "q10",
+      "title": "Десятичные дроби: сложение",
+      "text": "Вычислите: $14{,}08+7{,}6-3{,}125$. Ответ запишите десятичной дробью.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "decimal",
+      "answer": "18.555",
+      "accepted_answers": [
+        "18.555",
+        "18,555"
+      ],
+      "topic_weights": {
+        "decimal_fractions": 1.0
+      },
+      "skill_weights": {
+        "fraction_decimal_fluency": 0.5,
+        "calculation_accuracy": 0.4,
+        "attention_to_format": 0.1
+      },
+      "solution": "$14{,}08+7{,}6=21{,}68$, $21{,}68-3{,}125=18{,}555$.",
+      "typical_mistakes": [
+        "Не выравнивает разряды после запятой.",
+        "Теряет нули в десятичной записи."
+      ],
+      "recommendation_if_low": "Отработать сложение и вычитание десятичных дробей в столбик."
+    },
+    {
+      "id": "q11",
+      "title": "Десятичные дроби: умножение",
+      "text": "Вычислите: $3{,}75\\cdot0{,}8$. Ответ запишите десятичной дробью.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "decimal",
+      "answer": "3.0",
+      "accepted_answers": [
+        "3.0",
+        "3,0"
+      ],
+      "topic_weights": {
+        "decimal_fractions": 1.0
+      },
+      "skill_weights": {
+        "fraction_decimal_fluency": 0.6,
+        "calculation_accuracy": 0.3,
+        "attention_to_format": 0.1
+      },
+      "solution": "$3{,}75\\cdot8=30$, значит $3{,}75\\cdot0{,}8=3{,}0$.",
+      "typical_mistakes": [
+        "Неверно ставит запятую.",
+        "Записывает целое число вместо десятичной дроби, хотя формат задан."
+      ],
+      "recommendation_if_low": "Повторить умножение десятичных дробей и постановку запятой."
+    },
+    {
+      "id": "q12",
+      "title": "Десятичные дроби: деление",
+      "text": "Вычислите: $8{,}4:0{,}7$. Ответ запишите десятичной дробью.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "decimal",
+      "answer": "12.0",
+      "accepted_answers": [
+        "12.0",
+        "12,0"
+      ],
+      "topic_weights": {
+        "decimal_fractions": 1.0
+      },
+      "skill_weights": {
+        "fraction_decimal_fluency": 0.6,
+        "calculation_accuracy": 0.3,
+        "attention_to_format": 0.1
+      },
+      "solution": "$8{,}4:0{,}7=84:7=12{,}0$.",
+      "typical_mistakes": [
+        "Не переносит запятую в делимом и делителе.",
+        "Пишет 12 вместо десятичной записи."
+      ],
+      "recommendation_if_low": "Повторить деление десятичных дробей."
+    },
+    {
+      "id": "q13",
+      "title": "Текстовая задача на стоимость",
+      "text": "Купили 4 тетради по 38 рублей и 3 ручки по 27 рублей. Сколько рублей заплатили всего?",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "233",
+      "accepted_answers": [
+        "233"
+      ],
+      "topic_weights": {
+        "word_problems": 0.7,
+        "natural_numbers": 0.3
+      },
+      "skill_weights": {
+        "problem_modeling": 0.6,
+        "calculation_accuracy": 0.4
+      },
+      "solution": "$4\\cdot38+3\\cdot27=152+81=233$.",
+      "typical_mistakes": [
+        "Путает количество и цену.",
+        "Складывает цены без умножения."
+      ],
+      "recommendation_if_low": "Тренировать перевод текстовой задачи в арифметическое выражение."
+    },
+    {
+      "id": "q14",
+      "title": "Текстовая задача на движение",
+      "text": "Пешеход прошёл 18 км за 4 часа 30 минут. Какова его скорость в км/ч? Ответ запишите десятичной дробью.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "decimal",
+      "answer": "4.0",
+      "accepted_answers": [
+        "4.0",
+        "4,0"
+      ],
+      "topic_weights": {
+        "word_problems": 0.8,
+        "decimal_fractions": 0.2
+      },
+      "skill_weights": {
+        "problem_modeling": 0.6,
+        "calculation_accuracy": 0.3,
+        "attention_to_format": 0.1
+      },
+      "solution": "$4$ ч $30$ мин = $4{,}5$ ч, $18:4{,}5=4{,}0$ км/ч.",
+      "typical_mistakes": [
+        "Не переводит минуты в часы.",
+        "Делит время на расстояние."
+      ],
+      "recommendation_if_low": "Повторить задачи на скорость, время и расстояние."
+    },
+    {
+      "id": "q15",
+      "title": "Текстовая задача на части",
+      "text": "В коробке 100 карандашей. Синих карандашей в 3 раза больше, чем красных, а зелёных столько же, сколько красных. Сколько синих карандашей в коробке?",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "60",
+      "accepted_answers": [
+        "60"
+      ],
+      "topic_weights": {
+        "word_problems": 1.0
+      },
+      "skill_weights": {
+        "problem_modeling": 0.8,
+        "calculation_accuracy": 0.2
+      },
+      "solution": "Если красных $x$, то зелёных $x$, синих $3x$. Тогда $5x=100$, $x=20$. Синих карандашей $3\\cdot20=60$.",
+      "typical_mistakes": [
+        "Не переводит условие в части.",
+        "Находит одну часть, но не умножает её на 3."
+      ],
+      "recommendation_if_low": "Учиться проверять смысл полученного результата в текстовой задаче."
+    },
+    {
+      "id": "q16",
+      "title": "Периметр прямоугольника",
+      "text": "Периметр прямоугольника равен 54 см, одна сторона равна 11 см. Найдите другую сторону.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "16",
+      "accepted_answers": [
+        "16"
+      ],
+      "topic_weights": {
+        "geometry_measurement": 0.8,
+        "word_problems": 0.2
+      },
+      "skill_weights": {
+        "geometric_reasoning": 0.7,
+        "calculation_accuracy": 0.3
+      },
+      "solution": "$2(a+b)=54$, значит $a+b=27$. Другая сторона $27-11=16$.",
+      "typical_mistakes": [
+        "Забывает разделить периметр на 2.",
+        "Вычитает 11 из 54."
+      ],
+      "recommendation_if_low": "Повторить формулу периметра прямоугольника."
+    },
+    {
+      "id": "q17",
+      "title": "Площадь прямоугольника",
+      "text": "Площадь прямоугольника равна 168 см², одна сторона равна 12 см. Найдите другую сторону.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "14",
+      "accepted_answers": [
+        "14"
+      ],
+      "topic_weights": {
+        "geometry_measurement": 1.0
+      },
+      "skill_weights": {
+        "geometric_reasoning": 0.7,
+        "calculation_accuracy": 0.3
+      },
+      "solution": "$168:12=14$.",
+      "typical_mistakes": [
+        "Путает площадь и периметр.",
+        "Умножает вместо деления."
+      ],
+      "recommendation_if_low": "Повторить формулу площади прямоугольника."
+    },
+    {
+      "id": "q18",
+      "title": "Объём прямоугольного параллелепипеда",
+      "text": "Найдите объём прямоугольного параллелепипеда со сторонами 5 см, 8 см и 12 см.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "480",
+      "accepted_answers": [
+        "480"
+      ],
+      "topic_weights": {
+        "geometry_measurement": 1.0
+      },
+      "skill_weights": {
+        "geometric_reasoning": 0.6,
+        "calculation_accuracy": 0.4
+      },
+      "solution": "$V=5\\cdot8\\cdot12=480$.",
+      "typical_mistakes": [
+        "Складывает измерения вместо умножения.",
+        "Путает объём и площадь поверхности."
+      ],
+      "recommendation_if_low": "Повторить объём прямоугольного параллелепипеда."
+    },
+    {
+      "id": "q19",
+      "title": "Среднее арифметическое",
+      "text": "Найдите среднее арифметическое чисел 12, 18, 21 и 25. Ответ запишите десятичной дробью.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "decimal",
+      "answer": "19.0",
+      "accepted_answers": [
+        "19.0",
+        "19,0"
+      ],
+      "topic_weights": {
+        "data_logic": 0.8,
+        "decimal_fractions": 0.2
+      },
+      "skill_weights": {
+        "problem_modeling": 0.4,
+        "calculation_accuracy": 0.4,
+        "attention_to_format": 0.2
+      },
+      "solution": "$(12+18+21+25):4=76:4=19{,}0$.",
+      "typical_mistakes": [
+        "Делит не на количество чисел.",
+        "Ошибается в сумме."
+      ],
+      "recommendation_if_low": "Повторить среднее арифметическое и формат десятичного ответа."
+    },
+    {
+      "id": "q20",
+      "title": "Логическая задача",
+      "text": "В ряду чисел 4, 7, 10, 13, 16 пропущено следующее число. Запишите его.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "19",
+      "accepted_answers": [
+        "19"
+      ],
+      "topic_weights": {
+        "data_logic": 1.0
+      },
+      "skill_weights": {
+        "problem_modeling": 0.6,
+        "calculation_accuracy": 0.2,
+        "attention_to_format": 0.2
+      },
+      "solution": "Каждое следующее число больше предыдущего на 3, поэтому $16+3=19$.",
+      "typical_mistakes": [
+        "Не замечает постоянный шаг последовательности.",
+        "Ошибается при продолжении ряда."
+      ],
+      "recommendation_if_low": "Потренировать числовые закономерности."
+    }
+  ],
+  "topic_recommendations": {
+    "natural_numbers": {
+      "low": "Повторить письменные вычисления с натуральными числами и проверку результата.",
+      "medium": "Закрепить вычисления на смешанных примерах с несколькими действиями.",
+      "good": "Поддерживать навык через задачи на скорость и аккуратный счёт."
+    },
+    "operation_order": {
+      "low": "Разобрать порядок действий, скобки и связь простых уравнений с арифметическими действиями.",
+      "medium": "Отработать выражения со скобками, умножением, делением и вычитанием.",
+      "good": "Переходить к более длинным выражениям с несколькими шагами."
+    },
+    "ordinary_fractions": {
+      "low": "Повторить смысл дроби, общий знаменатель и нахождение дроби от числа.",
+      "medium": "Закрепить сложение и вычитание дробей с разными знаменателями.",
+      "good": "Добавлять текстовые задачи, где дробь появляется внутри условия."
+    },
+    "decimal_fractions": {
+      "low": "Повторить десятичную запись, разряды и действия с десятичными дробями.",
+      "medium": "Закрепить сложение, вычитание, умножение и деление десятичных дробей.",
+      "good": "Решать задачи, где десятичные дроби встречаются в тексте."
+    },
+    "word_problems": {
+      "low": "Учиться выделять данные, вопрос задачи и выбирать действие.",
+      "medium": "Тренировать составление выражения по условию.",
+      "good": "Добавлять задачи с лишним шагом или проверкой смысла результата."
+    },
+    "geometry_measurement": {
+      "low": "Повторить единицы измерения, периметр, площадь и объём.",
+      "medium": "Закрепить формулы на задачах с обратным действием.",
+      "good": "Переходить к составным геометрическим задачам."
+    },
+    "data_logic": {
+      "low": "Повторить среднее арифметическое, ряды чисел и простые закономерности.",
+      "medium": "Отработать задачи на данные и внимательное чтение условия.",
+      "good": "Добавлять задачи на анализ таблиц и диаграмм."
+    }
+  },
+  "skill_recommendations": {
+    "calculation_accuracy": {
+      "low": "Нужна регулярная тренировка вычислений с обязательной проверкой.",
+      "medium": "Добавить короткие ежедневные блоки на аккуратность счёта.",
+      "good": "Поддерживать точность на более длинных выражениях."
+    },
+    "operation_reasoning": {
+      "low": "Повторить порядок действий и смысл обратных операций.",
+      "medium": "Решать выражения, где порядок действий легко перепутать.",
+      "good": "Переходить к выражениям с несколькими скобками."
+    },
+    "fraction_decimal_fluency": {
+      "low": "Повторить дроби и десятичные дроби с самых базовых правил.",
+      "medium": "Закрепить вычисления с дробями и десятичными дробями в отдельных блоках.",
+      "good": "Добавлять задачи, где дроби появляются в текстовом условии."
+    },
+    "problem_modeling": {
+      "low": "Учиться переводить текст задачи в действие или выражение.",
+      "medium": "Отрабатывать задачи в два действия с пояснением выбора.",
+      "good": "Добавлять задачи с несколькими возможными ходами решения."
+    },
+    "geometric_reasoning": {
+      "low": "Повторить базовые формулы и единицы измерения.",
+      "medium": "Закрепить обратные задачи на периметр, площадь и объём.",
+      "good": "Переходить к составным фигурам и задачам на несколько шагов."
+    },
+    "attention_to_format": {
+      "low": "Тренировать запись ответа ровно в том формате, который просит условие.",
+      "medium": "Следить за дробями, десятичными дробями и единицами измерения.",
+      "good": "Поддерживать аккуратность ответа в смешанных заданиях."
+    }
+  }
+}

@@ -1,0 +1,1611 @@
+{
+  "id": "oge_base_5_8_diagnostic",
+  "mode": "ОГЭ",
+  "title": "Диагностика базовых знаний 5–8 классов перед подготовкой к ОГЭ",
+  "duration_minutes": "35–45",
+  "description": "Входная диагностика по математике для учеников 8–9 классов. Задания не копируют формат ОГЭ, а проверяют фундамент: вычисления, дроби, проценты, алгебраические преобразования, уравнения, текстовые задачи, функции, геометрию и элементы статистики. Большинство заданий рассчитано на короткий числовой ответ.",
+  "levels": [
+    {
+      "min_percent": 0,
+      "max_percent": 39.9,
+      "name": "критические пробелы в базе",
+      "summary": "У ученика существенные пробелы в материале 5–8 классов. Начинать подготовку к ОГЭ с вариантов преждевременно: сначала нужно восстановить арифметику, дроби, проценты, простые уравнения и базовую геометрию."
+    },
+    {
+      "min_percent": 40,
+      "max_percent": 59.9,
+      "name": "слабая база",
+      "summary": "Ученик решает часть стандартных заданий, но знания фрагментарны. Главная задача — закрыть пробелы в вычислениях, алгебре и текстовых задачах, чтобы подготовка к ОГЭ стала устойчивой."
+    },
+    {
+      "min_percent": 60,
+      "max_percent": 79.9,
+      "name": "рабочая база",
+      "summary": "У ученика есть рабочий фундамент для подготовки к ОГЭ. Нужно повысить скорость, аккуратность и стабильность, а также отдельно усилить темы, по которым были ошибки."
+    },
+    {
+      "min_percent": 80,
+      "max_percent": 100,
+      "name": "хорошая стартовая база",
+      "summary": "Ученик уверенно владеет материалом 5–8 классов. Можно быстро переходить к полноценным заданиям ОГЭ, параллельно устраняя точечные ошибки."
+    }
+  ],
+  "topics": [
+    {
+      "id": "arithmetic_numbers",
+      "name": "Арифметика, дроби, проценты",
+      "order": 1,
+      "critical": true
+    },
+    {
+      "id": "algebra_transformations",
+      "name": "Алгебраические преобразования",
+      "order": 2,
+      "critical": true
+    },
+    {
+      "id": "equations_inequalities",
+      "name": "Уравнения и неравенства",
+      "order": 3,
+      "critical": true
+    },
+    {
+      "id": "word_problems",
+      "name": "Текстовые задачи и моделирование",
+      "order": 4,
+      "critical": true
+    },
+    {
+      "id": "functions_graphs",
+      "name": "Функции и графики",
+      "order": 5,
+      "critical": true
+    },
+    {
+      "id": "geometry_basic",
+      "name": "Базовая геометрия 7–8 классов",
+      "order": 6,
+      "critical": true
+    },
+    {
+      "id": "statistics_probability",
+      "name": "Статистика и вероятность",
+      "order": 7,
+      "critical": false
+    }
+  ],
+  "skills": [
+    {
+      "id": "calculation_accuracy",
+      "name": "Вычислительная аккуратность",
+      "order": 1
+    },
+    {
+      "id": "fraction_percent_fluency",
+      "name": "Дроби и проценты",
+      "order": 2
+    },
+    {
+      "id": "symbolic_transformations",
+      "name": "Алгебраические преобразования",
+      "order": 3
+    },
+    {
+      "id": "equation_solving",
+      "name": "Решение уравнений и неравенств",
+      "order": 4
+    },
+    {
+      "id": "text_modeling",
+      "name": "Математическое моделирование",
+      "order": 5
+    },
+    {
+      "id": "graph_function_thinking",
+      "name": "Функциональное мышление",
+      "order": 6
+    },
+    {
+      "id": "geometric_reasoning",
+      "name": "Геометрическое мышление",
+      "order": 7
+    },
+    {
+      "id": "data_interpretation",
+      "name": "Работа с данными",
+      "order": 8
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "title": "Задание 1. Действия с отрицательными числами",
+      "text": "Вычислите: $-18+27-14+9$.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer": "4",
+      "accepted_answers": [
+        "4"
+      ],
+      "topic_weights": {
+        "arithmetic_numbers": 1.0
+      },
+      "skill_weights": {
+        "calculation_accuracy": 1.0
+      },
+      "checklist": [
+        "Введён правильный короткий ответ."
+      ],
+      "recommendation_if_low": "Повторить сложение и вычитание отрицательных чисел.",
+      "solution": "$-18+27=9$, $9-14=-5$, $-5+9=4$.",
+      "scoring_criteria": [
+        {
+          "points": 1,
+          "description": "Правильный ответ."
+        }
+      ],
+      "typical_mistakes": [
+        "Невнимательное чтение условия.",
+        "Арифметическая ошибка.",
+        "Запись ответа не в том формате."
+      ],
+      "check_items": [
+        "Введён правильный короткий ответ."
+      ],
+      "answer_format": "integer"
+    },
+    {
+      "id": "q2",
+      "title": "Задание 2. Обыкновенные дроби",
+      "text": "Вычислите: $\\frac{5}{6}-\\frac{3}{8}+\\frac{7}{12}$. Ответ запишите обыкновенной дробью.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer": "25/24",
+      "accepted_answers": [
+        "25/24"
+      ],
+      "topic_weights": {
+        "arithmetic_numbers": 1.0
+      },
+      "skill_weights": {
+        "fraction_percent_fluency": 1.0
+      },
+      "checklist": [
+        "Введён правильный короткий ответ."
+      ],
+      "recommendation_if_low": "Повторить сложение дробей с разными знаменателями.",
+      "solution": "Приведём к знаменателю 24: $\\frac{20}{24}-\\frac{9}{24}+\\frac{14}{24}=\\frac{25}{24}$.",
+      "scoring_criteria": [
+        {
+          "points": 1,
+          "description": "Правильный ответ."
+        }
+      ],
+      "typical_mistakes": [
+        "Невнимательное чтение условия.",
+        "Арифметическая ошибка.",
+        "Запись ответа не в том формате."
+      ],
+      "check_items": [
+        "Введён правильный короткий ответ."
+      ],
+      "answer_format": "ordinary_fraction"
+    },
+    {
+      "id": "q3",
+      "title": "Задание 3. Десятичные дроби",
+      "text": "Вычислите: $(2{,}8\\cdot0{,}45):0{,}6$. Ответ запишите десятичной дробью.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer": "2.1",
+      "accepted_answers": [
+        "2.1",
+        "2,1"
+      ],
+      "topic_weights": {
+        "arithmetic_numbers": 1.0
+      },
+      "skill_weights": {
+        "calculation_accuracy": 1.0
+      },
+      "checklist": [
+        "Введён правильный короткий ответ."
+      ],
+      "recommendation_if_low": "Повторить умножение и деление десятичных дробей.",
+      "solution": "$2{,}8\\cdot0{,}45=1{,}26$, $1{,}26:0{,}6=2{,}1$.",
+      "scoring_criteria": [
+        {
+          "points": 1,
+          "description": "Правильный ответ."
+        }
+      ],
+      "typical_mistakes": [
+        "Невнимательное чтение условия.",
+        "Арифметическая ошибка.",
+        "Запись ответа не в том формате."
+      ],
+      "check_items": [
+        "Введён правильный короткий ответ."
+      ],
+      "answer_format": "decimal"
+    },
+    {
+      "id": "q4",
+      "title": "Задание 4. Проценты от числа",
+      "text": "Найдите $12{,}5\\%$ от числа 296.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer": "37",
+      "accepted_answers": [
+        "37"
+      ],
+      "topic_weights": {
+        "arithmetic_numbers": 1.0
+      },
+      "skill_weights": {
+        "fraction_percent_fluency": 1.0
+      },
+      "checklist": [
+        "Введён правильный короткий ответ."
+      ],
+      "recommendation_if_low": "Повторить нахождение процента от числа.",
+      "solution": "$12{,}5\\%=\\frac18$, поэтому $296:8=37$.",
+      "scoring_criteria": [
+        {
+          "points": 1,
+          "description": "Правильный ответ."
+        }
+      ],
+      "typical_mistakes": [
+        "Невнимательное чтение условия.",
+        "Арифметическая ошибка.",
+        "Запись ответа не в том формате."
+      ],
+      "check_items": [
+        "Введён правильный короткий ответ."
+      ],
+      "answer_format": "integer"
+    },
+    {
+      "id": "q5",
+      "title": "Задание 5. Последовательное изменение величины",
+      "text": "Товар стоил 800 рублей. Сначала цену увеличили на $25\\%$, а затем новую цену уменьшили на $10\\%$. Сколько рублей стал стоить товар?",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer": "900",
+      "accepted_answers": [
+        "900"
+      ],
+      "topic_weights": {
+        "arithmetic_numbers": 1.0
+      },
+      "skill_weights": {
+        "fraction_percent_fluency": 1.0
+      },
+      "checklist": [
+        "Введён правильный короткий ответ."
+      ],
+      "recommendation_if_low": "Повторить последовательные процентные изменения.",
+      "solution": "$800\\cdot1{,}25=1000$, затем $1000\\cdot0{,}9=900$.",
+      "scoring_criteria": [
+        {
+          "points": 1,
+          "description": "Правильный ответ."
+        }
+      ],
+      "typical_mistakes": [
+        "Невнимательное чтение условия.",
+        "Арифметическая ошибка.",
+        "Запись ответа не в том формате."
+      ],
+      "check_items": [
+        "Введён правильный короткий ответ."
+      ],
+      "answer_format": "integer"
+    },
+    {
+      "id": "q6",
+      "title": "Задание 6. Порядок действий",
+      "text": "Вычислите: $72:(9-5)\\cdot3-14$.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer": "40",
+      "accepted_answers": [
+        "40"
+      ],
+      "topic_weights": {
+        "arithmetic_numbers": 1.0
+      },
+      "skill_weights": {
+        "calculation_accuracy": 1.0
+      },
+      "checklist": [
+        "Введён правильный короткий ответ."
+      ],
+      "recommendation_if_low": "Повторить порядок арифметических действий.",
+      "solution": "$9-5=4$, $72:4=18$, $18\\cdot3-14=40$.",
+      "scoring_criteria": [
+        {
+          "points": 1,
+          "description": "Правильный ответ."
+        }
+      ],
+      "typical_mistakes": [
+        "Невнимательное чтение условия.",
+        "Арифметическая ошибка.",
+        "Запись ответа не в том формате."
+      ],
+      "check_items": [
+        "Введён правильный короткий ответ."
+      ],
+      "answer_format": "integer"
+    },
+    {
+      "id": "q7",
+      "title": "Задание 7. Раскрытие скобок",
+      "text": "Найдите значение выражения $4(3x-2)-3(2x+5)$ при $x=-2$.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer": "-35",
+      "accepted_answers": [
+        "-35"
+      ],
+      "topic_weights": {
+        "algebra_transformations": 1.0
+      },
+      "skill_weights": {
+        "symbolic_transformations": 1.0
+      },
+      "checklist": [
+        "Введён правильный короткий ответ."
+      ],
+      "recommendation_if_low": "Повторить раскрытие скобок и приведение подобных.",
+      "solution": "$4(3x-2)-3(2x+5)=12x-8-6x-15=6x-23$. При $x=-2$ получаем $-35$.",
+      "scoring_criteria": [
+        {
+          "points": 1,
+          "description": "Правильный ответ."
+        }
+      ],
+      "typical_mistakes": [
+        "Невнимательное чтение условия.",
+        "Арифметическая ошибка.",
+        "Запись ответа не в том формате."
+      ],
+      "check_items": [
+        "Введён правильный короткий ответ."
+      ],
+      "answer_format": "integer"
+    },
+    {
+      "id": "q8",
+      "title": "Задание 8. Сокращение алгебраической дроби",
+      "text": "Найдите значение выражения $\\frac{a^2-16}{a-4}$ при $a=13$.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer": "17",
+      "accepted_answers": [
+        "17"
+      ],
+      "topic_weights": {
+        "algebra_transformations": 1.0
+      },
+      "skill_weights": {
+        "symbolic_transformations": 1.0
+      },
+      "checklist": [
+        "Введён правильный короткий ответ."
+      ],
+      "recommendation_if_low": "Повторить формулу разности квадратов и сокращение дробей.",
+      "solution": "$a^2-16=(a-4)(a+4)$, поэтому выражение равно $a+4$. При $a=13$ получаем 17.",
+      "scoring_criteria": [
+        {
+          "points": 1,
+          "description": "Правильный ответ."
+        }
+      ],
+      "typical_mistakes": [
+        "Невнимательное чтение условия.",
+        "Арифметическая ошибка.",
+        "Запись ответа не в том формате."
+      ],
+      "check_items": [
+        "Введён правильный короткий ответ."
+      ],
+      "answer_format": "integer"
+    },
+    {
+      "id": "q9",
+      "title": "Задание 9. Свойства степеней",
+      "text": "Вычислите: $\\frac{3^4\\cdot3^{-1}}{9}$.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer": "3",
+      "accepted_answers": [
+        "3"
+      ],
+      "topic_weights": {
+        "algebra_transformations": 1.0
+      },
+      "skill_weights": {
+        "symbolic_transformations": 1.0
+      },
+      "checklist": [
+        "Введён правильный короткий ответ."
+      ],
+      "recommendation_if_low": "Повторить свойства степеней с одинаковым основанием.",
+      "solution": "$3^4\\cdot3^{-1}=3^3=27$, $27:9=3$.",
+      "scoring_criteria": [
+        {
+          "points": 1,
+          "description": "Правильный ответ."
+        }
+      ],
+      "typical_mistakes": [
+        "Невнимательное чтение условия.",
+        "Арифметическая ошибка.",
+        "Запись ответа не в том формате."
+      ],
+      "check_items": [
+        "Введён правильный короткий ответ."
+      ],
+      "answer_format": "integer"
+    },
+    {
+      "id": "q10",
+      "title": "Задание 10. Формулы сокращённого умножения",
+      "text": "Найдите значение выражения $(x+5)^2-(x-3)^2$ при $x=2$.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer": "48",
+      "accepted_answers": [
+        "48"
+      ],
+      "topic_weights": {
+        "algebra_transformations": 1.0
+      },
+      "skill_weights": {
+        "symbolic_transformations": 1.0
+      },
+      "checklist": [
+        "Введён правильный короткий ответ."
+      ],
+      "recommendation_if_low": "Повторить разность квадратов и формулы сокращённого умножения.",
+      "solution": "Разность квадратов: $((x+5)-(x-3))((x+5)+(x-3))=8(2x+2)$. При $x=2$ получаем 48.",
+      "scoring_criteria": [
+        {
+          "points": 1,
+          "description": "Правильный ответ."
+        }
+      ],
+      "typical_mistakes": [
+        "Невнимательное чтение условия.",
+        "Арифметическая ошибка.",
+        "Запись ответа не в том формате."
+      ],
+      "check_items": [
+        "Введён правильный короткий ответ."
+      ],
+      "answer_format": "integer"
+    },
+    {
+      "id": "q11",
+      "title": "Задание 11. Линейное уравнение",
+      "text": "Решите уравнение: $7x-11=31$.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer": "6",
+      "accepted_answers": [
+        "6"
+      ],
+      "topic_weights": {
+        "equations_inequalities": 1.0
+      },
+      "skill_weights": {
+        "equation_solving": 1.0
+      },
+      "checklist": [
+        "Введён правильный короткий ответ."
+      ],
+      "recommendation_if_low": "Повторить линейные уравнения.",
+      "solution": "$7x=42$, значит $x=6$.",
+      "scoring_criteria": [
+        {
+          "points": 1,
+          "description": "Правильный ответ."
+        }
+      ],
+      "typical_mistakes": [
+        "Невнимательное чтение условия.",
+        "Арифметическая ошибка.",
+        "Запись ответа не в том формате."
+      ],
+      "check_items": [
+        "Введён правильный короткий ответ."
+      ],
+      "answer_format": "integer"
+    },
+    {
+      "id": "q12",
+      "title": "Задание 12. Уравнение со скобками",
+      "text": "Решите уравнение: $4(3x-2)=5x+20$.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer": "4",
+      "accepted_answers": [
+        "4"
+      ],
+      "topic_weights": {
+        "equations_inequalities": 1.0
+      },
+      "skill_weights": {
+        "equation_solving": 1.0
+      },
+      "checklist": [
+        "Введён правильный короткий ответ."
+      ],
+      "recommendation_if_low": "Повторить раскрытие скобок в уравнениях.",
+      "solution": "$12x-8=5x+20$, $7x=28$, $x=4$.",
+      "scoring_criteria": [
+        {
+          "points": 1,
+          "description": "Правильный ответ."
+        }
+      ],
+      "typical_mistakes": [
+        "Невнимательное чтение условия.",
+        "Арифметическая ошибка.",
+        "Запись ответа не в том формате."
+      ],
+      "check_items": [
+        "Введён правильный короткий ответ."
+      ],
+      "answer_format": "integer"
+    },
+    {
+      "id": "q13",
+      "title": "Задание 13. Уравнение с дробями",
+      "text": "Решите уравнение: $\\frac{x-2}{3}+\\frac{x+1}{2}=5$. Ответ запишите дробью или десятичным числом.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer": "31/5",
+      "accepted_answers": [
+        "31/5",
+        "6.2"
+      ],
+      "topic_weights": {
+        "equations_inequalities": 1.0
+      },
+      "skill_weights": {
+        "equation_solving": 1.0
+      },
+      "checklist": [
+        "Введён правильный короткий ответ."
+      ],
+      "recommendation_if_low": "Повторить уравнения с дробями и общий знаменатель.",
+      "solution": "Умножим на 6: 2(x-2)+3(x+1)=30. Получаем 5x-1=30, x=31/5.",
+      "scoring_criteria": [
+        {
+          "points": 1,
+          "description": "Правильный ответ."
+        }
+      ],
+      "typical_mistakes": [
+        "Невнимательное чтение условия.",
+        "Арифметическая ошибка.",
+        "Запись ответа не в том формате."
+      ],
+      "check_items": [
+        "Введён правильный короткий ответ."
+      ],
+      "answer_format": "number"
+    },
+    {
+      "id": "q14",
+      "title": "Задание 14. Простейшее квадратное уравнение",
+      "text": "Найдите положительный корень уравнения $x^2-49=0$.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer": "7",
+      "accepted_answers": [
+        "7"
+      ],
+      "topic_weights": {
+        "equations_inequalities": 1.0
+      },
+      "skill_weights": {
+        "equation_solving": 1.0
+      },
+      "checklist": [
+        "Введён правильный короткий ответ."
+      ],
+      "recommendation_if_low": "Повторить простейшие квадратные уравнения.",
+      "solution": "$x^2=49$, положительный корень равен 7.",
+      "scoring_criteria": [
+        {
+          "points": 1,
+          "description": "Правильный ответ."
+        }
+      ],
+      "typical_mistakes": [
+        "Невнимательное чтение условия.",
+        "Арифметическая ошибка.",
+        "Запись ответа не в том формате."
+      ],
+      "check_items": [
+        "Введён правильный короткий ответ."
+      ],
+      "answer_format": "integer"
+    },
+    {
+      "id": "q15",
+      "title": "Задание 15. Квадратное уравнение",
+      "text": "Найдите больший корень уравнения $x^2-7x+12=0$.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer": "4",
+      "accepted_answers": [
+        "4"
+      ],
+      "topic_weights": {
+        "equations_inequalities": 1.0
+      },
+      "skill_weights": {
+        "equation_solving": 1.0
+      },
+      "checklist": [
+        "Введён правильный короткий ответ."
+      ],
+      "recommendation_if_low": "Повторить разложение квадратного трёхчлена на множители.",
+      "solution": "$x^2-7x+12=(x-3)(x-4)$, больший корень 4.",
+      "scoring_criteria": [
+        {
+          "points": 1,
+          "description": "Правильный ответ."
+        }
+      ],
+      "typical_mistakes": [
+        "Невнимательное чтение условия.",
+        "Арифметическая ошибка.",
+        "Запись ответа не в том формате."
+      ],
+      "check_items": [
+        "Введён правильный короткий ответ."
+      ],
+      "answer_format": "integer"
+    },
+    {
+      "id": "q16",
+      "title": "Задание 16. Неравенство и целые решения",
+      "text": "Сколько целых чисел удовлетворяют неравенству $-5\\le 2x-1<9$?",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer": "7",
+      "accepted_answers": [
+        "7"
+      ],
+      "topic_weights": {
+        "equations_inequalities": 1.0
+      },
+      "skill_weights": {
+        "equation_solving": 1.0
+      },
+      "checklist": [
+        "Введён правильный короткий ответ."
+      ],
+      "recommendation_if_low": "Повторить двойные неравенства и целые решения.",
+      "solution": "$-4\\le2x<10$, значит $-2\\le x<5$. Целые: $-2,-1,0,1,2,3,4$, всего 7.",
+      "scoring_criteria": [
+        {
+          "points": 1,
+          "description": "Правильный ответ."
+        }
+      ],
+      "typical_mistakes": [
+        "Невнимательное чтение условия.",
+        "Арифметическая ошибка.",
+        "Запись ответа не в том формате."
+      ],
+      "check_items": [
+        "Введён правильный короткий ответ."
+      ],
+      "answer_format": "integer"
+    },
+    {
+      "id": "q17",
+      "title": "Задание 17. Стоимость покупки",
+      "text": "Купили 4 ручки по 27 рублей и 5 тетрадей по 38 рублей. Сколько рублей заплатили всего?",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer": "298",
+      "accepted_answers": [
+        "298"
+      ],
+      "topic_weights": {
+        "word_problems": 1.0
+      },
+      "skill_weights": {
+        "text_modeling": 1.0
+      },
+      "checklist": [
+        "Введён правильный короткий ответ."
+      ],
+      "recommendation_if_low": "Повторить текстовые задачи на стоимость.",
+      "solution": "$4\\cdot27+5\\cdot38=108+190=298$.",
+      "scoring_criteria": [
+        {
+          "points": 1,
+          "description": "Правильный ответ."
+        }
+      ],
+      "typical_mistakes": [
+        "Невнимательное чтение условия.",
+        "Арифметическая ошибка.",
+        "Запись ответа не в том формате."
+      ],
+      "check_items": [
+        "Введён правильный короткий ответ."
+      ],
+      "answer_format": "integer"
+    },
+    {
+      "id": "q18",
+      "title": "Задание 18. Движение",
+      "text": "Автомобиль ехал со скоростью 64 км/ч в течение 2,25 часа. Какое расстояние он проехал?",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer": "144",
+      "accepted_answers": [
+        "144"
+      ],
+      "topic_weights": {
+        "word_problems": 1.0
+      },
+      "skill_weights": {
+        "text_modeling": 1.0
+      },
+      "checklist": [
+        "Введён правильный короткий ответ."
+      ],
+      "recommendation_if_low": "Повторить формулу пути $S=vt$.",
+      "solution": "$64\\cdot2{,}25=144$.",
+      "scoring_criteria": [
+        {
+          "points": 1,
+          "description": "Правильный ответ."
+        }
+      ],
+      "typical_mistakes": [
+        "Невнимательное чтение условия.",
+        "Арифметическая ошибка.",
+        "Запись ответа не в том формате."
+      ],
+      "check_items": [
+        "Введён правильный короткий ответ."
+      ],
+      "answer_format": "integer"
+    },
+    {
+      "id": "q19",
+      "title": "Задание 19. Составление уравнения",
+      "text": "Сумма двух чисел равна 72. Одно число в 5 раз больше другого. Найдите меньшее число.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer": "12",
+      "accepted_answers": [
+        "12"
+      ],
+      "topic_weights": {
+        "word_problems": 1.0
+      },
+      "skill_weights": {
+        "text_modeling": 1.0
+      },
+      "checklist": [
+        "Введён правильный короткий ответ."
+      ],
+      "recommendation_if_low": "Повторить составление уравнений по тексту.",
+      "solution": "Пусть меньшее число $x$, тогда $x+5x=72$, $6x=72$, $x=12$.",
+      "scoring_criteria": [
+        {
+          "points": 1,
+          "description": "Правильный ответ."
+        }
+      ],
+      "typical_mistakes": [
+        "Невнимательное чтение условия.",
+        "Арифметическая ошибка.",
+        "Запись ответа не в том формате."
+      ],
+      "check_items": [
+        "Введён правильный короткий ответ."
+      ],
+      "answer_format": "integer"
+    },
+    {
+      "id": "q20",
+      "title": "Задание 20. Цена и скидка",
+      "text": "Цена товара 2400 рублей. После скидки $12{,}5\\%$ товар стал стоить сколько рублей?",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer": "2100",
+      "accepted_answers": [
+        "2100"
+      ],
+      "topic_weights": {
+        "word_problems": 1.0
+      },
+      "skill_weights": {
+        "fraction_percent_fluency": 1.0
+      },
+      "checklist": [
+        "Введён правильный короткий ответ."
+      ],
+      "recommendation_if_low": "Повторить задачи на скидки и проценты.",
+      "solution": "$12{,}5\\%=\\frac18$, скидка $2400:8=300$, цена $2400-300=2100$.",
+      "scoring_criteria": [
+        {
+          "points": 1,
+          "description": "Правильный ответ."
+        }
+      ],
+      "typical_mistakes": [
+        "Невнимательное чтение условия.",
+        "Арифметическая ошибка.",
+        "Запись ответа не в том формате."
+      ],
+      "check_items": [
+        "Введён правильный короткий ответ."
+      ],
+      "answer_format": "integer"
+    },
+    {
+      "id": "q21",
+      "title": "Задание 21. Совместная работа",
+      "text": "Одна труба наполняет бассейн за 8 часов, другая — за 12 часов. За сколько часов они наполнят бассейн вместе? Ответ запишите десятичной дробью.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer": "4.8",
+      "accepted_answers": [
+        "4.8",
+        "4,8"
+      ],
+      "topic_weights": {
+        "word_problems": 1.0
+      },
+      "skill_weights": {
+        "text_modeling": 1.0
+      },
+      "checklist": [
+        "Введён правильный короткий ответ."
+      ],
+      "recommendation_if_low": "Повторить задачи на совместную работу.",
+      "solution": "Скорости: $1/8$ и $1/12$, вместе $5/24$ бассейна в час. Время $24/5=4{,}8$ часа.",
+      "scoring_criteria": [
+        {
+          "points": 1,
+          "description": "Правильный ответ."
+        }
+      ],
+      "typical_mistakes": [
+        "Невнимательное чтение условия.",
+        "Арифметическая ошибка.",
+        "Запись ответа не в том формате."
+      ],
+      "check_items": [
+        "Введён правильный короткий ответ."
+      ],
+      "answer_format": "decimal"
+    },
+    {
+      "id": "q22",
+      "title": "Задание 22. Прямая пропорциональность",
+      "text": "9 одинаковых рабочих выполняют задание за 6 дней. За сколько дней выполнят это задание 6 таких же рабочих?",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer": "9",
+      "accepted_answers": [
+        "9"
+      ],
+      "topic_weights": {
+        "word_problems": 1.0
+      },
+      "skill_weights": {
+        "text_modeling": 1.0
+      },
+      "checklist": [
+        "Введён правильный короткий ответ."
+      ],
+      "recommendation_if_low": "Повторить задачи на производительность и обратную пропорциональность.",
+      "solution": "Объём работы $9\\cdot6=54$ рабоче-дня. Для 6 рабочих нужно $54:6=9$ дней.",
+      "scoring_criteria": [
+        {
+          "points": 1,
+          "description": "Правильный ответ."
+        }
+      ],
+      "typical_mistakes": [
+        "Невнимательное чтение условия.",
+        "Арифметическая ошибка.",
+        "Запись ответа не в том формате."
+      ],
+      "check_items": [
+        "Введён правильный короткий ответ."
+      ],
+      "answer_format": "integer"
+    },
+    {
+      "id": "q23",
+      "title": "Задание 23. Значение функции",
+      "text": "Функция задана формулой $f(x)=-3x+7$. Найдите $f(-5)$.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer": "22",
+      "accepted_answers": [
+        "22"
+      ],
+      "topic_weights": {
+        "functions_graphs": 1.0
+      },
+      "skill_weights": {
+        "graph_function_thinking": 1.0
+      },
+      "checklist": [
+        "Введён правильный короткий ответ."
+      ],
+      "recommendation_if_low": "Повторить подстановку значения аргумента в формулу функции.",
+      "solution": "$f(-5)=-3\\cdot(-5)+7=22$.",
+      "scoring_criteria": [
+        {
+          "points": 1,
+          "description": "Правильный ответ."
+        }
+      ],
+      "typical_mistakes": [
+        "Невнимательное чтение условия.",
+        "Арифметическая ошибка.",
+        "Запись ответа не в том формате."
+      ],
+      "check_items": [
+        "Введён правильный короткий ответ."
+      ],
+      "answer_format": "integer"
+    },
+    {
+      "id": "q24",
+      "title": "Задание 24. Линейная функция",
+      "text": "Для функции $y=2x-7$ найдите $x$, если $y=11$.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer": "9",
+      "accepted_answers": [
+        "9"
+      ],
+      "topic_weights": {
+        "functions_graphs": 1.0
+      },
+      "skill_weights": {
+        "graph_function_thinking": 1.0
+      },
+      "checklist": [
+        "Введён правильный короткий ответ."
+      ],
+      "recommendation_if_low": "Повторить связь значения функции и уравнения.",
+      "solution": "$2x-7=11$, $2x=18$, $x=9$.",
+      "scoring_criteria": [
+        {
+          "points": 1,
+          "description": "Правильный ответ."
+        }
+      ],
+      "typical_mistakes": [
+        "Невнимательное чтение условия.",
+        "Арифметическая ошибка.",
+        "Запись ответа не в том формате."
+      ],
+      "check_items": [
+        "Введён правильный короткий ответ."
+      ],
+      "answer_format": "integer"
+    },
+    {
+      "id": "q25",
+      "title": "Задание 25. Коэффициент прямой",
+      "text": "Прямая $y=kx$ проходит через точку $(4;-18)$. Найдите $k$. Ответ запишите десятичной дробью.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer": "-4.5",
+      "accepted_answers": [
+        "-4.5",
+        "-4,5"
+      ],
+      "topic_weights": {
+        "functions_graphs": 1.0
+      },
+      "skill_weights": {
+        "graph_function_thinking": 1.0
+      },
+      "checklist": [
+        "Введён правильный короткий ответ."
+      ],
+      "recommendation_if_low": "Повторить формулу прямой пропорциональности.",
+      "solution": "$-18=4k$, значит $k=-4{,}5$.",
+      "scoring_criteria": [
+        {
+          "points": 1,
+          "description": "Правильный ответ."
+        }
+      ],
+      "typical_mistakes": [
+        "Невнимательное чтение условия.",
+        "Арифметическая ошибка.",
+        "Запись ответа не в том формате."
+      ],
+      "check_items": [
+        "Введён правильный короткий ответ."
+      ],
+      "answer_format": "decimal"
+    },
+    {
+      "id": "q26",
+      "title": "Задание 26. Наибольшее значение на отрезке",
+      "text": "Найдите наибольшее значение функции $y=-(x-1)^2+10$ на отрезке $[-2;4]$.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer": "10",
+      "accepted_answers": [
+        "10"
+      ],
+      "topic_weights": {
+        "functions_graphs": 1.0
+      },
+      "skill_weights": {
+        "graph_function_thinking": 1.0
+      },
+      "checklist": [
+        "Введён правильный короткий ответ."
+      ],
+      "recommendation_if_low": "Повторить поведение функции $y=x^2$ и проверку концов отрезка.",
+      "solution": "Вершина параболы при $x=1$ входит в отрезок, наибольшее значение равно 10.",
+      "scoring_criteria": [
+        {
+          "points": 1,
+          "description": "Правильный ответ."
+        }
+      ],
+      "typical_mistakes": [
+        "Невнимательное чтение условия.",
+        "Арифметическая ошибка.",
+        "Запись ответа не в том формате."
+      ],
+      "check_items": [
+        "Введён правильный короткий ответ."
+      ],
+      "answer_format": "integer"
+    },
+    {
+      "id": "q27",
+      "title": "Задание 27. Минимум параболы",
+      "text": "Найдите наименьшее значение функции $y=(x+3)^2-4$.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer": "-4",
+      "accepted_answers": [
+        "-4"
+      ],
+      "topic_weights": {
+        "functions_graphs": 1.0
+      },
+      "skill_weights": {
+        "graph_function_thinking": 1.0
+      },
+      "checklist": [
+        "Введён правильный короткий ответ."
+      ],
+      "recommendation_if_low": "Повторить вершину параболы и неотрицательность квадрата.",
+      "solution": "Квадрат неотрицателен, минимум достигается при $x=-3$ и равен $-4$.",
+      "scoring_criteria": [
+        {
+          "points": 1,
+          "description": "Правильный ответ."
+        }
+      ],
+      "typical_mistakes": [
+        "Невнимательное чтение условия.",
+        "Арифметическая ошибка.",
+        "Запись ответа не в том формате."
+      ],
+      "check_items": [
+        "Введён правильный короткий ответ."
+      ],
+      "answer_format": "integer"
+    },
+    {
+      "id": "q28",
+      "title": "Задание 28. Область определения",
+      "text": "Найдите наименьшее целое значение $x$, при котором выражение $\\sqrt{2x-6}$ имеет смысл.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer": "3",
+      "accepted_answers": [
+        "3"
+      ],
+      "topic_weights": {
+        "functions_graphs": 1.0
+      },
+      "skill_weights": {
+        "graph_function_thinking": 1.0
+      },
+      "checklist": [
+        "Введён правильный короткий ответ."
+      ],
+      "recommendation_if_low": "Повторить область определения квадратного корня.",
+      "solution": "$2x-6\\ge0$, значит $x\\ge3$. Наименьшее целое значение 3.",
+      "scoring_criteria": [
+        {
+          "points": 1,
+          "description": "Правильный ответ."
+        }
+      ],
+      "typical_mistakes": [
+        "Невнимательное чтение условия.",
+        "Арифметическая ошибка.",
+        "Запись ответа не в том формате."
+      ],
+      "check_items": [
+        "Введён правильный короткий ответ."
+      ],
+      "answer_format": "integer"
+    },
+    {
+      "id": "q29",
+      "title": "Задание 29. Сумма углов треугольника",
+      "text": "В треугольнике два угла равны $38^\\circ$ и $74^\\circ$. Найдите третий угол.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer": "68",
+      "accepted_answers": [
+        "68"
+      ],
+      "topic_weights": {
+        "geometry_basic": 1.0
+      },
+      "skill_weights": {
+        "geometric_reasoning": 1.0
+      },
+      "checklist": [
+        "Введён правильный короткий ответ."
+      ],
+      "recommendation_if_low": "Повторить сумму углов треугольника.",
+      "solution": "$180-38-74=68$.",
+      "scoring_criteria": [
+        {
+          "points": 1,
+          "description": "Правильный ответ."
+        }
+      ],
+      "typical_mistakes": [
+        "Невнимательное чтение условия.",
+        "Арифметическая ошибка.",
+        "Запись ответа не в том формате."
+      ],
+      "check_items": [
+        "Введён правильный короткий ответ."
+      ],
+      "answer_format": "integer"
+    },
+    {
+      "id": "q30",
+      "title": "Задание 30. Периметр прямоугольника",
+      "text": "Стороны прямоугольника равны 8 и 15. Найдите его периметр.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer": "46",
+      "accepted_answers": [
+        "46"
+      ],
+      "topic_weights": {
+        "geometry_basic": 1.0
+      },
+      "skill_weights": {
+        "geometric_reasoning": 1.0
+      },
+      "checklist": [
+        "Введён правильный короткий ответ."
+      ],
+      "recommendation_if_low": "Повторить формулу периметра прямоугольника.",
+      "solution": "$P=2(8+15)=46$.",
+      "scoring_criteria": [
+        {
+          "points": 1,
+          "description": "Правильный ответ."
+        }
+      ],
+      "typical_mistakes": [
+        "Невнимательное чтение условия.",
+        "Арифметическая ошибка.",
+        "Запись ответа не в том формате."
+      ],
+      "check_items": [
+        "Введён правильный короткий ответ."
+      ],
+      "answer_format": "integer"
+    },
+    {
+      "id": "q31",
+      "title": "Задание 31. Площадь треугольника",
+      "text": "Основание треугольника равно 14, высота к этому основанию равна 9. Найдите площадь треугольника.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer": "63",
+      "accepted_answers": [
+        "63"
+      ],
+      "topic_weights": {
+        "geometry_basic": 1.0
+      },
+      "skill_weights": {
+        "geometric_reasoning": 1.0
+      },
+      "checklist": [
+        "Введён правильный короткий ответ."
+      ],
+      "recommendation_if_low": "Повторить формулу площади треугольника.",
+      "solution": "$S=\\frac12\\cdot14\\cdot9=63$.",
+      "scoring_criteria": [
+        {
+          "points": 1,
+          "description": "Правильный ответ."
+        }
+      ],
+      "typical_mistakes": [
+        "Невнимательное чтение условия.",
+        "Арифметическая ошибка.",
+        "Запись ответа не в том формате."
+      ],
+      "check_items": [
+        "Введён правильный короткий ответ."
+      ],
+      "answer_format": "integer"
+    },
+    {
+      "id": "q32",
+      "title": "Задание 32. Теорема Пифагора",
+      "text": "Катеты прямоугольного треугольника равны 9 и 12. Найдите гипотенузу.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer": "15",
+      "accepted_answers": [
+        "15"
+      ],
+      "topic_weights": {
+        "geometry_basic": 1.0
+      },
+      "skill_weights": {
+        "geometric_reasoning": 1.0
+      },
+      "checklist": [
+        "Введён правильный короткий ответ."
+      ],
+      "recommendation_if_low": "Повторить теорему Пифагора.",
+      "solution": "$c=\\sqrt{9^2+12^2}=\\sqrt{225}=15$.",
+      "scoring_criteria": [
+        {
+          "points": 1,
+          "description": "Правильный ответ."
+        }
+      ],
+      "typical_mistakes": [
+        "Невнимательное чтение условия.",
+        "Арифметическая ошибка.",
+        "Запись ответа не в том формате."
+      ],
+      "check_items": [
+        "Введён правильный короткий ответ."
+      ],
+      "answer_format": "integer"
+    },
+    {
+      "id": "q33",
+      "title": "Задание 33. Равнобедренный треугольник",
+      "text": "В равнобедренном треугольнике угол при вершине равен $52^\\circ$. Найдите угол при основании.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer": "64",
+      "accepted_answers": [
+        "64"
+      ],
+      "topic_weights": {
+        "geometry_basic": 1.0
+      },
+      "skill_weights": {
+        "geometric_reasoning": 1.0
+      },
+      "checklist": [
+        "Введён правильный короткий ответ."
+      ],
+      "recommendation_if_low": "Повторить свойства равнобедренного треугольника.",
+      "solution": "Углы при основании равны: $(180-52):2=64$.",
+      "scoring_criteria": [
+        {
+          "points": 1,
+          "description": "Правильный ответ."
+        }
+      ],
+      "typical_mistakes": [
+        "Невнимательное чтение условия.",
+        "Арифметическая ошибка.",
+        "Запись ответа не в том формате."
+      ],
+      "check_items": [
+        "Введён правильный короткий ответ."
+      ],
+      "answer_format": "integer"
+    },
+    {
+      "id": "q34",
+      "title": "Задание 34. Внешний угол треугольника",
+      "text": "Два внутренних угла треугольника равны $42^\\circ$ и $73^\\circ$. Найдите внешний угол при третьей вершине.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer": "115",
+      "accepted_answers": [
+        "115"
+      ],
+      "topic_weights": {
+        "geometry_basic": 1.0
+      },
+      "skill_weights": {
+        "geometric_reasoning": 1.0
+      },
+      "checklist": [
+        "Введён правильный короткий ответ."
+      ],
+      "recommendation_if_low": "Повторить свойство внешнего угла треугольника.",
+      "solution": "Внешний угол равен сумме двух внутренних несмежных углов: $42+73=115$.",
+      "scoring_criteria": [
+        {
+          "points": 1,
+          "description": "Правильный ответ."
+        }
+      ],
+      "typical_mistakes": [
+        "Невнимательное чтение условия.",
+        "Арифметическая ошибка.",
+        "Запись ответа не в том формате."
+      ],
+      "check_items": [
+        "Введён правильный короткий ответ."
+      ],
+      "answer_format": "integer"
+    },
+    {
+      "id": "q35",
+      "title": "Задание 35. Среднее арифметическое",
+      "text": "Найдите среднее арифметическое чисел 2, 5, 8 и 11. Ответ запишите десятичной дробью.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer": "6.5",
+      "accepted_answers": [
+        "6.5",
+        "6,5"
+      ],
+      "topic_weights": {
+        "statistics_probability": 1.0
+      },
+      "skill_weights": {
+        "data_interpretation": 1.0
+      },
+      "checklist": [
+        "Введён правильный короткий ответ."
+      ],
+      "recommendation_if_low": "Повторить среднее арифметическое.",
+      "solution": "Сумма $2+5+8+11=26$, среднее $26:4=6{,}5$.",
+      "scoring_criteria": [
+        {
+          "points": 1,
+          "description": "Правильный ответ."
+        }
+      ],
+      "typical_mistakes": [
+        "Невнимательное чтение условия.",
+        "Арифметическая ошибка.",
+        "Запись ответа не в том формате."
+      ],
+      "check_items": [
+        "Введён правильный короткий ответ."
+      ],
+      "answer_format": "decimal"
+    },
+    {
+      "id": "q36",
+      "title": "Задание 36. Медиана набора чисел",
+      "text": "Найдите медиану набора чисел: 12, 3, 8, 5, 10, 6, 7.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer": "7",
+      "accepted_answers": [
+        "7"
+      ],
+      "topic_weights": {
+        "statistics_probability": 1.0
+      },
+      "skill_weights": {
+        "data_interpretation": 1.0
+      },
+      "checklist": [
+        "Введён правильный короткий ответ."
+      ],
+      "recommendation_if_low": "Повторить медиану числового набора.",
+      "solution": "После упорядочивания: 3, 5, 6, 7, 8, 10, 12. Медиана равна 7.",
+      "scoring_criteria": [
+        {
+          "points": 1,
+          "description": "Правильный ответ."
+        }
+      ],
+      "typical_mistakes": [
+        "Невнимательное чтение условия.",
+        "Арифметическая ошибка.",
+        "Запись ответа не в том формате."
+      ],
+      "check_items": [
+        "Введён правильный короткий ответ."
+      ],
+      "answer_format": "integer"
+    },
+    {
+      "id": "q37",
+      "title": "Задание 37. Вероятность",
+      "text": "В коробке лежат 4 красных и 5 синих шаров. Какова вероятность вынуть красный шар? Ответ запишите дробью.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer": "4/9",
+      "accepted_answers": [
+        "4/9"
+      ],
+      "topic_weights": {
+        "statistics_probability": 1.0
+      },
+      "skill_weights": {
+        "data_interpretation": 1.0
+      },
+      "checklist": [
+        "Введён правильный короткий ответ."
+      ],
+      "recommendation_if_low": "Повторить вероятность как отношение благоприятных исходов ко всем исходам.",
+      "solution": "Всего 9 шаров, красных 4, вероятность равна $\\frac{4}{9}$.",
+      "scoring_criteria": [
+        {
+          "points": 1,
+          "description": "Правильный ответ."
+        }
+      ],
+      "typical_mistakes": [
+        "Невнимательное чтение условия.",
+        "Арифметическая ошибка.",
+        "Запись ответа не в том формате."
+      ],
+      "check_items": [
+        "Введён правильный короткий ответ."
+      ],
+      "answer_format": "ordinary_fraction"
+    },
+    {
+      "id": "q38",
+      "title": "Задание 38. Анализ данных",
+      "text": "В течение восьми дней ученик решал задачи: 6, 4, 7, 6, 5, 6, 4, 8 задач в день. Сколько задач он решал чаще всего?",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer": "6",
+      "accepted_answers": [
+        "6"
+      ],
+      "topic_weights": {
+        "statistics_probability": 1.0
+      },
+      "skill_weights": {
+        "data_interpretation": 1.0
+      },
+      "checklist": [
+        "Введён правильный короткий ответ."
+      ],
+      "recommendation_if_low": "Повторить моду набора данных.",
+      "solution": "Число 6 встречается чаще остальных — три раза.",
+      "scoring_criteria": [
+        {
+          "points": 1,
+          "description": "Правильный ответ."
+        }
+      ],
+      "typical_mistakes": [
+        "Невнимательное чтение условия.",
+        "Арифметическая ошибка.",
+        "Запись ответа не в том формате."
+      ],
+      "check_items": [
+        "Введён правильный короткий ответ."
+      ],
+      "answer_format": "integer"
+    }
+  ],
+  "topic_recommendations": {
+    "arithmetic_numbers": {
+      "low": "Начать с восстановления действий с обыкновенными и десятичными дробями, отрицательными числами, процентами и порядком действий.",
+      "medium": "Закрепить дроби, проценты и вычисления на коротких заданиях с ограничением по времени.",
+      "good": "Поддерживать навык регулярными вычислительными разминками и заданиями с несколькими действиями."
+    },
+    "algebra_transformations": {
+      "low": "Повторить раскрытие скобок, приведение подобных, степени, формулы сокращённого умножения и сокращение дробей.",
+      "medium": "Отработать преобразования выражений на заданиях с подстановкой и упрощением.",
+      "good": "Добавить задания на более плотные преобразования и выбор рационального способа решения."
+    },
+    "equations_inequalities": {
+      "low": "Повторить линейные уравнения, уравнения со скобками и дробями, простейшие квадратные уравнения и числовую прямую.",
+      "medium": "Закрепить алгоритм решения уравнений и проверку ответа.",
+      "good": "Переходить к уравнениям и неравенствам из ОГЭ, включая задачи с параметризованными условиями."
+    },
+    "word_problems": {
+      "low": "Учить переводить текст в уравнение: величины, связи, единицы измерения, вопрос задачи.",
+      "medium": "Отработать типовые модели: цена, скорость, работа, проценты, пропорция.",
+      "good": "Добавить комбинированные текстовые задачи и задачи из второй части ОГЭ."
+    },
+    "functions_graphs": {
+      "low": "Повторить координатную плоскость, значение функции, линейную функцию и смысл коэффициентов.",
+      "medium": "Закрепить связь формулы, таблицы и графика.",
+      "good": "Переходить к задачам ОГЭ на графики, параболу, область определения и чтение свойств функции."
+    },
+    "geometry_basic": {
+      "low": "Восстановить углы, треугольники, прямоугольный треугольник, площади и простейшие свойства окружности.",
+      "medium": "Закрепить теорему Пифагора, признаки равенства/подобия треугольников и базовые площади.",
+      "good": "Добавить геометрию ОГЭ с доказательствами и задачами на несколько шагов."
+    },
+    "statistics_probability": {
+      "low": "Повторить среднее арифметическое, медиану, частоту, простую вероятность.",
+      "medium": "Закрепить статистику и вероятность на коротких задачах с таблицами и наборами данных.",
+      "good": "Переходить к задачам ОГЭ на анализ данных и вероятность."
+    }
+  },
+  "skill_recommendations": {
+    "calculation_accuracy": {
+      "low": "Нужна регулярная вычислительная разминка: 8–10 коротких примеров в начале занятия.",
+      "medium": "Добавить контроль времени и обязательную проверку промежуточных вычислений.",
+      "good": "Следить, чтобы аккуратность сохранялась в длинных задачах."
+    },
+    "fraction_percent_fluency": {
+      "low": "Повторить связь дробей, десятичных дробей и процентов; отдельно отработать проценты от числа и число по проценту.",
+      "medium": "Закрепить проценты в текстовых задачах и задачах на изменение величины.",
+      "good": "Давать задачи на последовательные изменения и проценты в контексте ОГЭ."
+    },
+    "symbolic_transformations": {
+      "low": "Отработать раскрытие скобок, приведение подобных, степени и сокращение алгебраических дробей.",
+      "medium": "Закрепить преобразования в задачах с подстановкой и уравнениями.",
+      "good": "Переходить к преобразованиям из заданий 11–13 ОГЭ."
+    },
+    "equation_solving": {
+      "low": "Повторить базовый алгоритм решения уравнений: раскрыть скобки, перенести, привести, разделить, проверить.",
+      "medium": "Закрепить уравнения с дробями, квадратные уравнения и простые неравенства.",
+      "good": "Добавить задачи, где уравнение нужно составить самостоятельно."
+    },
+    "text_modeling": {
+      "low": "Тренировать выделение величин и составление краткой записи перед решением.",
+      "medium": "Отработать перевод условия в уравнение или пропорцию.",
+      "good": "Переходить к задачам на движение, работу, проценты и смеси уровня ОГЭ."
+    },
+    "graph_function_thinking": {
+      "low": "Повторить координаты, значение функции, график прямой и простые подстановки.",
+      "medium": "Закрепить линейную функцию и параболу через таблицы и графики.",
+      "good": "Добавить чтение графиков и задачи на свойства функций."
+    },
+    "geometric_reasoning": {
+      "low": "Начать с базовых фактов: сумма углов треугольника, площадь, периметр, теорема Пифагора.",
+      "medium": "Закрепить выбор нужной формулы и аккуратный чертёж.",
+      "good": "Переходить к геометрии ОГЭ с доказательными элементами."
+    },
+    "data_interpretation": {
+      "low": "Повторить среднее, медиану, вероятность как отношение благоприятных исходов ко всем.",
+      "medium": "Закрепить вычисления по наборам данных.",
+      "good": "Добавить задания с таблицами, диаграммами и текстовой интерпретацией данных."
+    }
+  }
+}

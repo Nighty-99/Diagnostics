@@ -1,0 +1,738 @@
+{
+  "id": "math_grade_9_diagnostic",
+  "mode": "9 класс",
+  "title": "Диагностика знаний по математике за 9 класс",
+  "duration_minutes": "45–55",
+  "description": "Диагностика ключевых тем математики 9 класса: преобразования выражений, уравнения и системы, неравенства, функции, прогрессии, текстовые задачи, вероятность и геометрия.",
+  "levels": [
+    {
+      "min_percent": 0,
+      "max_percent": 39.9,
+      "name": "нужен разбор базы",
+      "summary": "Есть серьёзные пробелы в темах 9 класса. Перед подготовкой к итоговым форматам нужно восстановить уравнения, неравенства, функции, прогрессии и базовую геометрию."
+    },
+    {
+      "min_percent": 40,
+      "max_percent": 59.9,
+      "name": "база нестабильна",
+      "summary": "Часть тем узнаётся, но результат пока нестабилен. Основной фокус — уравнения, функции, прогрессии и аккуратная запись ответа."
+    },
+    {
+      "min_percent": 60,
+      "max_percent": 79.9,
+      "name": "рабочий уровень",
+      "summary": "База 9 класса в целом есть, но остаются зоны риска. Нужно закрепить смешанные задачи, неравенства, графики и геометрические вычисления."
+    },
+    {
+      "min_percent": 80,
+      "max_percent": 100,
+      "name": "уверенный уровень",
+      "summary": "Ученик уверенно справляется с большинством тем 9 класса. Можно переходить к системной подготовке к ОГЭ и смешанным вариантам."
+    }
+  ],
+  "topics": [
+    {
+      "id": "algebra_transformations",
+      "name": "Алгебраические преобразования",
+      "order": 1,
+      "critical": true
+    },
+    {
+      "id": "equations_systems",
+      "name": "Уравнения и системы",
+      "order": 2,
+      "critical": true
+    },
+    {
+      "id": "inequalities",
+      "name": "Неравенства",
+      "order": 3,
+      "critical": true
+    },
+    {
+      "id": "functions_graphs",
+      "name": "Функции и графики",
+      "order": 4,
+      "critical": true
+    },
+    {
+      "id": "sequences",
+      "name": "Последовательности и прогрессии",
+      "order": 5,
+      "critical": true
+    },
+    {
+      "id": "word_problems",
+      "name": "Текстовые задачи",
+      "order": 6,
+      "critical": true
+    },
+    {
+      "id": "geometry",
+      "name": "Геометрия 9 класса",
+      "order": 7,
+      "critical": true
+    },
+    {
+      "id": "probability_statistics",
+      "name": "Вероятность и статистика",
+      "order": 8,
+      "critical": false
+    }
+  ],
+  "skills": [
+    {
+      "id": "symbolic_transformations",
+      "name": "Алгебраические преобразования",
+      "order": 1
+    },
+    {
+      "id": "equation_solving",
+      "name": "Решение уравнений",
+      "order": 2
+    },
+    {
+      "id": "inequality_reasoning",
+      "name": "Работа с неравенствами",
+      "order": 3
+    },
+    {
+      "id": "function_thinking",
+      "name": "Функциональное мышление",
+      "order": 4
+    },
+    {
+      "id": "sequence_reasoning",
+      "name": "Работа с последовательностями",
+      "order": 5
+    },
+    {
+      "id": "geometric_reasoning",
+      "name": "Геометрическое мышление",
+      "order": 6
+    },
+    {
+      "id": "problem_modeling",
+      "name": "Моделирование задачи",
+      "order": 7
+    },
+    {
+      "id": "calculation_accuracy",
+      "name": "Вычислительная аккуратность",
+      "order": 8
+    },
+    {
+      "id": "attention_to_format",
+      "name": "Внимание к формату ответа",
+      "order": 9
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "title": "Алгебраическая дробь",
+      "text": "Сократите дробь $\\frac{a^2-9}{a-3}$ и найдите её значение при $a=8$.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "11",
+      "accepted_answers": [
+        "11"
+      ],
+      "topic_weights": {
+        "algebra_transformations": 1.0
+      },
+      "skill_weights": {
+        "symbolic_transformations": 0.7,
+        "calculation_accuracy": 0.3
+      },
+      "solution": "$a^2-9=(a-3)(a+3)$, поэтому дробь равна $a+3$ при $a\\ne3$. При $a=8$ получаем 11.",
+      "typical_mistakes": [
+        "Не узнаёт разность квадратов.",
+        "Подставляет значение до сокращения и ошибается."
+      ],
+      "recommendation_if_low": "Повторить разность квадратов и сокращение алгебраических дробей."
+    },
+    {
+      "id": "q2",
+      "title": "Преобразование корней",
+      "text": "Упростите выражение $\\sqrt{75}-\\sqrt{12}$. Ответ запишите в виде $a\\sqrt{3}$, укажите число $a$.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "3",
+      "accepted_answers": [
+        "3"
+      ],
+      "topic_weights": {
+        "algebra_transformations": 1.0
+      },
+      "skill_weights": {
+        "symbolic_transformations": 0.7,
+        "calculation_accuracy": 0.3
+      },
+      "solution": "$\\sqrt{75}=5\\sqrt3$, $\\sqrt{12}=2\\sqrt3$, разность равна $3\\sqrt3$, значит $a=3$.",
+      "typical_mistakes": [
+        "Складывает или вычитает подкоренные выражения напрямую.",
+        "Не выносит множитель из-под корня."
+      ],
+      "recommendation_if_low": "Отработать вынесение множителя из-под квадратного корня."
+    },
+    {
+      "id": "q3",
+      "title": "Квадратное уравнение",
+      "text": "Найдите меньший корень уравнения $x^2-7x+10=0$.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "2",
+      "accepted_answers": [
+        "2"
+      ],
+      "topic_weights": {
+        "equations_systems": 1.0
+      },
+      "skill_weights": {
+        "equation_solving": 0.7,
+        "calculation_accuracy": 0.3
+      },
+      "solution": "$x^2-7x+10=(x-2)(x-5)$, корни 2 и 5. Меньший корень 2.",
+      "typical_mistakes": [
+        "Ошибается в подборе корней.",
+        "Записывает больший корень вместо меньшего."
+      ],
+      "recommendation_if_low": "Повторить разложение квадратного трёхчлена на множители."
+    },
+    {
+      "id": "q4",
+      "title": "Дискриминант",
+      "text": "Для уравнения $x^2-4x-12=0$ найдите дискриминант.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "64",
+      "accepted_answers": [
+        "64"
+      ],
+      "topic_weights": {
+        "equations_systems": 1.0
+      },
+      "skill_weights": {
+        "equation_solving": 0.5,
+        "calculation_accuracy": 0.5
+      },
+      "solution": "$D=b^2-4ac=(-4)^2-4\\cdot1\\cdot(-12)=16+48=64$.",
+      "typical_mistakes": [
+        "Не учитывает отрицательный знак свободного члена.",
+        "Ошибается в формуле дискриминанта."
+      ],
+      "recommendation_if_low": "Повторить формулу дискриминанта и работу со знаками коэффициентов."
+    },
+    {
+      "id": "q5",
+      "title": "Дробно-рациональное уравнение",
+      "text": "Решите уравнение $\\frac{x+1}{x-2}=3$. Ответ запишите десятичной дробью.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "decimal",
+      "answer": "3.5",
+      "accepted_answers": [
+        "3.5",
+        "3,5"
+      ],
+      "topic_weights": {
+        "equations_systems": 0.7,
+        "algebra_transformations": 0.3
+      },
+      "skill_weights": {
+        "equation_solving": 0.5,
+        "symbolic_transformations": 0.2,
+        "attention_to_format": 0.3
+      },
+      "solution": "$x\\ne2$. Из $x+1=3(x-2)$ получаем $x+1=3x-6$, $2x=7$, $x=3{,}5$.",
+      "typical_mistakes": [
+        "Теряет условие $x\\ne2$.",
+        "Записывает обыкновенную дробь вместо десятичной."
+      ],
+      "recommendation_if_low": "Повторить дробно-рациональные уравнения и формат десятичного ответа."
+    },
+    {
+      "id": "q6",
+      "title": "Система линейных уравнений",
+      "text": "Решите систему $\\begin{cases}x+y=9,\\\\ x-y=1.\\end{cases}$ Найдите $x$.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "5",
+      "accepted_answers": [
+        "5"
+      ],
+      "topic_weights": {
+        "equations_systems": 1.0
+      },
+      "skill_weights": {
+        "equation_solving": 0.6,
+        "calculation_accuracy": 0.2,
+        "problem_modeling": 0.2
+      },
+      "solution": "Сложим уравнения: $2x=10$, значит $x=5$.",
+      "typical_mistakes": [
+        "Складывает правые части неверно.",
+        "Находит $y$ вместо $x$."
+      ],
+      "recommendation_if_low": "Повторить метод сложения для систем двух линейных уравнений."
+    },
+    {
+      "id": "q7",
+      "title": "Система с произведением",
+      "text": "Два числа имеют сумму 8 и произведение 15. Найдите большее число.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "5",
+      "accepted_answers": [
+        "5"
+      ],
+      "topic_weights": {
+        "equations_systems": 0.7,
+        "word_problems": 0.3
+      },
+      "skill_weights": {
+        "equation_solving": 0.4,
+        "problem_modeling": 0.4,
+        "calculation_accuracy": 0.2
+      },
+      "solution": "Подходящие числа 3 и 5: $3+5=8$, $3\\cdot5=15$. Большее число 5.",
+      "typical_mistakes": [
+        "Берёт числа с нужной суммой, но не проверяет произведение.",
+        "Записывает меньшее число."
+      ],
+      "recommendation_if_low": "Тренировать связь суммы и произведения чисел с квадратным уравнением или подбором."
+    },
+    {
+      "id": "q8",
+      "title": "Линейное неравенство",
+      "text": "Найдите наибольшее целое число, удовлетворяющее неравенству $3x-5<10$.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "4",
+      "accepted_answers": [
+        "4"
+      ],
+      "topic_weights": {
+        "inequalities": 1.0
+      },
+      "skill_weights": {
+        "inequality_reasoning": 0.7,
+        "calculation_accuracy": 0.3
+      },
+      "solution": "$3x<15$, значит $x<5$. Наибольшее целое число — 4.",
+      "typical_mistakes": [
+        "Включает число 5, несмотря на строгий знак.",
+        "Ошибается при переносе слагаемого."
+      ],
+      "recommendation_if_low": "Повторить строгие неравенства и выбор целых решений."
+    },
+    {
+      "id": "q9",
+      "title": "Квадратное неравенство",
+      "text": "Сколько целых чисел удовлетворяют неравенству $x^2-5x+6\\le0$?",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "2",
+      "accepted_answers": [
+        "2"
+      ],
+      "topic_weights": {
+        "inequalities": 0.8,
+        "equations_systems": 0.2
+      },
+      "skill_weights": {
+        "inequality_reasoning": 0.6,
+        "equation_solving": 0.2,
+        "calculation_accuracy": 0.2
+      },
+      "solution": "$x^2-5x+6=(x-2)(x-3)$. Парабола не выше нуля на отрезке $[2;3]$, целые числа 2 и 3, всего 2.",
+      "typical_mistakes": [
+        "Берёт промежуток вне корней.",
+        "Не учитывает включение концов при знаке $\\le$."
+      ],
+      "recommendation_if_low": "Повторить метод интервалов для квадратных неравенств."
+    },
+    {
+      "id": "q10",
+      "title": "Линейная функция",
+      "text": "Функция задана формулой $y=-2x+7$. Найдите $x$, если $y=-1$.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "4",
+      "accepted_answers": [
+        "4"
+      ],
+      "topic_weights": {
+        "functions_graphs": 0.8,
+        "equations_systems": 0.2
+      },
+      "skill_weights": {
+        "function_thinking": 0.5,
+        "equation_solving": 0.4,
+        "calculation_accuracy": 0.1
+      },
+      "solution": "$-1=-2x+7$, значит $-2x=-8$, $x=4$.",
+      "typical_mistakes": [
+        "Путает значение функции и аргумент.",
+        "Ошибается при делении на отрицательное число."
+      ],
+      "recommendation_if_low": "Закрепить связь формулы функции и линейного уравнения."
+    },
+    {
+      "id": "q11",
+      "title": "Вершина параболы",
+      "text": "Найдите абсциссу вершины параболы $y=x^2-10x+8$.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "5",
+      "accepted_answers": [
+        "5"
+      ],
+      "topic_weights": {
+        "functions_graphs": 1.0
+      },
+      "skill_weights": {
+        "function_thinking": 0.7,
+        "calculation_accuracy": 0.3
+      },
+      "solution": "Абсцисса вершины равна $x_0=-\\frac{b}{2a}=\\frac{10}{2}=5$.",
+      "typical_mistakes": [
+        "Забывает знак минус в формуле.",
+        "Делит на $a$, а не на $2a$."
+      ],
+      "recommendation_if_low": "Повторить вершину параболы и формулу $x_0=-\\frac{b}{2a}$."
+    },
+    {
+      "id": "q12",
+      "title": "Нуль функции",
+      "text": "Функция задана формулой $y=(x-3)(x+6)$. Найдите положительный нуль функции.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "3",
+      "accepted_answers": [
+        "3"
+      ],
+      "topic_weights": {
+        "functions_graphs": 0.7,
+        "equations_systems": 0.3
+      },
+      "skill_weights": {
+        "function_thinking": 0.5,
+        "equation_solving": 0.4,
+        "attention_to_format": 0.1
+      },
+      "solution": "Нули функции находятся из $(x-3)(x+6)=0$: $x=3$ или $x=-6$. Положительный нуль равен 3.",
+      "typical_mistakes": [
+        "Находит отрицательный нуль вместо положительного.",
+        "Не применяет правило нулевого произведения."
+      ],
+      "recommendation_if_low": "Повторить связь нулей функции и корней уравнения."
+    },
+    {
+      "id": "q13",
+      "title": "Арифметическая прогрессия",
+      "text": "В арифметической прогрессии $a_1=4$, $d=3$. Найдите $a_{12}$.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "37",
+      "accepted_answers": [
+        "37"
+      ],
+      "topic_weights": {
+        "sequences": 1.0
+      },
+      "skill_weights": {
+        "sequence_reasoning": 0.7,
+        "calculation_accuracy": 0.3
+      },
+      "solution": "$a_{12}=a_1+11d=4+11\\cdot3=37$.",
+      "typical_mistakes": [
+        "Умножает разность на 12 вместо 11.",
+        "Путает первый член и номер члена."
+      ],
+      "recommendation_if_low": "Повторить формулу $a_n=a_1+(n-1)d$."
+    },
+    {
+      "id": "q14",
+      "title": "Сумма прогрессии",
+      "text": "В арифметической прогрессии $a_1=5$, $d=2$. Найдите сумму первых 8 членов.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "96",
+      "accepted_answers": [
+        "96"
+      ],
+      "topic_weights": {
+        "sequences": 1.0
+      },
+      "skill_weights": {
+        "sequence_reasoning": 0.7,
+        "calculation_accuracy": 0.3
+      },
+      "solution": "$a_8=5+7\\cdot2=19$. Тогда $S_8=\\frac{5+19}{2}\\cdot8=96$.",
+      "typical_mistakes": [
+        "Ошибается в нахождении восьмого члена.",
+        "Забывает умножить среднее первого и последнего члена на количество членов."
+      ],
+      "recommendation_if_low": "Закрепить формулы арифметической прогрессии и суммы первых членов."
+    },
+    {
+      "id": "q15",
+      "title": "Геометрическая прогрессия",
+      "text": "В геометрической прогрессии $b_1=2$, $q=3$. Найдите $b_4$.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "54",
+      "accepted_answers": [
+        "54"
+      ],
+      "topic_weights": {
+        "sequences": 1.0
+      },
+      "skill_weights": {
+        "sequence_reasoning": 0.7,
+        "calculation_accuracy": 0.3
+      },
+      "solution": "$b_4=b_1q^3=2\\cdot3^3=54$.",
+      "typical_mistakes": [
+        "Возводит знаменатель в степень 4 вместо 3.",
+        "Путает арифметическую и геометрическую прогрессии."
+      ],
+      "recommendation_if_low": "Повторить формулу $b_n=b_1q^{n-1}$."
+    },
+    {
+      "id": "q16",
+      "title": "Текстовая задача на движение",
+      "text": "Пешеход шёл 3 часа со скоростью $x$ км/ч. Велосипедист ехал 2 часа со скоростью на 9 км/ч больше и преодолел такое же расстояние. Найдите скорость пешехода.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "18",
+      "accepted_answers": [
+        "18"
+      ],
+      "topic_weights": {
+        "word_problems": 0.8,
+        "equations_systems": 0.2
+      },
+      "skill_weights": {
+        "problem_modeling": 0.6,
+        "equation_solving": 0.3,
+        "calculation_accuracy": 0.1
+      },
+      "solution": "Расстояния равны: $3x=2(x+9)$. Тогда $3x=2x+18$, $x=18$.",
+      "typical_mistakes": [
+        "Путает время и скорость.",
+        "Не составляет равенство расстояний."
+      ],
+      "recommendation_if_low": "Повторить задачи на движение и связь $S=vt$."
+    },
+    {
+      "id": "q17",
+      "title": "Вероятность",
+      "text": "В коробке 4 красных, 6 синих и 10 зелёных шаров. Какова вероятность вынуть синий шар? Ответ запишите обыкновенной дробью.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "ordinary_fraction",
+      "answer": "3/10",
+      "accepted_answers": [
+        "3/10"
+      ],
+      "topic_weights": {
+        "probability_statistics": 1.0
+      },
+      "skill_weights": {
+        "problem_modeling": 0.4,
+        "calculation_accuracy": 0.3,
+        "attention_to_format": 0.3
+      },
+      "solution": "Всего $4+6+10=20$ шаров, синих 6. Вероятность $\\frac{6}{20}=\\frac{3}{10}$.",
+      "typical_mistakes": [
+        "Берёт знаменателем число шаров одного цвета.",
+        "Записывает десятичную дробь вместо обыкновенной."
+      ],
+      "recommendation_if_low": "Повторить классическое определение вероятности и сокращение дробей."
+    },
+    {
+      "id": "q18",
+      "title": "Медиана набора чисел",
+      "text": "Найдите медиану набора чисел: $4$, $7$, $8$, $11$, $15$.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "8",
+      "accepted_answers": [
+        "8"
+      ],
+      "topic_weights": {
+        "probability_statistics": 1.0
+      },
+      "skill_weights": {
+        "problem_modeling": 0.3,
+        "calculation_accuracy": 0.4,
+        "attention_to_format": 0.3
+      },
+      "solution": "Числа уже упорядочены. Среднее по положению число в наборе из пяти чисел — 8.",
+      "typical_mistakes": [
+        "Находит среднее арифметическое вместо медианы.",
+        "Берёт одно из крайних значений."
+      ],
+      "recommendation_if_low": "Повторить отличие медианы от среднего арифметического."
+    },
+    {
+      "id": "q19",
+      "title": "Синус острого угла",
+      "text": "В прямоугольном треугольнике катеты равны 6 и 8. Найдите синус угла, противолежащего катету 6. Ответ запишите обыкновенной дробью.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "ordinary_fraction",
+      "answer": "3/5",
+      "accepted_answers": [
+        "3/5"
+      ],
+      "topic_weights": {
+        "geometry": 1.0
+      },
+      "skill_weights": {
+        "geometric_reasoning": 0.6,
+        "calculation_accuracy": 0.2,
+        "attention_to_format": 0.2
+      },
+      "solution": "Гипотенуза равна $\\sqrt{6^2+8^2}=10$. Синус нужного угла равен $\\frac{6}{10}=\\frac{3}{5}$.",
+      "typical_mistakes": [
+        "Делит катет на другой катет вместо гипотенузы.",
+        "Записывает десятичную дробь вместо обыкновенной."
+      ],
+      "recommendation_if_low": "Повторить синус острого угла в прямоугольном треугольнике."
+    },
+    {
+      "id": "q20",
+      "title": "Координаты вектора",
+      "text": "Вектор $\\vec a=(6;8)$. Найдите его длину.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "10",
+      "accepted_answers": [
+        "10"
+      ],
+      "topic_weights": {
+        "geometry": 1.0
+      },
+      "skill_weights": {
+        "geometric_reasoning": 0.6,
+        "calculation_accuracy": 0.4
+      },
+      "solution": "$|\\vec a|=\\sqrt{6^2+8^2}=\\sqrt{100}=10$.",
+      "typical_mistakes": [
+        "Складывает координаты без возведения в квадрат.",
+        "Ошибается при извлечении квадратного корня."
+      ],
+      "recommendation_if_low": "Повторить длину вектора по координатам."
+    }
+  ],
+  "topic_recommendations": {
+    "algebra_transformations": {
+      "low": "Повторить разложение на множители, корни и сокращение алгебраических дробей.",
+      "medium": "Закрепить преобразования выражений на коротких смешанных заданиях.",
+      "good": "Переходить к выражениям, связанным с уравнениями и функциями."
+    },
+    "equations_systems": {
+      "low": "Повторить квадратные, дробно-рациональные уравнения и системы.",
+      "medium": "Закрепить разные способы решения уравнений и систем.",
+      "good": "Добавлять задачи, где уравнение или систему нужно составить самостоятельно."
+    },
+    "inequalities": {
+      "low": "Повторить линейные и квадратные неравенства, строгие знаки и метод интервалов.",
+      "medium": "Закрепить выбор целых решений и работу с промежутками.",
+      "good": "Переходить к неравенствам, связанным с графиками функций."
+    },
+    "functions_graphs": {
+      "low": "Повторить значение функции, нули функции и вершину параболы.",
+      "medium": "Закрепить связь графика, формулы функции и уравнения.",
+      "good": "Добавлять задачи на чтение графиков и свойства квадратичной функции."
+    },
+    "sequences": {
+      "low": "Повторить арифметическую и геометрическую прогрессии, формулы членов и сумм.",
+      "medium": "Закрепить выбор нужной формулы и номер члена прогрессии.",
+      "good": "Переходить к текстовым задачам на прогрессии."
+    },
+    "word_problems": {
+      "low": "Учиться переводить условие в уравнение, систему или проверяемую модель.",
+      "medium": "Закрепить задачи на движение, числа и проценты через составление уравнений.",
+      "good": "Решать смешанные текстовые задачи в несколько шагов."
+    },
+    "geometry": {
+      "low": "Повторить прямоугольный треугольник, тригонометрию и координаты вектора.",
+      "medium": "Закрепить выбор нужной геометрической формулы и формат ответа.",
+      "good": "Переходить к смешанным геометрическим задачам ОГЭ."
+    },
+    "probability_statistics": {
+      "low": "Повторить вероятность, медиану и аккуратную запись дробного ответа.",
+      "medium": "Закрепить задачи на данные и вероятность через короткие серии.",
+      "good": "Добавлять задачи на статистику, таблицы и диаграммы."
+    }
+  },
+  "skill_recommendations": {
+    "symbolic_transformations": {
+      "low": "Отработать разложение на множители, корни и алгебраические дроби.",
+      "medium": "Закрепить преобразования на заданиях разных типов.",
+      "good": "Поддерживать навык через комбинированные выражения."
+    },
+    "equation_solving": {
+      "low": "Повторить алгоритмы решения квадратных, линейных и дробно-рациональных уравнений.",
+      "medium": "Закрепить уравнения и системы с проверкой результата.",
+      "good": "Добавлять текстовые задачи, приводящие к уравнениям."
+    },
+    "inequality_reasoning": {
+      "low": "Повторить строгие знаки, промежутки и метод интервалов.",
+      "medium": "Отработать целые решения линейных и квадратных неравенств.",
+      "good": "Переходить к неравенствам с графической интерпретацией."
+    },
+    "function_thinking": {
+      "low": "Повторить значение функции, нули функции и вершину параболы.",
+      "medium": "Закрепить связь формулы, графика и уравнения.",
+      "good": "Добавлять задачи на свойства функций и чтение графиков."
+    },
+    "sequence_reasoning": {
+      "low": "Повторить различие арифметической и геометрической прогрессий.",
+      "medium": "Закрепить формулы общего члена и суммы прогрессии.",
+      "good": "Решать задачи, где прогрессию нужно распознать по условию."
+    },
+    "geometric_reasoning": {
+      "low": "Повторить прямоугольный треугольник, синус и длину вектора.",
+      "medium": "Закрепить геометрические вычисления в один-два шага.",
+      "good": "Переходить к задачам, где нужно выбрать подходящий геометрический факт."
+    },
+    "problem_modeling": {
+      "low": "Учиться переводить текст задачи в уравнение, вероятность или числовую модель.",
+      "medium": "Отрабатывать короткие задачи на движение, числа и данные.",
+      "good": "Добавлять смешанные задачи с несколькими этапами."
+    },
+    "calculation_accuracy": {
+      "low": "Нужна регулярная проверка вычислений, особенно со знаками, корнями и дробями.",
+      "medium": "Добавить короткие блоки на аккуратность в алгебре, функциях и геометрии.",
+      "good": "Поддерживать точность в длинных решениях."
+    },
+    "attention_to_format": {
+      "low": "Следить за требуемым форматом ответа: целое число, десятичная дробь или обыкновенная дробь.",
+      "medium": "Закрепить запись ответа без лишних единиц и лишних символов.",
+      "good": "Поддерживать аккуратность ответа в заданиях разных типов."
+    }
+  }
+}

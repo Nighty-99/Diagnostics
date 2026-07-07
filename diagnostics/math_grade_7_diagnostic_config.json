@@ -1,0 +1,713 @@
+{
+  "id": "math_grade_7_diagnostic",
+  "mode": "7 класс",
+  "title": "Диагностика знаний по математике за 7 класс",
+  "duration_minutes": "40–50",
+  "description": "Диагностика ключевых тем 7 класса: алгебраические выражения, линейные уравнения, степени и многочлены, линейная функция, системы уравнений, проценты, данные и базовая геометрия.",
+  "levels": [
+    {
+      "min_percent": 0,
+      "max_percent": 39.9,
+      "name": "нужен разбор базы",
+      "summary": "Есть серьёзные пробелы в базовой алгебре 7 класса. Нужно восстановить действия с выражениями, линейные уравнения и вычислительную аккуратность."
+    },
+    {
+      "min_percent": 40,
+      "max_percent": 59.9,
+      "name": "база нестабильна",
+      "summary": "Часть тем узнаётся, но ошибки возникают в преобразованиях, уравнениях и задачах на функции. Нужна системная отработка базовых алгебраических навыков."
+    },
+    {
+      "min_percent": 60,
+      "max_percent": 79.9,
+      "name": "рабочий уровень",
+      "summary": "Основные темы 7 класса в целом освоены, но есть отдельные зоны риска. Важно закрепить многочлены, линейную функцию, системы и геометрические рассуждения."
+    },
+    {
+      "min_percent": 80,
+      "max_percent": 100,
+      "name": "уверенный уровень",
+      "summary": "Ученик уверенно владеет большинством тем 7 класса. Можно переходить к более сложным смешанным задачам и подготовке к темам 8 класса."
+    }
+  ],
+  "topics": [
+    {
+      "id": "algebra_expressions",
+      "name": "Алгебраические выражения",
+      "order": 1,
+      "critical": true
+    },
+    {
+      "id": "linear_equations",
+      "name": "Линейные уравнения",
+      "order": 2,
+      "critical": true
+    },
+    {
+      "id": "powers_polynomials",
+      "name": "Степени и многочлены",
+      "order": 3,
+      "critical": true
+    },
+    {
+      "id": "functions_graphs",
+      "name": "Линейная функция и графики",
+      "order": 4,
+      "critical": true
+    },
+    {
+      "id": "systems_modeling",
+      "name": "Системы и моделирование",
+      "order": 5,
+      "critical": true
+    },
+    {
+      "id": "geometry_angles_triangles",
+      "name": "Геометрия: углы и треугольники",
+      "order": 6,
+      "critical": true
+    },
+    {
+      "id": "data_percent",
+      "name": "Проценты и данные",
+      "order": 7,
+      "critical": false
+    }
+  ],
+  "skills": [
+    {
+      "id": "symbolic_transformations",
+      "name": "Алгебраические преобразования",
+      "order": 1
+    },
+    {
+      "id": "equation_solving",
+      "name": "Решение уравнений",
+      "order": 2
+    },
+    {
+      "id": "graph_function_thinking",
+      "name": "Функциональное мышление",
+      "order": 3
+    },
+    {
+      "id": "calculation_accuracy",
+      "name": "Вычислительная аккуратность",
+      "order": 4
+    },
+    {
+      "id": "geometric_reasoning",
+      "name": "Геометрическое мышление",
+      "order": 5
+    },
+    {
+      "id": "problem_modeling",
+      "name": "Моделирование задачи",
+      "order": 6
+    },
+    {
+      "id": "attention_to_format",
+      "name": "Внимание к формату ответа",
+      "order": 7
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "title": "Преобразование выражения",
+      "text": "Найдите значение выражения $3(2x-5)-2(x+4)$ при $x=-3$.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "-35",
+      "accepted_answers": [
+        "-35"
+      ],
+      "topic_weights": {
+        "algebra_expressions": 1.0
+      },
+      "skill_weights": {
+        "symbolic_transformations": 0.6,
+        "calculation_accuracy": 0.4
+      },
+      "solution": "$3(2x-5)-2(x+4)=6x-15-2x-8=4x-23$. При $x=-3$ получаем $-35$.",
+      "typical_mistakes": [
+        "Неверно раскрывает скобки.",
+        "Ошибается при подстановке отрицательного значения."
+      ],
+      "recommendation_if_low": "Повторить раскрытие скобок и подстановку значений в выражение."
+    },
+    {
+      "id": "q2",
+      "title": "Линейное уравнение со скобками",
+      "text": "Решите уравнение: $5(2x-3)-3(x+4)=22$.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "7",
+      "accepted_answers": [
+        "7"
+      ],
+      "topic_weights": {
+        "linear_equations": 0.8,
+        "algebra_expressions": 0.2
+      },
+      "skill_weights": {
+        "equation_solving": 0.7,
+        "symbolic_transformations": 0.2,
+        "calculation_accuracy": 0.1
+      },
+      "solution": "$10x-15-3x-12=22$, $7x-27=22$, $7x=49$, $x=7$.",
+      "typical_mistakes": [
+        "Ошибается при раскрытии скобок.",
+        "Неверно переносит слагаемые."
+      ],
+      "recommendation_if_low": "Закрепить линейные уравнения со скобками и переносом слагаемых."
+    },
+    {
+      "id": "q3",
+      "title": "Уравнение с дробями",
+      "text": "Решите уравнение: $\\frac{x-1}{3}+\\frac{x+2}{6}=5$.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "10",
+      "accepted_answers": [
+        "10"
+      ],
+      "topic_weights": {
+        "linear_equations": 0.7,
+        "algebra_expressions": 0.3
+      },
+      "skill_weights": {
+        "equation_solving": 0.6,
+        "symbolic_transformations": 0.3,
+        "calculation_accuracy": 0.1
+      },
+      "solution": "Умножим на 6: $2(x-1)+(x+2)=30$. Тогда $3x=30$, $x=10$.",
+      "typical_mistakes": [
+        "Не приводит дроби к общему знаменателю.",
+        "Теряет скобки при умножении на 6."
+      ],
+      "recommendation_if_low": "Повторить уравнения с дробями и общий знаменатель."
+    },
+    {
+      "id": "q4",
+      "title": "Свойства степеней",
+      "text": "Вычислите: $\\frac{2^3\\cdot2^5}{2^4}$.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "16",
+      "accepted_answers": [
+        "16"
+      ],
+      "topic_weights": {
+        "powers_polynomials": 1.0
+      },
+      "skill_weights": {
+        "symbolic_transformations": 0.5,
+        "calculation_accuracy": 0.5
+      },
+      "solution": "$\\frac{2^3\\cdot2^5}{2^4}=2^{3+5-4}=2^4=16$.",
+      "typical_mistakes": [
+        "Складывает показатели при делении.",
+        "Ошибается в значении $2^4$."
+      ],
+      "recommendation_if_low": "Повторить свойства степеней с одинаковым основанием."
+    },
+    {
+      "id": "q5",
+      "title": "Одночлен",
+      "text": "Найдите значение выражения $(-3a^2b)^2$ при $a=-2$, $b=1$.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "144",
+      "accepted_answers": [
+        "144"
+      ],
+      "topic_weights": {
+        "powers_polynomials": 0.8,
+        "algebra_expressions": 0.2
+      },
+      "skill_weights": {
+        "symbolic_transformations": 0.5,
+        "calculation_accuracy": 0.5
+      },
+      "solution": "$(-3a^2b)^2=9a^4b^2$. При $a=-2$, $b=1$: $9\\cdot16\\cdot1=144$.",
+      "typical_mistakes": [
+        "Не возводит коэффициент в квадрат.",
+        "Ошибается со степенью отрицательного числа."
+      ],
+      "recommendation_if_low": "Повторить степени одночленов и подстановку значений."
+    },
+    {
+      "id": "q6",
+      "title": "Произведение многочленов",
+      "text": "Найдите значение выражения $(x+5)(x-2)$ при $x=3$.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "8",
+      "accepted_answers": [
+        "8"
+      ],
+      "topic_weights": {
+        "powers_polynomials": 0.7,
+        "algebra_expressions": 0.3
+      },
+      "skill_weights": {
+        "symbolic_transformations": 0.5,
+        "calculation_accuracy": 0.5
+      },
+      "solution": "Можно подставить сразу: $(3+5)(3-2)=8\\cdot1=8$.",
+      "typical_mistakes": [
+        "Ошибается при раскрытии скобок.",
+        "Неверно подставляет значение переменной."
+      ],
+      "recommendation_if_low": "Закрепить умножение многочленов и подстановку значений."
+    },
+    {
+      "id": "q7",
+      "title": "Разность квадратов",
+      "text": "Вычислите: $47^2-37^2$.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "840",
+      "accepted_answers": [
+        "840"
+      ],
+      "topic_weights": {
+        "powers_polynomials": 1.0
+      },
+      "skill_weights": {
+        "symbolic_transformations": 0.6,
+        "calculation_accuracy": 0.4
+      },
+      "solution": "$47^2-37^2=(47-37)(47+37)=10\\cdot84=840$.",
+      "typical_mistakes": [
+        "Считает оба квадрата напрямую и ошибается.",
+        "Не узнаёт формулу разности квадратов."
+      ],
+      "recommendation_if_low": "Повторить формулу $a^2-b^2=(a-b)(a+b)$."
+    },
+    {
+      "id": "q8",
+      "title": "Разложение на множители",
+      "text": "Найдите больший корень уравнения $x^2-5x=0$.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "5",
+      "accepted_answers": [
+        "5"
+      ],
+      "topic_weights": {
+        "powers_polynomials": 0.6,
+        "linear_equations": 0.4
+      },
+      "skill_weights": {
+        "symbolic_transformations": 0.5,
+        "equation_solving": 0.4,
+        "calculation_accuracy": 0.1
+      },
+      "solution": "$x^2-5x=x(x-5)=0$, корни $0$ и $5$. Больший корень $5$.",
+      "typical_mistakes": [
+        "Делит на $x$ и теряет корень 0.",
+        "Не выносит общий множитель."
+      ],
+      "recommendation_if_low": "Повторить вынесение общего множителя и правило нулевого произведения."
+    },
+    {
+      "id": "q9",
+      "title": "Значение линейной функции",
+      "text": "Функция задана формулой $y=2x-7$. Найдите $y$ при $x=-4$.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "-15",
+      "accepted_answers": [
+        "-15"
+      ],
+      "topic_weights": {
+        "functions_graphs": 1.0
+      },
+      "skill_weights": {
+        "graph_function_thinking": 0.5,
+        "calculation_accuracy": 0.5
+      },
+      "solution": "$y=2\\cdot(-4)-7=-8-7=-15$.",
+      "typical_mistakes": [
+        "Ошибается со знаком при подстановке.",
+        "Путает $x$ и $y$."
+      ],
+      "recommendation_if_low": "Повторить подстановку значения аргумента в формулу функции."
+    },
+    {
+      "id": "q10",
+      "title": "Линейная функция",
+      "text": "Для функции $y=-3x+8$ найдите $x$, если $y=20$.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "-4",
+      "accepted_answers": [
+        "-4"
+      ],
+      "topic_weights": {
+        "functions_graphs": 0.7,
+        "linear_equations": 0.3
+      },
+      "skill_weights": {
+        "graph_function_thinking": 0.4,
+        "equation_solving": 0.5,
+        "calculation_accuracy": 0.1
+      },
+      "solution": "$20=-3x+8$, $-3x=12$, $x=-4$.",
+      "typical_mistakes": [
+        "Неверно переносит 8.",
+        "Ошибается при делении на отрицательное число."
+      ],
+      "recommendation_if_low": "Закрепить связь линейной функции и линейного уравнения."
+    },
+    {
+      "id": "q11",
+      "title": "Коэффициент прямой",
+      "text": "Прямая $y=kx$ проходит через точку $(-3;12)$. Найдите $k$.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "-4",
+      "accepted_answers": [
+        "-4"
+      ],
+      "topic_weights": {
+        "functions_graphs": 1.0
+      },
+      "skill_weights": {
+        "graph_function_thinking": 0.6,
+        "equation_solving": 0.3,
+        "calculation_accuracy": 0.1
+      },
+      "solution": "$12=k\\cdot(-3)$, значит $k=-4$.",
+      "typical_mistakes": [
+        "Путает координаты точки.",
+        "Ошибается со знаком коэффициента."
+      ],
+      "recommendation_if_low": "Повторить смысл коэффициента $k$ в функции $y=kx$."
+    },
+    {
+      "id": "q12",
+      "title": "Система уравнений",
+      "text": "Решите систему $\\begin{cases}x+y=11,\\\\ x-y=3.\\end{cases}$ Найдите $x$.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "7",
+      "accepted_answers": [
+        "7"
+      ],
+      "topic_weights": {
+        "systems_modeling": 0.8,
+        "linear_equations": 0.2
+      },
+      "skill_weights": {
+        "equation_solving": 0.5,
+        "problem_modeling": 0.3,
+        "calculation_accuracy": 0.2
+      },
+      "solution": "Сложим уравнения: $2x=14$, значит $x=7$.",
+      "typical_mistakes": [
+        "Складывает правые части неверно.",
+        "Находит $y$ вместо $x$."
+      ],
+      "recommendation_if_low": "Повторить метод сложения для систем двух линейных уравнений."
+    },
+    {
+      "id": "q13",
+      "title": "Нуль линейной функции",
+      "text": "Найдите значение $x$, при котором функция $y=-2x+5$ равна нулю. Ответ запишите десятичной дробью.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "decimal",
+      "answer": "2.5",
+      "accepted_answers": [
+        "2.5",
+        "2,5"
+      ],
+      "topic_weights": {
+        "functions_graphs": 0.8,
+        "linear_equations": 0.2
+      },
+      "skill_weights": {
+        "graph_function_thinking": 0.5,
+        "equation_solving": 0.3,
+        "attention_to_format": 0.2
+      },
+      "solution": "$-2x+5=0$, $-2x=-5$, $x=2{,}5$.",
+      "typical_mistakes": [
+        "Путает значение функции и значение аргумента.",
+        "Записывает дробь вместо десятичной дроби."
+      ],
+      "recommendation_if_low": "Повторить нуль функции и решение уравнения $y=0$."
+    },
+    {
+      "id": "q14",
+      "title": "Смежные углы",
+      "text": "Один из смежных углов равен $124^\\circ$. Найдите второй угол.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "56",
+      "accepted_answers": [
+        "56"
+      ],
+      "topic_weights": {
+        "geometry_angles_triangles": 1.0
+      },
+      "skill_weights": {
+        "geometric_reasoning": 0.7,
+        "calculation_accuracy": 0.3
+      },
+      "solution": "Сумма смежных углов равна $180^\\circ$, значит второй угол $180-124=56^\\circ$.",
+      "typical_mistakes": [
+        "Считает смежные углы равными.",
+        "Забывает, что сумма равна 180 градусов."
+      ],
+      "recommendation_if_low": "Повторить смежные и вертикальные углы."
+    },
+    {
+      "id": "q15",
+      "title": "Сумма углов треугольника",
+      "text": "В треугольнике два угла равны $47^\\circ$ и $68^\\circ$. Найдите третий угол.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "65",
+      "accepted_answers": [
+        "65"
+      ],
+      "topic_weights": {
+        "geometry_angles_triangles": 1.0
+      },
+      "skill_weights": {
+        "geometric_reasoning": 0.7,
+        "calculation_accuracy": 0.3
+      },
+      "solution": "$180-47-68=65$.",
+      "typical_mistakes": [
+        "Забывает сумму углов треугольника.",
+        "Ошибается при вычитании."
+      ],
+      "recommendation_if_low": "Повторить сумму углов треугольника."
+    },
+    {
+      "id": "q16",
+      "title": "Равнобедренный треугольник",
+      "text": "В равнобедренном треугольнике угол при вершине равен $38^\\circ$. Найдите угол при основании.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "71",
+      "accepted_answers": [
+        "71"
+      ],
+      "topic_weights": {
+        "geometry_angles_triangles": 1.0
+      },
+      "skill_weights": {
+        "geometric_reasoning": 0.8,
+        "calculation_accuracy": 0.2
+      },
+      "solution": "Углы при основании равны: $(180-38):2=71$.",
+      "typical_mistakes": [
+        "Не делит оставшуюся сумму на два равных угла.",
+        "Путает угол при вершине и угол при основании."
+      ],
+      "recommendation_if_low": "Повторить свойства равнобедренного треугольника."
+    },
+    {
+      "id": "q17",
+      "title": "Внешний угол треугольника",
+      "text": "Внешний угол треугольника равен $132^\\circ$. Один из внутренних углов, не смежных с ним, равен $57^\\circ$. Найдите другой такой внутренний угол.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "75",
+      "accepted_answers": [
+        "75"
+      ],
+      "topic_weights": {
+        "geometry_angles_triangles": 1.0
+      },
+      "skill_weights": {
+        "geometric_reasoning": 0.8,
+        "calculation_accuracy": 0.2
+      },
+      "solution": "Внешний угол равен сумме двух внутренних несмежных: $132=57+x$, значит $x=75$.",
+      "typical_mistakes": [
+        "Путает внешний угол со смежным внутренним.",
+        "Не использует свойство внешнего угла."
+      ],
+      "recommendation_if_low": "Повторить внешний угол треугольника."
+    },
+    {
+      "id": "q18",
+      "title": "Задача на отношение",
+      "text": "Стороны треугольника относятся как $2:3:4$, а его периметр равен 45 см. Найдите наибольшую сторону.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "20",
+      "accepted_answers": [
+        "20"
+      ],
+      "topic_weights": {
+        "systems_modeling": 0.4,
+        "geometry_angles_triangles": 0.4,
+        "data_percent": 0.2
+      },
+      "skill_weights": {
+        "problem_modeling": 0.5,
+        "calculation_accuracy": 0.3,
+        "geometric_reasoning": 0.2
+      },
+      "solution": "Всего $2+3+4=9$ частей. Одна часть $45:9=5$, наибольшая сторона $4\\cdot5=20$.",
+      "typical_mistakes": [
+        "Не складывает все части отношения.",
+        "Находит одну часть, но не умножает на 4."
+      ],
+      "recommendation_if_low": "Повторить задачи на отношение и части."
+    },
+    {
+      "id": "q19",
+      "title": "Среднее арифметическое",
+      "text": "Среднее арифметическое чисел $7$, $9$, $12$ и $x$ равно $10$. Найдите $x$.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "12",
+      "accepted_answers": [
+        "12"
+      ],
+      "topic_weights": {
+        "data_percent": 0.8,
+        "linear_equations": 0.2
+      },
+      "skill_weights": {
+        "problem_modeling": 0.5,
+        "equation_solving": 0.3,
+        "calculation_accuracy": 0.2
+      },
+      "solution": "$\\frac{7+9+12+x}{4}=10$, значит $28+x=40$, $x=12$.",
+      "typical_mistakes": [
+        "Не умножает среднее на количество чисел.",
+        "Ошибается в сумме известных чисел."
+      ],
+      "recommendation_if_low": "Повторить среднее арифметическое и задачи с неизвестным числом."
+    },
+    {
+      "id": "q20",
+      "title": "Проценты",
+      "text": "Число увеличили на $15\\%$ и получили 92. Найдите исходное число.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "80",
+      "accepted_answers": [
+        "80"
+      ],
+      "topic_weights": {
+        "data_percent": 0.8,
+        "linear_equations": 0.2
+      },
+      "skill_weights": {
+        "problem_modeling": 0.4,
+        "equation_solving": 0.3,
+        "calculation_accuracy": 0.3
+      },
+      "solution": "После увеличения число стало $115\\%$ исходного. $92:1{,}15=80$.",
+      "typical_mistakes": [
+        "Находит 15% от 92.",
+        "Вычитает 15 из 92 вместо работы с процентами."
+      ],
+      "recommendation_if_low": "Повторить задачи на нахождение исходной величины после изменения на проценты."
+    }
+  ],
+  "topic_recommendations": {
+    "algebra_expressions": {
+      "low": "Повторить раскрытие скобок, приведение подобных и подстановку значений.",
+      "medium": "Закрепить преобразования выражений на коротких примерах.",
+      "good": "Переходить к выражениям с несколькими скобками и параметрами."
+    },
+    "linear_equations": {
+      "low": "Повторить линейные уравнения, перенос слагаемых и уравнения с дробями.",
+      "medium": "Закрепить уравнения со скобками и дробными коэффициентами.",
+      "good": "Добавлять задачи, где уравнение нужно составить по условию."
+    },
+    "powers_polynomials": {
+      "low": "Повторить степени, одночлены, многочлены и формулы сокращённого умножения.",
+      "medium": "Закрепить свойства степеней и разложение на множители.",
+      "good": "Переходить к комбинированным преобразованиям многочленов."
+    },
+    "functions_graphs": {
+      "low": "Повторить линейную функцию, подстановку значения и смысл коэффициента.",
+      "medium": "Закрепить задачи на $y=kx+b$, нуль функции и точки графика.",
+      "good": "Добавлять задачи на графики и взаимное расположение прямых."
+    },
+    "systems_modeling": {
+      "low": "Повторить системы линейных уравнений и задачи на части.",
+      "medium": "Закрепить метод сложения и перевод условия в систему или выражение.",
+      "good": "Переходить к текстовым задачам, где нужно выбрать модель решения."
+    },
+    "geometry_angles_triangles": {
+      "low": "Повторить смежные углы, сумму углов треугольника и свойства равнобедренного треугольника.",
+      "medium": "Закрепить задачи на углы и треугольники с несколькими шагами.",
+      "good": "Добавлять доказательные мини-задачи и задачи на внешний угол."
+    },
+    "data_percent": {
+      "low": "Повторить проценты, среднее арифметическое и задачи на отношение.",
+      "medium": "Закрепить проценты и данные через задачи с неизвестным.",
+      "good": "Переходить к смешанным задачам с процентами, отношениями и уравнениями."
+    }
+  },
+  "skill_recommendations": {
+    "symbolic_transformations": {
+      "low": "Отработать раскрытие скобок, степени и преобразования многочленов.",
+      "medium": "Закрепить преобразования на заданиях с разными типами выражений.",
+      "good": "Поддерживать навык через более длинные алгебраические выражения."
+    },
+    "equation_solving": {
+      "low": "Повторить базовый алгоритм решения линейных уравнений.",
+      "medium": "Закрепить уравнения со скобками, дробями и отрицательными числами.",
+      "good": "Переходить к задачам, где уравнение нужно составить самому."
+    },
+    "graph_function_thinking": {
+      "low": "Повторить смысл формулы функции и подстановку значений.",
+      "medium": "Закрепить линейную функцию, коэффициент и нуль функции.",
+      "good": "Добавлять задачи на графики и точки прямой."
+    },
+    "calculation_accuracy": {
+      "low": "Нужна регулярная работа над аккуратностью вычислений и проверкой результата.",
+      "medium": "Добавить короткие блоки на вычисления с отрицательными числами и дробями.",
+      "good": "Следить за точностью на многошаговых задачах."
+    },
+    "geometric_reasoning": {
+      "low": "Повторить базовые факты об углах и треугольниках.",
+      "medium": "Закрепить геометрию через задачи на два действия.",
+      "good": "Переходить к задачам с объяснением хода рассуждения."
+    },
+    "problem_modeling": {
+      "low": "Учиться переводить текст задачи в выражение, уравнение или отношение.",
+      "medium": "Отрабатывать задачи на части, среднее и проценты.",
+      "good": "Добавлять смешанные текстовые задачи."
+    },
+    "attention_to_format": {
+      "low": "Следить за тем, какой формат ответа требует условие.",
+      "medium": "Закрепить запись целого числа, дроби и десятичной дроби без лишних единиц.",
+      "good": "Поддерживать аккуратность ответа в заданиях разных типов."
+    }
+  }
+}

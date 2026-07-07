@@ -1,0 +1,1252 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Диагностика знаний</title>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [["$", "$"]], displayMath: [["$$", "$$"]] },
+      svg: { fontCache: "global" }
+    };
+  </script>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&subset=latin,cyrillic" rel="stylesheet">
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <style>
+    :root {
+      --td-ink: #151515;
+      --td-muted: #7b606a;
+      --td-line: rgba(123, 96, 106, 0.24);
+      --td-paper: #ffffff;
+      --td-soft: #f7f2f3;
+      --td-dark: #090909;
+      --td-blue: #cf294b;
+      --td-blue-dark: #a91f3b;
+      --td-red: #cf294b;
+      --td-red-bg: #fff3f5;
+      --td-amber: #ff8562;
+      --td-amber-bg: #fff5ef;
+      --td-indigo: #183057;
+      --td-indigo-bg: #eef2f7;
+      --td-green: #356d5f;
+      --td-green-bg: #eff8f5;
+    }
+
+    body {
+      margin: 0;
+      background: #090909;
+    }
+
+    .td-diagnostic {
+      box-sizing: border-box;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 28px 20px 48px;
+      color: var(--td-ink);
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      line-height: 1.5;
+      background:
+        linear-gradient(180deg, rgba(24, 48, 87, 0.92) 0%, rgba(9, 9, 9, 0.98) 410px, #f7f2f3 410px, #f7f2f3 100%);
+    }
+
+    .td-diagnostic * {
+      box-sizing: border-box;
+    }
+
+    .td-topbar {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(260px, 0.75fr);
+      gap: 18px;
+      align-items: end;
+      padding: 34px 28px 28px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.72), rgba(24, 48, 87, 0.68));
+      color: #ffffff;
+    }
+
+    .td-title {
+      margin: 0 0 8px;
+      font-family: Cormorant, Georgia, serif;
+      font-size: 46px;
+      line-height: 1;
+      letter-spacing: 0;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .td-lead {
+      margin: 0;
+      max-width: 720px;
+      color: rgba(255, 255, 255, 0.76);
+      font-size: 16px;
+    }
+
+    .td-field {
+      display: grid;
+      gap: 6px;
+    }
+
+    .td-label {
+      color: #3c3035;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .td-topbar .td-label {
+      color: rgba(255, 255, 255, 0.74);
+    }
+
+    .td-select,
+    .td-input {
+      width: 100%;
+      min-height: 44px;
+      border: 1px solid rgba(123, 96, 106, 0.34);
+      border-radius: 0;
+      padding: 10px 12px;
+      color: var(--td-ink);
+      background: #fff;
+      font: inherit;
+    }
+
+    .td-select:focus,
+    .td-input:focus {
+      border-color: var(--td-blue);
+      outline: 3px solid rgba(207, 41, 75, 0.14);
+    }
+
+    .td-meta {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin: 18px 0 14px;
+    }
+
+    .td-panel {
+      border: 1px solid var(--td-line);
+      border-radius: 0;
+      background: var(--td-paper);
+      padding: 16px;
+    }
+
+    .td-panel-title {
+      margin: 0 0 6px;
+      font-family: Cormorant, Georgia, serif;
+      font-size: 28px;
+      line-height: 1.25;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .td-description {
+      margin: 0;
+      color: var(--td-muted);
+    }
+
+    .td-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .td-stat {
+      border: 1px solid rgba(123, 96, 106, 0.22);
+      border-radius: 0;
+      background: var(--td-soft);
+      padding: 12px;
+    }
+
+    .td-stat-label {
+      color: var(--td-muted);
+      font-size: 13px;
+    }
+
+    .td-stat-value {
+      margin-top: 2px;
+      font-family: Cormorant, Georgia, serif;
+      font-size: 28px;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+
+    .td-questions {
+      display: grid;
+      gap: 12px;
+      margin: 16px 0;
+    }
+
+    .td-question {
+      border: 1px solid var(--td-line);
+      border-radius: 0;
+      background: #fff;
+      padding: 16px;
+    }
+
+    .td-question-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: flex-start;
+      margin-bottom: 10px;
+    }
+
+    .td-question-title {
+      margin: 0;
+      font-family: Cormorant, Georgia, serif;
+      font-size: 23px;
+      line-height: 1.25;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .td-question-points {
+      color: var(--td-muted);
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    .td-question-text {
+      margin: 0 0 12px;
+    }
+
+    .td-answer-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .td-format {
+      color: var(--td-muted);
+      font-size: 13px;
+    }
+
+    .td-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 16px 0 22px;
+    }
+
+    .td-button {
+      min-height: 44px;
+      border: 1px solid var(--td-blue);
+      border-radius: 0;
+      background: var(--td-blue);
+      color: white;
+      padding: 10px 16px;
+      font: inherit;
+      font-weight: 800;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    .td-button:hover {
+      background: #ffffff;
+      color: #000000;
+    }
+
+    .td-button-secondary {
+      background: #fff;
+      color: var(--td-blue);
+    }
+
+    .td-button-secondary:hover {
+      background: var(--td-blue);
+      color: #fff;
+    }
+
+    .td-report {
+      display: none;
+      margin-top: 20px;
+    }
+
+    .td-report.td-visible {
+      display: block;
+    }
+
+    .td-hero {
+      border: 1px solid var(--td-line);
+      border-radius: 0;
+      background: linear-gradient(135deg, #ffffff 0%, #fff7f8 58%, #f7f2f3 100%);
+      padding: 20px;
+      margin: 16px 0;
+    }
+
+    .td-hero h3,
+    .td-section-title {
+      margin: 0 0 12px;
+      font-family: Cormorant, Georgia, serif;
+      font-size: 30px;
+      line-height: 1.25;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .td-grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .td-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .td-card {
+      border: 1px solid rgba(123, 96, 106, 0.22);
+      border-radius: 0;
+      background: #fff;
+      padding: 14px;
+    }
+
+    .td-card h4 {
+      margin: 0 0 8px;
+      font-family: Cormorant, Georgia, serif;
+      font-size: 22px;
+      line-height: 1.25;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .td-chip {
+      display: inline-block;
+      border-radius: 0;
+      padding: 4px 9px;
+      color: #334155;
+      background: #f1f5f9;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .td-status-priority {
+      border-color: #fecdd3;
+      background: var(--td-red-bg);
+    }
+
+    .td-status-warning {
+      border-color: #fde68a;
+      background: var(--td-amber-bg);
+    }
+
+    .td-status-steady {
+      border-color: #c7d2fe;
+      background: var(--td-indigo-bg);
+    }
+
+    .td-status-strong {
+      border-color: #bbf7d0;
+      background: var(--td-green-bg);
+    }
+
+    .td-progress {
+      width: 100%;
+      height: 9px;
+      border-radius: 0;
+      background: rgba(123, 96, 106, 0.18);
+      overflow: hidden;
+      margin: 10px 0 8px;
+    }
+
+    .td-progress span {
+      display: block;
+      height: 100%;
+      border-radius: 0;
+      background: var(--td-blue);
+    }
+
+    .td-muted {
+      color: var(--td-muted);
+    }
+
+    .td-table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--td-line);
+      border-radius: 0;
+      margin: 12px 0;
+    }
+
+    .td-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 640px;
+      background: white;
+    }
+
+    .td-table th,
+    .td-table td {
+      border-bottom: 1px solid #e5e7eb;
+      padding: 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .td-table th {
+      background: #f7f2f3;
+      font-size: 13px;
+      color: #3c3035;
+      text-transform: uppercase;
+    }
+
+    .td-alert {
+      display: none;
+      border: 1px solid #fecdd3;
+      border-radius: 0;
+      background: var(--td-red-bg);
+      color: #9f1239;
+      padding: 12px;
+      margin: 12px 0;
+    }
+
+    .td-alert.td-visible {
+      display: block;
+    }
+
+    .td-consent-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      background: rgba(0, 0, 0, 0.72);
+    }
+
+    .td-consent-overlay.td-hidden {
+      display: none;
+    }
+
+    .td-consent-dialog {
+      width: min(760px, 100%);
+      max-height: calc(100vh - 36px);
+      overflow: auto;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      background: linear-gradient(135deg, #ffffff 0%, #fff7f8 58%, #f7f2f3 100%);
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+      padding: 26px;
+    }
+
+    .td-consent-title {
+      margin: 0 0 8px;
+      font-family: Cormorant, Georgia, serif;
+      font-size: 36px;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .td-consent-text {
+      margin: 0 0 16px;
+      color: var(--td-muted);
+    }
+
+    .td-consent-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin: 14px 0;
+    }
+
+    .td-checkbox {
+      display: grid;
+      grid-template-columns: 20px minmax(0, 1fr);
+      gap: 10px;
+      align-items: start;
+      margin: 12px 0;
+      color: #33272c;
+      font-size: 14px;
+    }
+
+    .td-checkbox input {
+      width: 18px;
+      height: 18px;
+      margin-top: 2px;
+      accent-color: var(--td-blue);
+    }
+
+    .td-checkbox a {
+      color: var(--td-blue);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(207, 41, 75, 0.4);
+    }
+
+    .td-submit-note {
+      margin: 10px 0 0;
+      color: var(--td-muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 760px) {
+      .td-topbar,
+      .td-meta,
+      .td-stats,
+      .td-grid-2,
+      .td-grid-3,
+      .td-consent-grid,
+      .td-answer-row {
+        grid-template-columns: 1fr;
+      }
+
+      .td-title {
+        font-size: 34px;
+      }
+
+      .td-question-head {
+        display: grid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="td-diagnostic" id="tdDiagnosticApp">
+    <section class="td-consent-overlay" id="tdLeadOverlay" aria-modal="true" role="dialog">
+      <form class="td-consent-dialog" id="tdLeadForm">
+        <h2 class="td-consent-title">Получить диагностику</h2>
+        <p class="td-consent-text">Оставьте контакты перед началом. После прохождения диагностики результат будет отправлен на указанную почту и сохранён в базе школы.</p>
+        <div class="td-consent-grid">
+          <label class="td-field">
+            <span class="td-label">Имя</span>
+            <input class="td-input" id="tdLeadName" type="text" autocomplete="name" required placeholder="Имя ученика">
+          </label>
+          <label class="td-field">
+            <span class="td-label">Почта</span>
+            <input class="td-input" id="tdLeadEmail" type="email" autocomplete="email" required placeholder="name@example.com">
+          </label>
+          <label class="td-field">
+            <span class="td-label">Телефон</span>
+            <input class="td-input" id="tdLeadPhone" type="tel" autocomplete="tel" required placeholder="+7 900 000 00 00">
+          </label>
+        </div>
+        <label class="td-checkbox">
+          <input id="tdConsentPersonal" type="checkbox" required>
+          <span>Я согласен(на) на обработку персональных данных и принимаю <a href="https://shkolainfinita.tilda.ws/politika" target="_blank" rel="noreferrer noopener">политику обработки персональных данных</a>.</span>
+        </label>
+        <label class="td-checkbox">
+          <input id="tdConsentMarketing" type="checkbox">
+          <span>Я согласен(на) получать информационные и рекламные сообщения от школы Infinita и принимаю <a href="https://shkolainfinita.tilda.ws/reklamarassilka" target="_blank" rel="noreferrer noopener">согласие на рекламную рассылку</a>. Согласие можно отозвать.</span>
+        </label>
+        <div class="td-alert" id="tdLeadError"></div>
+        <button class="td-button" type="submit">Начать диагностику</button>
+        <p class="td-submit-note">Рекламное согласие хранится отдельно от согласия на обработку персональных данных.</p>
+      </form>
+    </section>
+
+    <section class="td-topbar">
+      <div>
+        <h1 class="td-title">Диагностика знаний</h1>
+        <p class="td-lead">Выберите диагностику, введите ответы ученика и сформируйте отчёт по темам, навыкам и зонам риска.</p>
+      </div>
+      <label class="td-field">
+        <span class="td-label">Диагностика</span>
+        <select class="td-select" id="tdConfigSelect"></select>
+      </label>
+    </section>
+
+    <section class="td-meta">
+      <label class="td-field">
+        <span class="td-label">Имя ученика</span>
+        <input class="td-input" id="tdStudentName" type="text" readonly placeholder="Имя ученика">
+      </label>
+      <label class="td-field">
+        <span class="td-label">Почта</span>
+        <input class="td-input" id="tdStudentEmail" type="email" readonly placeholder="Почта">
+      </label>
+      <label class="td-field">
+        <span class="td-label">Телефон</span>
+        <input class="td-input" id="tdStudentPhone" type="tel" readonly placeholder="Телефон">
+      </label>
+    </section>
+
+    <section class="td-panel">
+      <h2 class="td-panel-title" id="tdConfigTitle">Загрузка...</h2>
+      <p class="td-description" id="tdConfigDescription"></p>
+      <div class="td-stats">
+        <div class="td-stat">
+          <div class="td-stat-label">Длительность</div>
+          <div class="td-stat-value" id="tdDuration">-</div>
+        </div>
+        <div class="td-stat">
+          <div class="td-stat-label">Заданий</div>
+          <div class="td-stat-value" id="tdQuestionCount">-</div>
+        </div>
+        <div class="td-stat">
+          <div class="td-stat-label">Максимум</div>
+          <div class="td-stat-value" id="tdMaxScore">-</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="td-alert" id="tdError"></div>
+    <div class="td-alert" id="tdSubmitStatus"></div>
+    <form id="tdDiagnosticForm">
+      <section class="td-questions" id="tdQuestions"></section>
+      <div class="td-actions">
+        <button class="td-button" type="submit">Сформировать отчёт</button>
+        <button class="td-button td-button-secondary" id="tdResetButton" type="button">Очистить ответы</button>
+        <button class="td-button td-button-secondary" id="tdCopyButton" type="button">Скопировать результат</button>
+      </div>
+    </form>
+
+    <section class="td-report" id="tdReport"></section>
+  </main>
+
+  <script>
+    window.DIAGNOSTIC_CONFIG_URLS = window.DIAGNOSTIC_CONFIG_URLS || [
+      "diagnostics/ege_math_10_base_readiness_config.json",
+      "diagnostics/oge_base_5_8_diagnostic_config.json",
+      "diagnostics/math_grade_9_diagnostic_config.json",
+      "diagnostics/math_grade_8_diagnostic_config.json",
+      "diagnostics/math_grade_7_diagnostic_config.json",
+      "diagnostics/math_grade_6_diagnostic_config.json",
+      "diagnostics/math_grade_5_diagnostic_config.json"
+    ];
+    window.DIAGNOSTIC_SUBMIT_URL = "https://script.google.com/macros/s/AKfycbwJtVjna8ePs7Kal8Hrm1gR1Vy3n4gCGYrFSAE1rm6E_oc9Y2njUMHiZJXMQJBzOwnV/exec";
+
+
+    const app = {
+      configs: [],
+      currentConfig: null,
+      lastResults: null,
+      lead: null
+    };
+
+    const $ = (id) => document.getElementById(id);
+
+    function escapeHtml(value) {
+      return String(value ?? "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    function sum(values) {
+      return values.reduce((acc, value) => acc + Number(value || 0), 0);
+    }
+
+    function roundNumber(value, digits = 1) {
+      const factor = Math.pow(10, digits);
+      const rounded = Math.round((Number(value) + Number.EPSILON) * factor) / factor;
+      return Number.isInteger(rounded) ? rounded : rounded;
+    }
+
+    function percent(score, maxScore) {
+      if (!maxScore) return 0;
+      return roundNumber((score / maxScore) * 100, 1);
+    }
+
+    function normalizeAnswer(value) {
+      return String(value || "").trim().toLowerCase().replace(",", ".").replace(/\s+/g, "");
+    }
+
+    function isOrdinaryFraction(value) {
+      return /^-?\d+\s*\/\s*-?\d+$/.test(String(value || "").trim());
+    }
+
+    function isValidFormat(value, format) {
+      const normalized = normalizeAnswer(value);
+      if (format === "integer") return /^-?\d+$/.test(normalized);
+      if (format === "decimal") return /^-?\d+\.\d+$/.test(normalized);
+      if (format === "ordinary_fraction") return isOrdinaryFraction(value);
+      if (format === "number") return /^-?\d+(\.\d+)?$/.test(normalized) || isOrdinaryFraction(value);
+      if (format === "text") return String(value || "").trim().length > 0;
+      return true;
+    }
+
+    function answerPlaceholder(format) {
+      const placeholders = {
+        integer: "Введите целое число",
+        decimal: "Введите десятичную дробь",
+        ordinary_fraction: "Введите дробь вида a/b",
+        number: "Введите число",
+        text: "Введите ответ"
+      };
+      return placeholders[format] || "Введите ответ";
+    }
+
+    function answerFormatLabel(format) {
+      const labels = {
+        integer: "целое число",
+        decimal: "десятичная дробь",
+        ordinary_fraction: "обыкновенная дробь",
+        number: "число",
+        text: "текст"
+      };
+      return labels[format] || "ответ";
+    }
+
+    function questionMaxScore(question) {
+      return Number(question.max_score || 0);
+    }
+
+    function recommendation(recommendations, id, value) {
+      const block = recommendations?.[id] || {};
+      if (value < 50) return block.low || "";
+      if (value < 75) return block.medium || "";
+      return block.good || "";
+    }
+
+    function statusKey(value) {
+      if (value < 40) return "priority";
+      if (value < 65) return "warning";
+      if (value < 80) return "steady";
+      return "strong";
+    }
+
+    function statusText(value) {
+      if (value < 40) return "приоритетная зона";
+      if (value < 65) return "требует усиления";
+      if (value < 80) return "рабочий уровень";
+      return "сильная сторона";
+    }
+
+    function findLevel(config, overallPercent) {
+      const levels = config.levels || [];
+      return levels.find((level) => (
+        Number(level.min_percent || 0) <= overallPercent &&
+        overallPercent <= Number(level.max_percent || 100)
+      )) || { name: "уровень не задан", summary: "" };
+    }
+
+    function formatRange(value) {
+      return Array.isArray(value) && value.length === 2 ? `${value[0]}–${value[1]}` : String(value || "");
+    }
+
+    function scoreForecast(config, overallPercent) {
+      const forecast = config.score_forecast;
+      if (!forecast || !Array.isArray(forecast.bands)) return null;
+      const band = forecast.bands.find((item) => (
+        Number(item.min_percent || 0) <= overallPercent &&
+        overallPercent <= Number(item.max_percent || 100)
+      ));
+      if (!band) return null;
+      return {
+        title: forecast.title || "Ориентир по баллам",
+        note: forecast.note || "",
+        readiness_label: band.readiness_label || "",
+        primary_score_range: formatRange(band.primary_score_range),
+        secondary_score_range: formatRange(band.secondary_score_range),
+        comment: band.comment || "",
+        next_goal: band.next_goal || ""
+      };
+    }
+
+    function uniqueTexts(items, limit) {
+      const result = [];
+      const seen = new Set();
+      for (const raw of items) {
+        const text = String(raw || "").trim();
+        if (text && !seen.has(text)) {
+          result.push(text);
+          seen.add(text);
+        }
+        if (result.length >= limit) break;
+      }
+      return result;
+    }
+
+    function computeResults(config) {
+      const topicMeta = Object.fromEntries((config.topics || []).map((item) => [item.id, item]));
+      const skillMeta = Object.fromEntries((config.skills || []).map((item) => [item.id, item]));
+      const topicBuckets = Object.fromEntries((config.topics || []).map((item) => [item.id, { score: 0, max: 0 }]));
+      const skillBuckets = Object.fromEntries((config.skills || []).map((item) => [item.id, { score: 0, max: 0 }]));
+      const questionRows = [];
+      const uncheckedItems = [];
+      const checkedItems = [];
+      let totalScore = 0;
+      let totalMax = 0;
+
+      (config.questions || []).forEach((question, index) => {
+        const qMax = questionMaxScore(question);
+        const input = $(`tdAnswer_${question.id}`)?.value || "";
+        const acceptedAnswers = question.accepted_answers || [question.answer || ""];
+        const normalizedAccepted = new Set(acceptedAnswers.map(normalizeAnswer));
+        const formatValid = isValidFormat(input, question.answer_format || "text");
+        const correct = formatValid && normalizedAccepted.has(normalizeAnswer(input));
+        const qScore = correct ? qMax : 0;
+        const problem = input.trim()
+          ? (formatValid ? "Короткий ответ не совпадает с правильным." : "Ответ записан не в требуемом формате.")
+          : "Короткий ответ не введён.";
+
+        for (const [topicId, weight] of Object.entries(question.topic_weights || {})) {
+          if (!topicBuckets[topicId]) topicBuckets[topicId] = { score: 0, max: 0 };
+          topicBuckets[topicId].max += qMax * Number(weight);
+          if (correct) topicBuckets[topicId].score += qMax * Number(weight);
+        }
+
+        for (const [skillId, weight] of Object.entries(question.skill_weights || {})) {
+          if (!skillBuckets[skillId]) skillBuckets[skillId] = { score: 0, max: 0 };
+          skillBuckets[skillId].max += qMax * Number(weight);
+          if (correct) skillBuckets[skillId].score += qMax * Number(weight);
+        }
+
+        if (correct) {
+          checkedItems.push(`${question.title || `Задание ${index + 1}`}: введён правильный короткий ответ.`);
+        } else {
+          uncheckedItems.push({
+            question_title: question.title || `Задание ${index + 1}`,
+            problem,
+            recommendation: question.recommendation_if_low || ""
+          });
+        }
+
+        questionRows.push({
+          id: question.id,
+          title: question.title || `Задание ${index + 1}`,
+          score: qScore,
+          max_score: qMax,
+          percent: percent(qScore, qMax),
+          checked_count: correct ? 1 : 0,
+          total_items: 1,
+          problem: correct ? "" : problem,
+          recommendation: correct ? "Поддерживать темп и переходить к более сложным вариантам." : (question.recommendation_if_low || "")
+        });
+
+        totalScore += qScore;
+        totalMax += qMax;
+      });
+
+      const topicRows = Object.entries(topicBuckets).map(([id, bucket]) => {
+        const value = percent(bucket.score, bucket.max);
+        return {
+          id,
+          name: topicMeta[id]?.name || id,
+          order: topicMeta[id]?.order || 999,
+          score: roundNumber(bucket.score, 2),
+          max_score: roundNumber(bucket.max, 2),
+          percent: value,
+          recommendation: recommendation(config.topic_recommendations, id, Number(value))
+        };
+      }).sort((a, b) => a.order - b.order);
+
+      const skillRows = Object.entries(skillBuckets).map(([id, bucket]) => {
+        const value = percent(bucket.score, bucket.max);
+        return {
+          id,
+          name: skillMeta[id]?.name || id,
+          order: skillMeta[id]?.order || 999,
+          score: roundNumber(bucket.score, 2),
+          max_score: roundNumber(bucket.max, 2),
+          percent: value,
+          recommendation: recommendation(config.skill_recommendations, id, Number(value))
+        };
+      }).sort((a, b) => a.order - b.order);
+
+      const overallPercent = percent(totalScore, totalMax);
+      const level = findLevel(config, Number(overallPercent));
+      const weakTopics = topicRows.filter((row) => Number(row.percent) < 65).sort((a, b) => a.percent - b.percent);
+      const weakSkills = skillRows.filter((row) => Number(row.percent) < 65).sort((a, b) => a.percent - b.percent);
+      const strongTopics = topicRows.filter((row) => Number(row.percent) >= 80).sort((a, b) => b.percent - a.percent);
+      const findings = [];
+
+      if (weakTopics.length) findings.push(`Главный фокус подготовки: ${weakTopics.slice(0, 3).map((row) => row.name).join(", ")}.`);
+      else if (strongTopics.length) findings.push(`У ученика есть уверенная опора в темах: ${strongTopics.slice(0, 3).map((row) => row.name).join(", ")}.`);
+      if (weakSkills.length) findings.push(`По навыкам заметнее всего проседает: ${weakSkills.slice(0, 3).map((row) => row.name).join(", ")}.`);
+      if (uncheckedItems.length) findings.push(uncheckedItems[0].problem);
+      if (findings.length < 2) findings.push("Следующий шаг — закрепить решения короткими сериями задач с обязательной проверкой ответа.");
+
+      return {
+        total_score: roundNumber(totalScore, 2),
+        total_max: roundNumber(totalMax, 2),
+        overall_percent: overallPercent,
+        overall_level: level.name || "",
+        summary_text: level.summary || "",
+        topic_rows: topicRows,
+        skill_rows: skillRows,
+        question_rows: questionRows,
+        main_findings: uniqueTexts(findings, 4),
+        strengths: uniqueTexts([
+          ...topicRows.filter((row) => Number(row.percent) >= 80).map((row) => `${row.name}: можно использовать как опору в подготовке.`),
+          ...skillRows.filter((row) => Number(row.percent) >= 80).map((row) => `${row.name}: навык проявился уверенно.`),
+          ...checkedItems
+        ], 5),
+        risks: uniqueTexts([
+          ...topicRows.filter((row) => Number(row.percent) < 65).map((row) => `${row.name}: ${row.recommendation}`),
+          ...skillRows.filter((row) => Number(row.percent) < 65).map((row) => `${row.name}: ${row.recommendation}`),
+          ...uncheckedItems.map((item) => `${item.question_title}: ${item.problem}`)
+        ], 6),
+        score_forecast: scoreForecast(config, Number(overallPercent))
+      };
+    }
+
+    function renderConfig() {
+      const config = app.currentConfig;
+      if (!config) return;
+      $("tdConfigTitle").textContent = config.title || "";
+      $("tdConfigDescription").textContent = config.description || "";
+      $("tdDuration").textContent = `${config.duration_minutes || "-"} мин`;
+      $("tdQuestionCount").textContent = String((config.questions || []).length);
+      $("tdMaxScore").textContent = String(sum((config.questions || []).map(questionMaxScore)));
+
+      $("tdQuestions").innerHTML = (config.questions || []).map((question, index) => `
+        <article class="td-question">
+          <div class="td-question-head">
+            <h3 class="td-question-title">Задание ${index + 1}</h3>
+            <span class="td-question-points">максимум ${questionMaxScore(question)} балл</span>
+          </div>
+          <div class="td-question-text">${question.text || ""}</div>
+          <div class="td-answer-row">
+            <label class="td-field">
+              <span class="td-label">Ответ</span>
+              <input class="td-input" id="tdAnswer_${escapeHtml(question.id)}" name="${escapeHtml(question.id)}" type="text" placeholder="${escapeHtml(answerPlaceholder(question.answer_format))}">
+            </label>
+            <span class="td-format">${escapeHtml(answerFormatLabel(question.answer_format))}</span>
+          </div>
+        </article>
+      `).join("");
+
+      $("tdReport").classList.remove("td-visible");
+      if (window.MathJax?.typesetPromise) window.MathJax.typesetPromise();
+    }
+
+    function renderScoreCards(results) {
+      return `
+        <section class="td-hero">
+          <h3>Итог диагностики</h3>
+          <div class="td-grid-3">
+            <div class="td-stat"><div class="td-stat-label">Общий балл</div><div class="td-stat-value">${results.total_score} / ${results.total_max}</div></div>
+            <div class="td-stat"><div class="td-stat-label">Процент</div><div class="td-stat-value">${results.overall_percent}%</div></div>
+            <div class="td-stat"><div class="td-stat-label">Уровень</div><div class="td-stat-value">${escapeHtml(results.overall_level)}</div></div>
+          </div>
+          <p>${escapeHtml(results.summary_text)}</p>
+        </section>
+      `;
+    }
+
+    function renderForecast(forecast) {
+      if (!forecast) return "";
+      return `
+        <section class="td-hero">
+          <h3>${escapeHtml(forecast.title)}</h3>
+          <div class="td-grid-3">
+            <div class="td-stat"><div class="td-stat-label">Готовность</div><div class="td-stat-value">${escapeHtml(forecast.readiness_label)}</div></div>
+            <div class="td-stat"><div class="td-stat-label">Первичный балл</div><div class="td-stat-value">${escapeHtml(forecast.primary_score_range)}</div></div>
+            <div class="td-stat"><div class="td-stat-label">Вторичный балл</div><div class="td-stat-value">${escapeHtml(forecast.secondary_score_range)}</div></div>
+          </div>
+          <p>${escapeHtml(forecast.comment)}</p>
+          <p><strong>Ближайшая цель:</strong> ${escapeHtml(forecast.next_goal)}</p>
+          <p class="td-muted">${escapeHtml(forecast.note)}</p>
+        </section>
+      `;
+    }
+
+    function renderList(items, emptyText) {
+      const visible = items.length ? items : [emptyText];
+      return `<ul>${visible.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>`;
+    }
+
+    function renderBlockCards(title, rows) {
+      return `
+        <section>
+          <h3 class="td-section-title">${escapeHtml(title)}</h3>
+          <div class="td-grid-2">
+            ${rows.map((row) => {
+              const key = statusKey(Number(row.percent));
+              return `
+                <article class="td-card td-status-${key}">
+                  <span class="td-chip">${escapeHtml(statusText(Number(row.percent)))}</span>
+                  <h4>${escapeHtml(row.name)}</h4>
+                  <div class="td-progress"><span style="width:${Math.max(0, Math.min(100, Number(row.percent)))}%"></span></div>
+                  <p><strong>${row.percent}%</strong> · ${escapeHtml(row.score)} / ${escapeHtml(row.max_score)}</p>
+                  <p>${escapeHtml(row.recommendation)}</p>
+                </article>
+              `;
+            }).join("")}
+          </div>
+        </section>
+      `;
+    }
+
+    function renderQuestionTable(rows) {
+      return `
+        <section>
+          <h3 class="td-section-title">По заданиям</h3>
+          <div class="td-table-wrap">
+            <table class="td-table">
+              <thead><tr><th>Задание</th><th>Балл</th><th>Процент</th><th>Проблема</th><th>Рекомендация</th></tr></thead>
+              <tbody>
+                ${rows.map((row, index) => `
+                  <tr>
+                    <td>Задание ${index + 1}</td>
+                    <td>${row.score} / ${row.max_score}</td>
+                    <td>${row.percent}%</td>
+                    <td>${escapeHtml(row.problem || "Существенных проблем не зафиксировано.")}</td>
+                    <td>${escapeHtml(row.recommendation || "")}</td>
+                  </tr>
+                `).join("")}
+              </tbody>
+            </table>
+          </div>
+        </section>
+      `;
+    }
+
+    function renderReport(results) {
+      const studentName = app.lead?.name || "не указано";
+      const studentEmail = app.lead?.email || "не указано";
+      const studentPhone = app.lead?.phone || "не указано";
+      $("tdReport").innerHTML = `
+        ${renderScoreCards(results)}
+        ${renderForecast(results.score_forecast)}
+        <section class="td-grid-2">
+          <article class="td-card">
+            <h4>Данные ученика</h4>
+            <p><strong>Имя:</strong> ${escapeHtml(studentName)}</p>
+            <p><strong>Почта:</strong> ${escapeHtml(studentEmail)}</p>
+            <p><strong>Телефон:</strong> ${escapeHtml(studentPhone)}</p>
+          </article>
+          <article class="td-card">
+            <h4>Главные выводы</h4>
+            ${renderList(results.main_findings, "Выводы не сформированы.")}
+          </article>
+        </section>
+        <section class="td-grid-2">
+          <article class="td-card td-status-strong">
+            <h4>Сильные стороны</h4>
+            ${renderList(results.strengths, "Пока не выделены.")}
+          </article>
+          <article class="td-card td-status-priority">
+            <h4>Зоны риска</h4>
+            ${renderList(results.risks, "Критических рисков не видно.")}
+          </article>
+        </section>
+        ${renderBlockCards("Темы", results.topic_rows)}
+        ${renderBlockCards("Навыки", results.skill_rows)}
+        ${renderQuestionTable(results.question_rows)}
+      `;
+      $("tdReport").classList.add("td-visible");
+      $("tdReport").scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    function showError(message) {
+      $("tdError").textContent = message;
+      $("tdError").classList.add("td-visible");
+    }
+
+    function hideError() {
+      $("tdError").classList.remove("td-visible");
+      $("tdError").textContent = "";
+    }
+
+    function showBox(id, message) {
+      $(id).textContent = message;
+      $(id).classList.add("td-visible");
+    }
+
+    function hideBox(id) {
+      $(id).classList.remove("td-visible");
+      $(id).textContent = "";
+    }
+
+    function normalizePhone(value) {
+      return String(value || "").replace(/[^\d+]/g, "");
+    }
+
+    function validPhone(value) {
+      const digits = String(value || "").replace(/\D/g, "");
+      return digits.length >= 10;
+    }
+
+    function validEmail(value) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(value || "").trim());
+    }
+
+    function collectLead() {
+      return {
+        name: $("tdLeadName").value.trim(),
+        email: $("tdLeadEmail").value.trim(),
+        phone: $("tdLeadPhone").value.trim(),
+        phone_normalized: normalizePhone($("tdLeadPhone").value),
+        personal_data_consent: $("tdConsentPersonal").checked,
+        marketing_consent: $("tdConsentMarketing").checked,
+        consent_links: {
+          personal_data_policy: "https://shkolainfinita.tilda.ws/politika",
+          marketing: "https://shkolainfinita.tilda.ws/reklamarassilka"
+        }
+      };
+    }
+
+    function applyLeadToPage(lead) {
+      $("tdStudentName").value = lead.name;
+      $("tdStudentEmail").value = lead.email;
+      $("tdStudentPhone").value = lead.phone;
+    }
+
+    function collectAnswers() {
+      if (!app.currentConfig) return {};
+      return Object.fromEntries((app.currentConfig.questions || []).map((question) => [
+        question.id,
+        {
+          answer: $(`tdAnswer_${question.id}`)?.value || "",
+          expected_format: question.answer_format || "text"
+        }
+      ]));
+    }
+
+    function buildSubmissionPayload(results) {
+      const forecast = results.score_forecast || null;
+      return {
+        submitted_at: new Date().toISOString(),
+        source: "tilda_diagnostics_page",
+        student: app.lead,
+        diagnostic: {
+          id: app.currentConfig?.id || "",
+          mode: app.currentConfig?.mode || "",
+          title: app.currentConfig?.title || ""
+        },
+        answers: collectAnswers(),
+        result: {
+          total_score: results.total_score,
+          total_max: results.total_max,
+          overall_percent: results.overall_percent,
+          overall_level: results.overall_level,
+          summary_text: results.summary_text,
+          score_forecast: forecast,
+          main_findings: results.main_findings,
+          strengths: results.strengths,
+          risks: results.risks,
+          topic_rows: results.topic_rows,
+          skill_rows: results.skill_rows,
+          question_rows: results.question_rows
+        }
+      };
+    }
+
+    async function submitResults(results) {
+      hideBox("tdSubmitStatus");
+      const payload = buildSubmissionPayload(results);
+      try {
+        const response = await fetch(window.DIAGNOSTIC_SUBMIT_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+        const data = await response.json().catch(() => ({}));
+        if (!response.ok || data.ok === false) {
+          throw new Error(data.error || `HTTP ${response.status}`);
+        }
+        showBox("tdSubmitStatus", "Результат сохранён и отправлен на указанную почту.");
+      } catch (error) {
+        showBox("tdSubmitStatus", `Отчёт сформирован, но не удалось отправить результат в базу: ${error.message}`);
+      }
+    }
+
+    function resultText() {
+      if (!app.lastResults || !app.currentConfig) return "";
+      const r = app.lastResults;
+      const forecast = r.score_forecast
+        ? `\nОриентир ЕГЭ: первичный ${r.score_forecast.primary_score_range}, вторичный ${r.score_forecast.secondary_score_range}`
+        : "";
+      return [
+        `Диагностика: ${app.currentConfig.title}`,
+        `Ученик: ${app.lead?.name || "не указано"}`,
+        `Почта: ${app.lead?.email || "не указано"}`,
+        `Телефон: ${app.lead?.phone || "не указано"}`,
+        `Результат: ${r.total_score} / ${r.total_max} (${r.overall_percent}%)`,
+        `Уровень: ${r.overall_level}`,
+        forecast,
+        `Главные выводы: ${r.main_findings.join(" ")}`
+      ].filter(Boolean).join("\n");
+    }
+
+    async function loadConfigs() {
+      const configs = [];
+      for (const url of window.DIAGNOSTIC_CONFIG_URLS) {
+        const response = await fetch(url, { cache: "no-cache" });
+        if (!response.ok) throw new Error(`Не удалось загрузить ${url}`);
+        const config = await response.json();
+        const allShortAnswer = (config.questions || []).every((q) => (q.answer_type || "manual_check") === "short_answer");
+        if (allShortAnswer) configs.push(config);
+      }
+      return configs;
+    }
+
+    document.addEventListener("DOMContentLoaded", async () => {
+      try {
+        app.configs = await loadConfigs();
+        if (!app.configs.length) {
+          showError("Не найдено диагностик с коротким ответом.");
+          return;
+        }
+        $("tdConfigSelect").innerHTML = app.configs
+          .map((config, index) => `<option value="${index}">${escapeHtml(config.mode)} — ${escapeHtml(config.title)}</option>`)
+          .join("");
+        app.currentConfig = app.configs[0];
+        renderConfig();
+      } catch (error) {
+        showError(`Ошибка загрузки диагностики: ${error.message}`);
+      }
+    });
+
+    $("tdLeadForm").addEventListener("submit", (event) => {
+      event.preventDefault();
+      hideBox("tdLeadError");
+      const lead = collectLead();
+      if (!lead.name) {
+        showBox("tdLeadError", "Введите имя.");
+        return;
+      }
+      if (!validEmail(lead.email)) {
+        showBox("tdLeadError", "Введите корректную почту.");
+        return;
+      }
+      if (!validPhone(lead.phone)) {
+        showBox("tdLeadError", "Введите корректный телефон.");
+        return;
+      }
+      if (!lead.personal_data_consent) {
+        showBox("tdLeadError", "Нужно согласие на обработку персональных данных.");
+        return;
+      }
+      app.lead = lead;
+      applyLeadToPage(lead);
+      $("tdLeadOverlay").classList.add("td-hidden");
+    });
+
+    $("tdConfigSelect").addEventListener("change", (event) => {
+      hideError();
+      app.currentConfig = app.configs[Number(event.target.value)];
+      app.lastResults = null;
+      renderConfig();
+    });
+
+    $("tdDiagnosticForm").addEventListener("submit", (event) => {
+      event.preventDefault();
+      hideError();
+      if (!app.lead) {
+        $("tdLeadOverlay").classList.remove("td-hidden");
+        return;
+      }
+      if (!app.currentConfig) return;
+      app.lastResults = computeResults(app.currentConfig);
+      renderReport(app.lastResults);
+      submitResults(app.lastResults);
+    });
+
+    $("tdResetButton").addEventListener("click", () => {
+      document.querySelectorAll("#tdQuestions input").forEach((input) => { input.value = ""; });
+      $("tdReport").classList.remove("td-visible");
+      app.lastResults = null;
+    });
+
+    $("tdCopyButton").addEventListener("click", async () => {
+      if (!app.lastResults) {
+        showError("Сначала сформируйте отчёт.");
+        return;
+      }
+      try {
+        await navigator.clipboard.writeText(resultText());
+        hideError();
+      } catch (error) {
+        showError("Не удалось скопировать результат автоматически. Выделите текст отчёта вручную.");
+      }
+    });
+  </script>
+</body>
+</html>

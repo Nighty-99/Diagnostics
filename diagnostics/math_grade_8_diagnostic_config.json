@@ -1,0 +1,725 @@
+{
+  "id": "math_grade_8_diagnostic",
+  "mode": "8 класс",
+  "title": "Диагностика знаний по математике за 8 класс",
+  "duration_minutes": "45–55",
+  "description": "Диагностика ключевых тем математики 8 класса: квадратные корни, квадратные уравнения, неравенства, алгебраические дроби, функции, текстовые задачи и геометрия.",
+  "levels": [
+    {
+      "min_percent": 0,
+      "max_percent": 39.9,
+      "name": "нужен разбор базы",
+      "summary": "Есть серьёзные пробелы в темах 8 класса. Перед движением дальше нужно восстановить квадратные корни, квадратные уравнения, преобразования и базовую геометрию."
+    },
+    {
+      "min_percent": 40,
+      "max_percent": 59.9,
+      "name": "база нестабильна",
+      "summary": "Часть тем узнаётся, но результат пока нестабилен. Основной фокус — аккуратность преобразований, решение квадратных уравнений и геометрические факты."
+    },
+    {
+      "min_percent": 60,
+      "max_percent": 79.9,
+      "name": "рабочий уровень",
+      "summary": "База 8 класса в целом есть, но остаются зоны риска. Нужно закрепить корни, уравнения, неравенства, функции и задачи на применение формул."
+    },
+    {
+      "min_percent": 80,
+      "max_percent": 100,
+      "name": "уверенный уровень",
+      "summary": "Ученик уверенно справляется с большинством тем 8 класса. Можно переходить к смешанным задачам и подготовке к темам 9 класса."
+    }
+  ],
+  "topics": [
+    {
+      "id": "square_roots",
+      "name": "Квадратные корни",
+      "order": 1,
+      "critical": true
+    },
+    {
+      "id": "quadratic_equations",
+      "name": "Квадратные уравнения",
+      "order": 2,
+      "critical": true
+    },
+    {
+      "id": "inequalities",
+      "name": "Неравенства",
+      "order": 3,
+      "critical": true
+    },
+    {
+      "id": "algebraic_fractions",
+      "name": "Алгебраические дроби",
+      "order": 4,
+      "critical": true
+    },
+    {
+      "id": "functions_graphs",
+      "name": "Функции и графики",
+      "order": 5,
+      "critical": true
+    },
+    {
+      "id": "word_problems",
+      "name": "Текстовые задачи",
+      "order": 6,
+      "critical": true
+    },
+    {
+      "id": "geometry",
+      "name": "Геометрия",
+      "order": 7,
+      "critical": true
+    },
+    {
+      "id": "data_probability",
+      "name": "Данные и вероятность",
+      "order": 8,
+      "critical": false
+    }
+  ],
+  "skills": [
+    {
+      "id": "symbolic_transformations",
+      "name": "Алгебраические преобразования",
+      "order": 1
+    },
+    {
+      "id": "equation_solving",
+      "name": "Решение уравнений",
+      "order": 2
+    },
+    {
+      "id": "inequality_reasoning",
+      "name": "Работа с неравенствами",
+      "order": 3
+    },
+    {
+      "id": "function_thinking",
+      "name": "Функциональное мышление",
+      "order": 4
+    },
+    {
+      "id": "geometric_reasoning",
+      "name": "Геометрическое мышление",
+      "order": 5
+    },
+    {
+      "id": "problem_modeling",
+      "name": "Моделирование задачи",
+      "order": 6
+    },
+    {
+      "id": "calculation_accuracy",
+      "name": "Вычислительная аккуратность",
+      "order": 7
+    },
+    {
+      "id": "attention_to_format",
+      "name": "Внимание к формату ответа",
+      "order": 8
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "title": "Квадратный корень",
+      "text": "Вычислите: $\\sqrt{144}-\\sqrt{49}$.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "5",
+      "accepted_answers": [
+        "5"
+      ],
+      "topic_weights": {
+        "square_roots": 1.0
+      },
+      "skill_weights": {
+        "symbolic_transformations": 0.4,
+        "calculation_accuracy": 0.6
+      },
+      "solution": "$\\sqrt{144}=12$, $\\sqrt{49}=7$, $12-7=5$.",
+      "typical_mistakes": [
+        "Ошибается в значениях квадратных корней.",
+        "Путает корень и деление на 2."
+      ],
+      "recommendation_if_low": "Повторить таблицу квадратов и смысл квадратного корня."
+    },
+    {
+      "id": "q2",
+      "title": "Преобразование корней",
+      "text": "Упростите выражение: $\\sqrt{50}+\\sqrt{8}$. Ответ запишите в виде $a\\sqrt{2}$, укажите число $a$.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "7",
+      "accepted_answers": [
+        "7"
+      ],
+      "topic_weights": {
+        "square_roots": 1.0
+      },
+      "skill_weights": {
+        "symbolic_transformations": 0.7,
+        "calculation_accuracy": 0.3
+      },
+      "solution": "$\\sqrt{50}=5\\sqrt2$, $\\sqrt8=2\\sqrt2$, сумма $7\\sqrt2$, значит $a=7$.",
+      "typical_mistakes": [
+        "Не выносит множитель из-под корня.",
+        "Складывает подкоренные выражения."
+      ],
+      "recommendation_if_low": "Отработать вынесение множителя из-под квадратного корня."
+    },
+    {
+      "id": "q3",
+      "title": "Корень и степень",
+      "text": "Вычислите: $(\\sqrt{18})^2-\\sqrt{81}$.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "9",
+      "accepted_answers": [
+        "9"
+      ],
+      "topic_weights": {
+        "square_roots": 1.0
+      },
+      "skill_weights": {
+        "symbolic_transformations": 0.5,
+        "calculation_accuracy": 0.5
+      },
+      "solution": "$(\\sqrt{18})^2=18$, $\\sqrt{81}=9$, $18-9=9$.",
+      "typical_mistakes": [
+        "Считает $\\sqrt{18}$ приближённо без необходимости.",
+        "Забывает, что $(\\sqrt a)^2=a$."
+      ],
+      "recommendation_if_low": "Повторить свойства квадратного корня и степени."
+    },
+    {
+      "id": "q4",
+      "title": "Квадратное уравнение",
+      "text": "Найдите больший корень уравнения $x^2-9x+20=0$.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "5",
+      "accepted_answers": [
+        "5"
+      ],
+      "topic_weights": {
+        "quadratic_equations": 1.0
+      },
+      "skill_weights": {
+        "equation_solving": 0.7,
+        "calculation_accuracy": 0.3
+      },
+      "solution": "$x^2-9x+20=(x-4)(x-5)$, корни 4 и 5. Больший корень 5.",
+      "typical_mistakes": [
+        "Ошибается в подборе корней.",
+        "Записывает меньший корень."
+      ],
+      "recommendation_if_low": "Повторить разложение квадратного трёхчлена на множители."
+    },
+    {
+      "id": "q5",
+      "title": "Дискриминант",
+      "text": "Для уравнения $x^2-6x+5=0$ найдите дискриминант.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "16",
+      "accepted_answers": [
+        "16"
+      ],
+      "topic_weights": {
+        "quadratic_equations": 1.0
+      },
+      "skill_weights": {
+        "equation_solving": 0.5,
+        "calculation_accuracy": 0.5
+      },
+      "solution": "$D=b^2-4ac=(-6)^2-4\\cdot1\\cdot5=36-20=16$.",
+      "typical_mistakes": [
+        "Не учитывает знак коэффициента $b$.",
+        "Ошибается в формуле дискриминанта."
+      ],
+      "recommendation_if_low": "Повторить формулу дискриминанта и знаки коэффициентов."
+    },
+    {
+      "id": "q6",
+      "title": "Неполное квадратное уравнение",
+      "text": "Найдите положительный корень уравнения $3x^2-48=0$.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "4",
+      "accepted_answers": [
+        "4"
+      ],
+      "topic_weights": {
+        "quadratic_equations": 0.8,
+        "square_roots": 0.2
+      },
+      "skill_weights": {
+        "equation_solving": 0.6,
+        "calculation_accuracy": 0.4
+      },
+      "solution": "$3x^2=48$, $x^2=16$, положительный корень $x=4$.",
+      "typical_mistakes": [
+        "Забывает второй корень.",
+        "Не делит 48 на 3."
+      ],
+      "recommendation_if_low": "Повторить неполные квадратные уравнения."
+    },
+    {
+      "id": "q7",
+      "title": "Алгебраическая дробь",
+      "text": "Сократите дробь $\\frac{x^2-16}{x-4}$ и найдите её значение при $x=9$.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "13",
+      "accepted_answers": [
+        "13"
+      ],
+      "topic_weights": {
+        "algebraic_fractions": 1.0
+      },
+      "skill_weights": {
+        "symbolic_transformations": 0.7,
+        "calculation_accuracy": 0.3
+      },
+      "solution": "$x^2-16=(x-4)(x+4)$, дробь равна $x+4$ при $x\\ne4$. При $x=9$ получаем 13.",
+      "typical_mistakes": [
+        "Не раскладывает разность квадратов.",
+        "Подставляет значение до сокращения и ошибается."
+      ],
+      "recommendation_if_low": "Повторить сокращение алгебраических дробей через разложение на множители."
+    },
+    {
+      "id": "q8",
+      "title": "ОДЗ алгебраической дроби",
+      "text": "При каком значении $x$ не имеет смысла дробь $\\frac{5}{x+7}$?",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "-7",
+      "accepted_answers": [
+        "-7"
+      ],
+      "topic_weights": {
+        "algebraic_fractions": 1.0
+      },
+      "skill_weights": {
+        "symbolic_transformations": 0.4,
+        "calculation_accuracy": 0.2,
+        "attention_to_format": 0.4
+      },
+      "solution": "Знаменатель не должен быть равен нулю: $x+7=0$, значит $x=-7$.",
+      "typical_mistakes": [
+        "Ищет значение, при котором числитель равен нулю.",
+        "Ошибается со знаком."
+      ],
+      "recommendation_if_low": "Повторить область допустимых значений дробных выражений."
+    },
+    {
+      "id": "q9",
+      "title": "Линейное неравенство",
+      "text": "Сколько целых чисел удовлетворяют неравенству $-3\\le2x+1<9$?",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "6",
+      "accepted_answers": [
+        "6"
+      ],
+      "topic_weights": {
+        "inequalities": 1.0
+      },
+      "skill_weights": {
+        "inequality_reasoning": 0.7,
+        "calculation_accuracy": 0.3
+      },
+      "solution": "$-4\\le2x<8$, значит $-2\\le x<4$. Целые: $-2,-1,0,1,2,3$, всего 6.",
+      "typical_mistakes": [
+        "Неверно работает с двойным неравенством.",
+        "Ошибается при подсчёте целых чисел."
+      ],
+      "recommendation_if_low": "Повторить двойные неравенства и целые решения."
+    },
+    {
+      "id": "q10",
+      "title": "Квадратное неравенство",
+      "text": "Сколько целых чисел удовлетворяют неравенству $x^2<10$?",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "7",
+      "accepted_answers": [
+        "7"
+      ],
+      "topic_weights": {
+        "inequalities": 0.7,
+        "square_roots": 0.3
+      },
+      "skill_weights": {
+        "inequality_reasoning": 0.6,
+        "calculation_accuracy": 0.4
+      },
+      "solution": "$x^2<10$ выполняется для целых $x=-3,-2,-1,0,1,2,3$, всего 7.",
+      "typical_mistakes": [
+        "Считает только положительные значения.",
+        "Включает $x=4$."
+      ],
+      "recommendation_if_low": "Повторить смысл квадратного неравенства и симметрию относительно нуля."
+    },
+    {
+      "id": "q11",
+      "title": "Функция $y=x^2$",
+      "text": "Найдите значение функции $y=x^2-6x+5$ при $x=4$.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "-3",
+      "accepted_answers": [
+        "-3"
+      ],
+      "topic_weights": {
+        "functions_graphs": 0.8,
+        "quadratic_equations": 0.2
+      },
+      "skill_weights": {
+        "function_thinking": 0.5,
+        "calculation_accuracy": 0.5
+      },
+      "solution": "$4^2-6\\cdot4+5=16-24+5=-3$.",
+      "typical_mistakes": [
+        "Ошибается при подстановке.",
+        "Путает значение функции и корень уравнения."
+      ],
+      "recommendation_if_low": "Повторить подстановку значения аргумента в формулу функции."
+    },
+    {
+      "id": "q12",
+      "title": "Вершина параболы",
+      "text": "Найдите абсциссу вершины параболы $y=x^2-8x+3$.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "4",
+      "accepted_answers": [
+        "4"
+      ],
+      "topic_weights": {
+        "functions_graphs": 1.0
+      },
+      "skill_weights": {
+        "function_thinking": 0.7,
+        "calculation_accuracy": 0.3
+      },
+      "solution": "Абсцисса вершины равна $x_0=-\\frac{b}{2a}=\\frac{8}{2}=4$.",
+      "typical_mistakes": [
+        "Забывает знак минус в формуле.",
+        "Делит на $a$, а не на $2a$."
+      ],
+      "recommendation_if_low": "Повторить вершину параболы и формулу $x_0=-\\frac{b}{2a}$."
+    },
+    {
+      "id": "q13",
+      "title": "Текстовая задача на уравнение",
+      "text": "Произведение двух последовательных натуральных чисел равно 72. Найдите большее число.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "9",
+      "accepted_answers": [
+        "9"
+      ],
+      "topic_weights": {
+        "word_problems": 0.6,
+        "quadratic_equations": 0.4
+      },
+      "skill_weights": {
+        "problem_modeling": 0.6,
+        "equation_solving": 0.3,
+        "calculation_accuracy": 0.1
+      },
+      "solution": "Подходящие последовательные числа: 8 и 9, $8\\cdot9=72$. Большее число 9.",
+      "typical_mistakes": [
+        "Берёт любые множители, а не последовательные числа.",
+        "Записывает меньшее число."
+      ],
+      "recommendation_if_low": "Тренировать перевод текстового условия в уравнение или подбор с проверкой."
+    },
+    {
+      "id": "q14",
+      "title": "Задача на движение",
+      "text": "Автомобиль проехал 180 км. Если бы скорость была на 15 км/ч больше, он потратил бы на 1 час меньше. Найдите исходную скорость.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "45",
+      "accepted_answers": [
+        "45"
+      ],
+      "topic_weights": {
+        "word_problems": 0.7,
+        "quadratic_equations": 0.3
+      },
+      "skill_weights": {
+        "problem_modeling": 0.7,
+        "equation_solving": 0.2,
+        "calculation_accuracy": 0.1
+      },
+      "solution": "При скорости 45 км/ч время 4 часа. При скорости 60 км/ч время 3 часа, что на 1 час меньше.",
+      "typical_mistakes": [
+        "Путает скорость и время.",
+        "Не проверяет найденную скорость в условии."
+      ],
+      "recommendation_if_low": "Повторить задачи на движение и связь $S=vt$."
+    },
+    {
+      "id": "q15",
+      "title": "Среднее значение",
+      "text": "Среднее арифметическое чисел $12$, $18$, $x$ и $26$ равно $20$. Найдите $x$.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "24",
+      "accepted_answers": [
+        "24"
+      ],
+      "topic_weights": {
+        "data_probability": 0.8,
+        "word_problems": 0.2
+      },
+      "skill_weights": {
+        "problem_modeling": 0.5,
+        "equation_solving": 0.3,
+        "calculation_accuracy": 0.2
+      },
+      "solution": "$\\frac{12+18+x+26}{4}=20$, значит $56+x=80$, $x=24$.",
+      "typical_mistakes": [
+        "Не умножает среднее на количество чисел.",
+        "Ошибается при сложении известных чисел."
+      ],
+      "recommendation_if_low": "Повторить среднее арифметическое с неизвестным числом."
+    },
+    {
+      "id": "q16",
+      "title": "Вероятность",
+      "text": "В коробке 5 белых, 3 чёрных и 2 красных шара. Какова вероятность вынуть чёрный шар? Ответ запишите обыкновенной дробью.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "ordinary_fraction",
+      "answer": "3/10",
+      "accepted_answers": [
+        "3/10"
+      ],
+      "topic_weights": {
+        "data_probability": 1.0
+      },
+      "skill_weights": {
+        "problem_modeling": 0.4,
+        "calculation_accuracy": 0.3,
+        "attention_to_format": 0.3
+      },
+      "solution": "Всего $5+3+2=10$ шаров, чёрных 3. Вероятность $\\frac{3}{10}$.",
+      "typical_mistakes": [
+        "Берёт знаменателем число не всех шаров.",
+        "Записывает десятичную дробь вместо обыкновенной."
+      ],
+      "recommendation_if_low": "Повторить классическое определение вероятности."
+    },
+    {
+      "id": "q17",
+      "title": "Теорема Пифагора",
+      "text": "Катеты прямоугольного треугольника равны 9 и 12. Найдите гипотенузу.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "15",
+      "accepted_answers": [
+        "15"
+      ],
+      "topic_weights": {
+        "geometry": 1.0
+      },
+      "skill_weights": {
+        "geometric_reasoning": 0.7,
+        "calculation_accuracy": 0.3
+      },
+      "solution": "$c=\\sqrt{9^2+12^2}=\\sqrt{81+144}=\\sqrt{225}=15$.",
+      "typical_mistakes": [
+        "Складывает катеты без квадратов.",
+        "Ошибается при извлечении корня."
+      ],
+      "recommendation_if_low": "Повторить теорему Пифагора."
+    },
+    {
+      "id": "q18",
+      "title": "Площадь трапеции",
+      "text": "Основания трапеции равны 8 и 14, высота равна 5. Найдите площадь трапеции.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "55",
+      "accepted_answers": [
+        "55"
+      ],
+      "topic_weights": {
+        "geometry": 1.0
+      },
+      "skill_weights": {
+        "geometric_reasoning": 0.6,
+        "calculation_accuracy": 0.4
+      },
+      "solution": "$S=\\frac{8+14}{2}\\cdot5=11\\cdot5=55$.",
+      "typical_mistakes": [
+        "Забывает делить сумму оснований на 2.",
+        "Путает формулу площади трапеции с площадью прямоугольника."
+      ],
+      "recommendation_if_low": "Повторить формулу площади трапеции."
+    },
+    {
+      "id": "q19",
+      "title": "Площадь круга",
+      "text": "Радиус круга равен 6. Найдите площадь круга, делённую на $\\pi$.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "36",
+      "accepted_answers": [
+        "36"
+      ],
+      "topic_weights": {
+        "geometry": 1.0
+      },
+      "skill_weights": {
+        "geometric_reasoning": 0.5,
+        "calculation_accuracy": 0.3,
+        "attention_to_format": 0.2
+      },
+      "solution": "$S=\\pi r^2=36\\pi$, значит $S/\\pi=36$.",
+      "typical_mistakes": [
+        "Использует формулу длины окружности вместо площади.",
+        "Забывает возвести радиус в квадрат."
+      ],
+      "recommendation_if_low": "Повторить площадь круга и длину окружности."
+    },
+    {
+      "id": "q20",
+      "title": "Подобные треугольники",
+      "text": "Стороны двух подобных треугольников относятся как $3:5$. Меньшая сторона первого треугольника равна 12. Найдите соответствующую сторону второго треугольника.",
+      "max_score": 1,
+      "answer_type": "short_answer",
+      "answer_format": "integer",
+      "answer": "20",
+      "accepted_answers": [
+        "20"
+      ],
+      "topic_weights": {
+        "geometry": 0.7,
+        "word_problems": 0.3
+      },
+      "skill_weights": {
+        "geometric_reasoning": 0.5,
+        "problem_modeling": 0.3,
+        "calculation_accuracy": 0.2
+      },
+      "solution": "Если 3 части соответствуют 12, то 1 часть равна 4. Соответствующая сторона второго треугольника: $5\\cdot4=20$.",
+      "typical_mistakes": [
+        "Путает направление отношения.",
+        "Не находит одну часть."
+      ],
+      "recommendation_if_low": "Повторить подобие треугольников и отношение соответствующих сторон."
+    }
+  ],
+  "topic_recommendations": {
+    "square_roots": {
+      "low": "Повторить смысл квадратного корня, таблицу квадратов и преобразование корней.",
+      "medium": "Закрепить свойства корней и упрощение выражений.",
+      "good": "Переходить к выражениям с несколькими корнями и уравнениям."
+    },
+    "quadratic_equations": {
+      "low": "Повторить квадратные уравнения: разложение на множители, дискриминант, неполные уравнения.",
+      "medium": "Закрепить разные способы решения квадратных уравнений.",
+      "good": "Добавлять текстовые задачи, приводящие к квадратным уравнениям."
+    },
+    "inequalities": {
+      "low": "Повторить линейные и простейшие квадратные неравенства.",
+      "medium": "Закрепить работу с двойными неравенствами и целыми решениями.",
+      "good": "Переходить к неравенствам, связанным с функциями и графиками."
+    },
+    "algebraic_fractions": {
+      "low": "Повторить ОДЗ, сокращение дробей и разложение числителя на множители.",
+      "medium": "Закрепить алгебраические дроби на задачах с подстановкой.",
+      "good": "Переходить к дробно-рациональным выражениям и уравнениям."
+    },
+    "functions_graphs": {
+      "low": "Повторить подстановку в формулу функции и свойства параболы.",
+      "medium": "Закрепить вершину параболы, нули функции и чтение графиков.",
+      "good": "Добавлять задачи на связь уравнений, неравенств и графиков."
+    },
+    "word_problems": {
+      "low": "Учиться переводить текст задачи в уравнение или проверяемую модель.",
+      "medium": "Закрепить задачи на движение, произведение чисел и подобие.",
+      "good": "Решать задачи в несколько шагов с проверкой результата."
+    },
+    "geometry": {
+      "low": "Повторить теорему Пифагора, площади фигур и подобие.",
+      "medium": "Закрепить геометрические формулы в задачах с вычислениями.",
+      "good": "Переходить к смешанным задачам, где нужно выбрать нужную формулу."
+    },
+    "data_probability": {
+      "low": "Повторить среднее арифметическое и простую вероятность.",
+      "medium": "Закрепить задачи с неизвестным и форматом дробного ответа.",
+      "good": "Добавлять задачи на данные, вероятность и проценты."
+    }
+  },
+  "skill_recommendations": {
+    "symbolic_transformations": {
+      "low": "Отработать преобразования корней, дробей и алгебраических выражений.",
+      "medium": "Закрепить преобразования на коротких задачах разных типов.",
+      "good": "Поддерживать навык через комбинированные выражения."
+    },
+    "equation_solving": {
+      "low": "Повторить квадратные и линейные уравнения, дискриминант и разложение на множители.",
+      "medium": "Закрепить разные способы решения уравнений.",
+      "good": "Добавлять задачи, где уравнение нужно составить самостоятельно."
+    },
+    "inequality_reasoning": {
+      "low": "Повторить смысл неравенства и работу с промежутками.",
+      "medium": "Отработать целые решения и двойные неравенства.",
+      "good": "Переходить к неравенствам с графической интерпретацией."
+    },
+    "function_thinking": {
+      "low": "Повторить формулы функций, подстановку и вершину параболы.",
+      "medium": "Закрепить задачи на значение функции и элементы графика.",
+      "good": "Добавлять задачи на связь функции с уравнениями."
+    },
+    "geometric_reasoning": {
+      "low": "Повторить основные формулы геометрии 8 класса.",
+      "medium": "Закрепить вычислительные задачи на площадь, Пифагора и подобие.",
+      "good": "Переходить к задачам, где нужно выбрать подходящий геометрический факт."
+    },
+    "problem_modeling": {
+      "low": "Учиться переводить условие в уравнение, пропорцию или проверку.",
+      "medium": "Отрабатывать задачи на движение, подобие и среднее.",
+      "good": "Решать смешанные текстовые задачи с несколькими этапами."
+    },
+    "calculation_accuracy": {
+      "low": "Нужна регулярная проверка вычислений, особенно со знаками, корнями и дробями.",
+      "medium": "Добавить короткие блоки на аккуратность в алгебре и геометрии.",
+      "good": "Поддерживать точность в длинных решениях."
+    },
+    "attention_to_format": {
+      "low": "Следить за тем, какой формат ответа требуется: целое число, дробь или десятичная дробь.",
+      "medium": "Закрепить запись ответа без лишних единиц и лишних символов.",
+      "good": "Поддерживать аккуратность ответа в задачах разных типов."
+    }
+  }
+}
