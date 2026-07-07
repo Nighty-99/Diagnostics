@@ -620,7 +620,8 @@
       configs: [],
       currentConfig: null,
       lastResults: null,
-      lead: null
+      lead: null,
+      configsLoaded: false
     };
 
     const $ = (id) => document.getElementById(id);
@@ -1068,8 +1069,6 @@
     function scheduleParentHeightUpdate() {
       notifyParentHeight();
       window.setTimeout(notifyParentHeight, 80);
-      window.setTimeout(notifyParentHeight, 400);
-      window.setTimeout(notifyParentHeight, 1200);
     }
 
     function setDiagnosticLocked(locked) {
@@ -1208,6 +1207,7 @@
     }
 
     async function loadConfigs() {
+      if (app.configsLoaded) return app.configs;
       const configs = [];
       for (const url of window.DIAGNOSTIC_CONFIG_URLS) {
         const response = await fetch(url, { cache: "no-cache" });
@@ -1216,10 +1216,13 @@
         const allShortAnswer = (config.questions || []).every((q) => (q.answer_type || "manual_check") === "short_answer");
         if (allShortAnswer) configs.push(config);
       }
+      app.configs = configs;
+      app.configsLoaded = true;
       return configs;
     }
 
-    document.addEventListener("DOMContentLoaded", async () => {
+    async function initDiagnostics() {
+      if (app.configsLoaded) return;
       try {
         app.configs = await loadConfigs();
         if (!app.configs.length) {
@@ -1235,10 +1238,16 @@
         scheduleParentHeightUpdate();
       } catch (error) {
         showError(`Ошибка загрузки диагностики: ${error.message}`);
+        scheduleParentHeightUpdate();
       }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      setDiagnosticLocked(true);
+      scheduleParentHeightUpdate();
     });
 
-    $("tdLeadForm").addEventListener("submit", (event) => {
+    $("tdLeadForm").addEventListener("submit", async (event) => {
       event.preventDefault();
       hideBox("tdLeadError");
       const lead = collectLead();
@@ -1260,9 +1269,15 @@
       }
       app.lead = lead;
       applyLeadToPage(lead);
-      $("tdLeadOverlay").classList.add("td-hidden");
-      setDiagnosticLocked(false);
-      $("tdDiagnosticApp").scrollIntoView({ behavior: "smooth", block: "start" });
+      try {
+        await initDiagnostics();
+        $("tdLeadOverlay").classList.add("td-hidden");
+        setDiagnosticLocked(false);
+        $("tdDiagnosticApp").scrollIntoView({ behavior: "smooth", block: "start" });
+      } catch (error) {
+        showBox("tdLeadError", `Не удалось загрузить диагностику: ${error.message}`);
+        setDiagnosticLocked(true);
+      }
     });
 
     $("tdConfigSelect").addEventListener("change", (event) => {
@@ -1312,9 +1327,6 @@
 
     window.addEventListener("load", scheduleParentHeightUpdate);
     window.addEventListener("resize", scheduleParentHeightUpdate);
-    if ("ResizeObserver" in window) {
-      new ResizeObserver(scheduleParentHeightUpdate).observe(document.body);
-    }
   </script>
 </body>
 </html>
