@@ -54,6 +54,19 @@
       box-sizing: border-box;
     }
 
+    .td-requires-lead {
+      display: none;
+    }
+
+    .td-diagnostic.td-lead-ready .td-requires-lead {
+      display: block;
+    }
+
+    .td-diagnostic.td-lead-ready .td-topbar.td-requires-lead,
+    .td-diagnostic.td-lead-ready .td-meta.td-requires-lead {
+      display: grid;
+    }
+
     .td-topbar {
       display: grid;
       grid-template-columns: minmax(0, 1.5fr) minmax(260px, 0.75fr);
@@ -499,10 +512,10 @@
 </head>
 <body>
   <main class="td-diagnostic" id="tdDiagnosticApp">
-    <section class="td-consent-overlay" id="tdLeadOverlay" aria-modal="true" role="dialog">
+    <section class="td-consent-overlay" id="tdLeadOverlay">
       <form class="td-consent-dialog" id="tdLeadForm">
         <h2 class="td-consent-title">Получить диагностику</h2>
-        <p class="td-consent-text">Оставьте контакты перед началом. После прохождения диагностики результат будет отправлен на указанную почту и сохранён в базе школы.</p>
+        <p class="td-consent-text">Оставьте контакты перед началом. После прохождения диагностики результат появится на этой странице, а данные будут сохранены в базе школы.</p>
         <div class="td-consent-grid">
           <label class="td-field">
             <span class="td-label">Имя</span>
@@ -531,7 +544,7 @@
       </form>
     </section>
 
-    <section class="td-topbar">
+    <section class="td-topbar td-requires-lead">
       <div>
         <h1 class="td-title">Диагностика знаний</h1>
         <p class="td-lead">Выберите диагностику, введите ответы ученика и сформируйте отчёт по темам, навыкам и зонам риска.</p>
@@ -542,7 +555,7 @@
       </label>
     </section>
 
-    <section class="td-meta">
+    <section class="td-meta td-requires-lead">
       <label class="td-field">
         <span class="td-label">Имя ученика</span>
         <input class="td-input" id="tdStudentName" type="text" readonly placeholder="Имя ученика">
@@ -557,7 +570,7 @@
       </label>
     </section>
 
-    <section class="td-panel">
+    <section class="td-panel td-requires-lead">
       <h2 class="td-panel-title" id="tdConfigTitle">Загрузка...</h2>
       <p class="td-description" id="tdConfigDescription"></p>
       <div class="td-stats">
@@ -578,7 +591,7 @@
 
     <div class="td-alert" id="tdError"></div>
     <div class="td-alert" id="tdSubmitStatus"></div>
-    <form id="tdDiagnosticForm">
+    <form id="tdDiagnosticForm" class="td-requires-lead">
       <section class="td-questions" id="tdQuestions"></section>
       <div class="td-actions">
         <button class="td-button" type="submit">Сформировать отчёт</button>
@@ -1238,6 +1251,7 @@
       app.lead = lead;
       applyLeadToPage(lead);
       $("tdLeadOverlay").classList.add("td-hidden");
+      $("tdDiagnosticApp").classList.add("td-lead-ready");
       scheduleParentHeightUpdate();
     });
 
