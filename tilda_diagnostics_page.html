@@ -605,7 +605,7 @@
       "diagnostics/math_grade_6_diagnostic_config.json",
       "diagnostics/math_grade_5_diagnostic_config.json"
     ];
-    window.DIAGNOSTIC_SUBMIT_URL = "https://script.google.com/macros/s/AKfycbwJtVjna8ePs7Kal8Hrm1gR1Vy3n4gCGYrFSAE1rm6E_oc9Y2njUMHiZJXMQJBzOwnV/exec";
+    window.DIAGNOSTIC_SUBMIT_URL = "https://script.google.com/macros/s/AKfycbzT4W6Lzn2BnvsM_qGL3r4V-p9vTExaSUCQeQXs1ZNrS-ZoLQlvnGPid-uShOnESbIe/exec";
 
 
     const app = {
@@ -1122,6 +1122,16 @@
       hideBox("tdSubmitStatus");
       const payload = buildSubmissionPayload(results);
       try {
+        const isGoogleScript = window.DIAGNOSTIC_SUBMIT_URL.includes("script.google.com");
+        if (isGoogleScript) {
+          await fetch(window.DIAGNOSTIC_SUBMIT_URL, {
+            method: "POST",
+            mode: "no-cors",
+            body: JSON.stringify(payload)
+          });
+          showBox("tdSubmitStatus", "Результат отправлен на сохранение.");
+          return;
+        }
         const response = await fetch(window.DIAGNOSTIC_SUBMIT_URL, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -1131,7 +1141,7 @@
         if (!response.ok || data.ok === false) {
           throw new Error(data.error || `HTTP ${response.status}`);
         }
-        showBox("tdSubmitStatus", "Результат сохранён и отправлен на указанную почту.");
+        showBox("tdSubmitStatus", "Результат сохранён.");
       } catch (error) {
         showBox("tdSubmitStatus", `Отчёт сформирован, но не удалось отправить результат в базу: ${error.message}`);
       }
