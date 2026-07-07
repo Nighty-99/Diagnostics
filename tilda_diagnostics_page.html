@@ -605,7 +605,7 @@
       "diagnostics/math_grade_6_diagnostic_config.json",
       "diagnostics/math_grade_5_diagnostic_config.json"
     ];
-    window.DIAGNOSTIC_SUBMIT_URL = "https://script.google.com/macros/s/AKfycbwXWrEHrV4QpreRN_yo13OiULEMsRXypjd37AakvFvDLKamc2Hd4jKX0Fxcsfz20NdT/exec";
+    window.DIAGNOSTIC_SUBMIT_URL = "https://script.google.com/macros/s/AKfycbwPLjT-05H3TPiWzShrcetMYTlwMzOrtwtGVBV3iG63VnTXHoFNd8lPrAiCE_7LS30g/exec";
 
 
     const app = {
@@ -1044,6 +1044,35 @@
       $(id).textContent = "";
     }
 
+    function notifyParentHeight() {
+      if (window.parent === window) return;
+      const body = document.body;
+      const html = document.documentElement;
+      const height = Math.max(
+        body.scrollHeight,
+        body.offsetHeight,
+        html.clientHeight,
+        html.scrollHeight,
+        html.offsetHeight
+      );
+      window.parent.postMessage({
+        type: "infinitaDiagnosticHeight",
+        height
+      }, "*");
+    }
+
+    function scheduleParentHeightUpdate() {
+      notifyParentHeight();
+      window.setTimeout(notifyParentHeight, 80);
+      window.setTimeout(notifyParentHeight, 400);
+      window.setTimeout(notifyParentHeight, 1200);
+    }
+
+    if (window.parent !== window) {
+      document.documentElement.style.overflow = "hidden";
+      document.body.style.overflow = "hidden";
+    }
+
     function normalizePhone(value) {
       return String(value || "").replace(/[^\d+]/g, "");
     }
@@ -1189,6 +1218,7 @@
           .join("");
         app.currentConfig = app.configs[0];
         renderConfig();
+        scheduleParentHeightUpdate();
       } catch (error) {
         showError(`Ошибка загрузки диагностики: ${error.message}`);
       }
@@ -1217,6 +1247,7 @@
       app.lead = lead;
       applyLeadToPage(lead);
       $("tdLeadOverlay").classList.add("td-hidden");
+      scheduleParentHeightUpdate();
     });
 
     $("tdConfigSelect").addEventListener("change", (event) => {
@@ -1224,6 +1255,7 @@
       app.currentConfig = app.configs[Number(event.target.value)];
       app.lastResults = null;
       renderConfig();
+      scheduleParentHeightUpdate();
     });
 
     $("tdDiagnosticForm").addEventListener("submit", (event) => {
@@ -1237,12 +1269,14 @@
       app.lastResults = computeResults(app.currentConfig);
       renderReport(app.lastResults);
       submitResults(app.lastResults);
+      scheduleParentHeightUpdate();
     });
 
     $("tdResetButton").addEventListener("click", () => {
       document.querySelectorAll("#tdQuestions input").forEach((input) => { input.value = ""; });
       $("tdReport").classList.remove("td-visible");
       app.lastResults = null;
+      scheduleParentHeightUpdate();
     });
 
     $("tdCopyButton").addEventListener("click", async () => {
@@ -1257,6 +1291,12 @@
         showError("Не удалось скопировать результат автоматически. Выделите текст отчёта вручную.");
       }
     });
+
+    window.addEventListener("load", scheduleParentHeightUpdate);
+    window.addEventListener("resize", scheduleParentHeightUpdate);
+    if ("ResizeObserver" in window) {
+      new ResizeObserver(scheduleParentHeightUpdate).observe(document.body);
+    }
   </script>
 </body>
 </html>
