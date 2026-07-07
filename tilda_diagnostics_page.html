@@ -1068,10 +1068,13 @@
       window.setTimeout(notifyParentHeight, 1200);
     }
 
-    if (window.parent !== window) {
+    window.addEventListener("message", (event) => {
+      const data = event.data || {};
+      if (data.type !== "infinitaDiagnosticHostReady") return;
       document.documentElement.style.overflow = "hidden";
       document.body.style.overflow = "hidden";
-    }
+      scheduleParentHeightUpdate();
+    });
 
     function normalizePhone(value) {
       return String(value || "").replace(/[^\d+]/g, "");
