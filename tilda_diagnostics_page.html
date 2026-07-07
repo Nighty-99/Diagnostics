@@ -12,7 +12,6 @@
   </script>
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&subset=latin,cyrillic" rel="stylesheet">
-  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
   <style>
     :root {
       --td-ink: #151515;
@@ -515,7 +514,7 @@
     <section class="td-consent-overlay" id="tdLeadOverlay">
       <form class="td-consent-dialog" id="tdLeadForm">
         <h2 class="td-consent-title">Получить диагностику</h2>
-        <p class="td-consent-text">Оставьте контакты перед началом. После прохождения диагностики результат сразу появится на этой странице, а данные будут сохранены в базе школы.</p>
+        <p class="td-consent-text">Для прохождения диагностики необходимо заполнить контактную информацию.</p>
         <div class="td-consent-grid">
           <label class="td-field">
             <span class="td-label">Имя</span>
@@ -597,6 +596,8 @@
         <button class="td-button" type="submit">Сформировать отчёт</button>
         <button class="td-button td-button-secondary" id="tdResetButton" type="button">Очистить ответы</button>
         <button class="td-button td-button-secondary" id="tdCopyButton" type="button">Скопировать результат</button>
+        <button class="td-button td-button-secondary" id="tdDownloadHtmlButton" type="button">Скачать HTML</button>
+        <button class="td-button td-button-secondary" id="tdPrintPdfButton" type="button">Сохранить PDF</button>
       </div>
     </form>
 
@@ -621,7 +622,8 @@
       currentConfig: null,
       lastResults: null,
       lead: null,
-      configsLoaded: false
+      configsLoaded: false,
+      mathJaxLoading: null
     };
 
     const $ = (id) => document.getElementById(id);
@@ -677,6 +679,27 @@
         text: "Введите ответ"
       };
       return placeholders[format] || "Введите ответ";
+    }
+
+    function ensureMathJax() {
+      if (window.MathJax?.typesetPromise) return Promise.resolve(window.MathJax);
+      if (app.mathJaxLoading) return app.mathJaxLoading;
+      app.mathJaxLoading = new Promise((resolve, reject) => {
+        const script = document.createElement("script");
+        script.src = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js";
+        script.async = true;
+        script.onload = () => resolve(window.MathJax);
+        script.onerror = () => reject(new Error("Не удалось загрузить MathJax"));
+        document.head.appendChild(script);
+      });
+      return app.mathJaxLoading;
+    }
+
+    function typesetMath() {
+      ensureMathJax()
+        .then((mathJax) => mathJax?.typesetPromise?.())
+        .then(scheduleParentHeightUpdate)
+        .catch(() => scheduleParentHeightUpdate());
     }
 
     function answerFormatLabel(format) {
@@ -912,7 +935,7 @@
 
       $("tdReport").classList.remove("td-visible");
       $("tdReport").innerHTML = "";
-      if (window.MathJax?.typesetPromise) window.MathJax.typesetPromise();
+      typesetMath();
     }
 
     function renderScoreCards(results) {
@@ -1206,6 +1229,76 @@
       ].filter(Boolean).join("\n");
     }
 
+    function reportHtmlDocument() {
+      if (!app.lastResults || !app.currentConfig) return "";
+      const report = $("tdReport").innerHTML;
+      return `<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>${escapeHtml(app.currentConfig.title || "Результат диагностики")}</title>
+  <style>
+    body { margin: 0; padding: 28px; color: #151515; background: #f7f2f3; font-family: Arial, sans-serif; line-height: 1.5; }
+    h1, h2, h3, h4 { margin-top: 0; }
+    .td-report-export { max-width: 980px; margin: 0 auto; }
+    .td-hero, .td-card, .td-panel { border: 1px solid #e5d7dc; background: #fff; padding: 18px; margin: 14px 0; }
+    .td-grid-2, .td-grid-3 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .td-grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .td-stat-value { font-size: 24px; font-weight: 700; }
+    .td-table { width: 100%; border-collapse: collapse; background: #fff; }
+    .td-table th, .td-table td { border: 1px solid #e5d7dc; padding: 8px; text-align: left; vertical-align: top; }
+    .td-progress { height: 8px; background: #f7f2f3; }
+    .td-progress span { display: block; height: 100%; background: #cf294b; }
+    @media print { body { background: #fff; padding: 12mm; } .td-hero, .td-card, .td-panel { break-inside: avoid; } }
+  </style>
+</head>
+<body>
+  <main class="td-report-export">
+    <h1>${escapeHtml(app.currentConfig.title || "Результат диагностики")}</h1>
+    ${report}
+  </main>
+</body>
+</html>`;
+    }
+
+    function downloadHtmlReport() {
+      const html = reportHtmlDocument();
+      if (!html) {
+        showError("Сначала сформируйте отчёт.");
+        return;
+      }
+      const blob = new Blob([html], { type: "text/html;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = `diagnostic-result-${new Date().toISOString().slice(0, 10)}.html`;
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      URL.revokeObjectURL(url);
+    }
+
+    function printPdfReport() {
+      const html = reportHtmlDocument();
+      if (!html) {
+        showError("Сначала сформируйте отчёт.");
+        return;
+      }
+      const printWindow = window.open("", "_blank");
+      if (!printWindow) {
+        showError("Браузер заблокировал окно печати. Разрешите всплывающие окна для этой страницы.");
+        return;
+      }
+      printWindow.document.open();
+      printWindow.document.write(html);
+      printWindow.document.close();
+      printWindow.focus();
+      window.setTimeout(() => {
+        printWindow.print();
+      }, 300);
+    }
+
     async function loadConfigs() {
       if (app.configsLoaded) return app.configs;
       const configs = [];
@@ -1324,6 +1417,9 @@
         showError("Не удалось скопировать результат автоматически. Выделите текст отчёта вручную.");
       }
     });
+
+    $("tdDownloadHtmlButton").addEventListener("click", downloadHtmlReport);
+    $("tdPrintPdfButton").addEventListener("click", printPdfReport);
 
     window.addEventListener("load", scheduleParentHeightUpdate);
     window.addEventListener("resize", scheduleParentHeightUpdate);
