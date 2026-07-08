@@ -531,7 +531,7 @@
         </div>
         <label class="td-checkbox">
           <input id="tdConsentPersonal" type="checkbox" required>
-          <span>Я принимаю <a href="http://infinita-school.ru/soglasie" target="_blank" rel="noreferrer noopener">согласие на обработку персональных данных</a> и ознакомлен(на) с <a href="http://infinita-school.ru/politika" target="_blank" rel="noreferrer noopener">политикой обработки персональных данных</a>.</span>
+          <span>Я согласен(на) на обработку персональных данных, принимаю <a href="http://infinita-school.ru/soglasie" target="_blank" rel="noreferrer noopener">согласие на обработку персональных данных</a> и <a href="http://infinita-school.ru/politika" target="_blank" rel="noreferrer noopener">политику обработки персональных данных</a>.</span>
         </label>
         <label class="td-checkbox">
           <input id="tdConsentMarketing" type="checkbox">
@@ -1051,7 +1051,6 @@
         ${renderQuestionTable(results.question_rows)}
       `;
       $("tdReport").classList.add("td-visible");
-      $("tdReport").scrollIntoView({ behavior: "smooth", block: "start" });
     }
 
     function showError(message) {
