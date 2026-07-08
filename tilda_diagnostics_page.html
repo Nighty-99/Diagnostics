@@ -539,7 +539,6 @@
         </label>
         <div class="td-alert" id="tdLeadError"></div>
         <button class="td-button" type="submit">Начать диагностику</button>
-        <p class="td-submit-note">Рекламное согласие хранится отдельно от согласия на обработку персональных данных.</p>
       </form>
     </section>
 
@@ -595,9 +594,7 @@
       <div class="td-actions">
         <button class="td-button" type="submit">Сформировать отчёт</button>
         <button class="td-button td-button-secondary" id="tdResetButton" type="button">Очистить ответы</button>
-        <button class="td-button td-button-secondary" id="tdCopyButton" type="button">Скопировать результат</button>
         <button class="td-button td-button-secondary" id="tdDownloadHtmlButton" type="button">Скачать HTML</button>
-        <button class="td-button td-button-secondary" id="tdPrintPdfButton" type="button">Сохранить PDF</button>
       </div>
     </form>
 
@@ -1211,24 +1208,6 @@
       }
     }
 
-    function resultText() {
-      if (!app.lastResults || !app.currentConfig) return "";
-      const r = app.lastResults;
-      const forecast = r.score_forecast
-        ? `\nОриентир ЕГЭ: первичный ${r.score_forecast.primary_score_range}, вторичный ${r.score_forecast.secondary_score_range}`
-        : "";
-      return [
-        `Диагностика: ${app.currentConfig.title}`,
-        `Ученик: ${app.lead?.name || "не указано"}`,
-        `Почта: ${app.lead?.email || "не указано"}`,
-        `Телефон: ${app.lead?.phone || "не указано"}`,
-        `Результат: ${r.total_score} / ${r.total_max} (${r.overall_percent}%)`,
-        `Уровень: ${r.overall_level}`,
-        forecast,
-        `Главные выводы: ${r.main_findings.join(" ")}`
-      ].filter(Boolean).join("\n");
-    }
-
     function reportHtmlDocument() {
       if (!app.lastResults || !app.currentConfig) return "";
       const report = $("tdReport").innerHTML;
@@ -1277,26 +1256,6 @@
       link.click();
       link.remove();
       URL.revokeObjectURL(url);
-    }
-
-    function printPdfReport() {
-      const html = reportHtmlDocument();
-      if (!html) {
-        showError("Сначала сформируйте отчёт.");
-        return;
-      }
-      const printWindow = window.open("", "_blank");
-      if (!printWindow) {
-        showError("Браузер заблокировал окно печати. Разрешите всплывающие окна для этой страницы.");
-        return;
-      }
-      printWindow.document.open();
-      printWindow.document.write(html);
-      printWindow.document.close();
-      printWindow.focus();
-      window.setTimeout(() => {
-        printWindow.print();
-      }, 300);
     }
 
     async function loadConfigs() {
@@ -1405,21 +1364,7 @@
       scheduleParentHeightUpdate();
     });
 
-    $("tdCopyButton").addEventListener("click", async () => {
-      if (!app.lastResults) {
-        showError("Сначала сформируйте отчёт.");
-        return;
-      }
-      try {
-        await navigator.clipboard.writeText(resultText());
-        hideError();
-      } catch (error) {
-        showError("Не удалось скопировать результат автоматически. Выделите текст отчёта вручную.");
-      }
-    });
-
     $("tdDownloadHtmlButton").addEventListener("click", downloadHtmlReport);
-    $("tdPrintPdfButton").addEventListener("click", printPdfReport);
 
     window.addEventListener("load", scheduleParentHeightUpdate);
     window.addEventListener("resize", scheduleParentHeightUpdate);
