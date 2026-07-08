@@ -611,7 +611,7 @@
       "diagnostics/math_grade_6_diagnostic_config.json",
       "diagnostics/math_grade_5_diagnostic_config.json"
     ];
-    window.DIAGNOSTIC_SUBMIT_URL = "https://script.google.com/macros/s/AKfycbxulLfea01c-R6oVbC1fJtV99tR8rr5ypLCtHKwimOZiLnA68aU4XvXlfzIdk-UPog/exec";
+    window.DIAGNOSTIC_SUBMIT_URL = "https://script.google.com/macros/s/AKfycbwPLjT-05H3TPiWzShrcetMYTlwMzOrtwtGVBV3iG63VnTXHoFNd8lPrAiCE_7LS30g/exec";
 
 
     const app = {
@@ -1331,6 +1331,7 @@
         await initDiagnostics();
         $("tdLeadOverlay").classList.add("td-hidden");
         setDiagnosticLocked(false);
+        typesetMath();
         $("tdDiagnosticApp").scrollIntoView({ behavior: "smooth", block: "start" });
       } catch (error) {
         showBox("tdLeadError", `Не удалось загрузить диагностику: ${error.message}`);
