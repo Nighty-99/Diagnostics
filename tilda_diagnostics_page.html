@@ -611,7 +611,7 @@
       "diagnostics/math_grade_6_diagnostic_config.json",
       "diagnostics/math_grade_5_diagnostic_config.json"
     ];
-    window.DIAGNOSTIC_SUBMIT_URL = "https://script.google.com/macros/s/AKfycby9MWdRAaduzDGT8F7mYZdmOn9lL-MyyRnOCp3PP0JgPpWHmtRQfCXiN8GEzAaXGJtV/exec";
+    window.DIAGNOSTIC_SUBMIT_URL = "https://script.google.com/macros/s/AKfycbwGXoUjBlKteEu8JmyOHcKnEG6wKEgqSt5ygzB-_BD7KWx8VgBlRTmle_3S2MrmW0_F/exec";
 
 
     const app = {
@@ -1188,10 +1188,12 @@
       try {
         const isGoogleScript = window.DIAGNOSTIC_SUBMIT_URL.includes("script.google.com");
         if (isGoogleScript) {
+          const formBody = new URLSearchParams();
+          formBody.set("payload", JSON.stringify(payload));
           await fetch(window.DIAGNOSTIC_SUBMIT_URL, {
             method: "POST",
             mode: "no-cors",
-            body: JSON.stringify(payload)
+            body: formBody
           });
           showBox("tdSubmitStatus", "Результат отправлен на сохранение.");
           return;
