@@ -932,7 +932,11 @@
 
       $("tdReport").classList.remove("td-visible");
       $("tdReport").innerHTML = "";
-      typesetMath();
+      if (app.lead) {
+        typesetMath();
+      } else {
+        scheduleParentHeightUpdate();
+      }
     }
 
     function renderScoreCards(results) {
@@ -1296,6 +1300,9 @@
     document.addEventListener("DOMContentLoaded", () => {
       setDiagnosticLocked(true);
       scheduleParentHeightUpdate();
+      window.setTimeout(() => {
+        initDiagnostics();
+      }, 700);
     });
 
     $("tdLeadForm").addEventListener("submit", async (event) => {
